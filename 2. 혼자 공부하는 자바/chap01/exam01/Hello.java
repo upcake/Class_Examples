@@ -1,7 +1,7 @@
 package sec03.exam01;
 
 /*
- * 작성자: 이범우
+ * 작성자: 
  * 작성일: 2020. 02. 24
  */
 public class Hello {
