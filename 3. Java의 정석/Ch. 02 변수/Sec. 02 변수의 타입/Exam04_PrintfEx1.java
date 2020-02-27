@@ -18,7 +18,7 @@ class Exam04_PrintfEx1 {
 		System.out.printf("s=%d%n", s);
 		System.out.printf("c=%c, %d %n", c, (int) c); 	// %c는 문자로 출력
 		// char타입의 값을 %d로 출력하려면 int타입으로 형변환이 필요함
-		System.out.printf("finger=[%5d] %n", finger); 	// []는 출력될 값이 차지할 공간을 숫자로 지정할 수 있음
+		System.out.printf("finger=[%5d] %n", finger); 	// 출력될 값이 차지할 공간을 숫자로 지정할 수 있음
 		System.out.printf("finger=[%-5d] %n", finger);	// -는 왼쪽 정렬
 		System.out.printf("finger=[%05d] %n", finger);	// 빈 공간을 0으로 채움
 		System.out.printf("big=%d%n", big);
