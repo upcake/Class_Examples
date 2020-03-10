@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>입력 양식 4</title>
+<script>
+/* function func()랑 var func = function() 같음 */
+var func = function(){
+	location.href = "https://www.google.com"
+}
+/* function func(){
+	location.href = "https://www.google.com"
+} */
+</script>
+</head>
+<body>
+	<form name="form">
+		<label for="name">이름 </label>
+		<input type="text" name="name" id="name" required="required"/>
+		<!-- required 속성은 이 칸을 채워야 submit이 되도록 함 -->
+		<br /><br />
+		
+		<input type="button" name="naver" id="naver" value="네이버"
+		onclick="location.href='https://www.naver.com'"/>
+		<!-- location.href="'주소'" 해당 주소로 이동 -->
+		<input type="button" name="google" id="google" value="구글"
+		onclick="func();" />
+		<button type="button" name="daum" id="daum"
+		onclick="location.href='https://www.daum.net'">다음</button>
+		<input type="submit" value="전송" />		
+		<!-- button 태그는 단독태그가 아님 -->
+	</form>
+</body>
+</html>

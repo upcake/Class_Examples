@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>입력 양식2</title>
+<script>
+	function nameClear() {
+		document.form.name.value='';
+		/* . 은 접근 연산자, 문서 - 양식 - name - value에 접근한다 */
+	}	
+	function image1Click() {
+		return false;
+	}
+</script>
+	
+</head>
+<body>
+	<form name="form">
+		<input type="text" name="name" value="이름을 입력하세요." onclick="nameClear()" /><br />
+		<!-- value는 입력 칸 안에 출력되는 텍스트 -->
+		<!-- onclick="nameClear()"는 클릭하면 nameClear()라는 함수를 실행시킴  -->
+		<!-- form 태그에서는 대부분의 요소에 return false를 주어야함 -->
+		<input type="button" value="버튼" /><br />
+		<input type="checkbox" /> 남자
+		<input type="checkbox" /> 여자 <br />
+		<input type="file" />
+		
+		<input type="hidden" value="12345" name="hidden" /><br />
+		
+		<input type="image" src="img01.png" onclick="return image1Click();" /> 그림1 <br />
+		<!-- 전송을 못하게 하는 속성을 만들어 줘야 함 -->
+		<input type="image" src="img02.png" onclick="login(e);" /> 그림2 <br />
+		<input type="image" src="img03.png" onclick="login(e); return false;" /> 그림3 <br />
+		<!-- 자바스크립트는 세미콜론을 안붙여도 에러가 안생기나 일반적으로 붙여주는 것을 권장함 -->
+		<img src="img04.png" /> 그림4 <br />
+		
+		비밀번호 : <input type="password" /><br />
+		
+		<input type="radio" /> 등산 <br />
+			
+		<input type="submit" /><br />
+		<input type="reset" /><br />
+		<!-- 인풋 타입 image, submit이 있을때 엔터를 누르면 전송된다  -->
+	</form>
+</body>
+</html>
