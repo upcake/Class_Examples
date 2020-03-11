@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form exam2</title>
+<style type="text/css">		/* placeholder를 클릭 시 투명으로 만드는 css */
+	input:focus::-webkit-input-placeholder,	/* input: 인풋에서 focus 클릭했을때 webkit : 크롬에서 */
+	textarea:focus::-webkit-input-placeholder {
+		color: transparent;
+	/* chrome */
+	}
+	 
+	input:focus::-moz-input-placeholder,	/* moz : 파이어폭스에서 */
+	textarea:focus::-moz-input-placeholder {
+		color: transparent;
+	}
+	/* firefox */
+	
+	input:focus:-ms-input-placeholder,	/* focus 콜론 하나 삭제 후 ms : 익스플로러에서 */
+	textarea:focus:-ms-input-placeholder {
+		color: transparent;
+	}
+	/* explorer */
+</style>
+</head>
+<body>
+	<form name="form" id="form" method="post">		<!-- id랑 method 추가할 것 -->
+		이름 : 		<input type="text" name="name" id="name" placeholder="이름을 입력하세요."
+						onKeypress="if(event.keyCode == 13) {return false};"/><br />		
+		아이디 : 		<input type="text" name="id" id="user_id" placeholder="아이디를 입력하세요."
+						onKeypress="if(event.keyCode == 13) {return false};"/><br />		<!-- id를 user_id나 usr_id -->
+		비밀번호 : 		<input type="password" name="password" id="password" placeholder="비밀번호를 입력하세요."
+						onKeypress="if(event.keyCode == 13) {return false};"/><br />
+		연락처 : 		<input type="text" name="tel1" id="tel1" size="3" maxlength="3" 
+						onKeypress="if(event.keyCode == 13) {return false};"/>
+			- 		<input type="text" name="tel2" id="tel2" size="4" maxlength="4" 
+						onKeypress="if(event.keyCode == 13) {return false};"/>
+			- 		<input type="text" name="tel3" id="tel3" size="4" maxlength="4" 
+						onKeypress="if(event.keyCode == 13) {return false};"/><br />
+		사진 : 		<input type="file" name="file" id="file"/><br />
+		성별 구분 : 	<input type="radio" name="gender" value="male"/> <!-- 여러개 중에 하나 선택하는건 id 주지 않는다. -->
+						<label for="male">남</label>
+					<input type="radio" name="gender" value="female" checked="checked" />	<!-- checked는 기본으로 체크되어 있는 속성 -->
+						<label for="female">여</label><br />
+		사용 언어 : 	<input type="checkbox" name="language" value="kor" checked="checked" />한글
+					<input type="checkbox" name="language" value="eng" />영어
+					<input type="checkbox" name="language" value="jpn" />일어
+					<input type="checkbox" name="language" value="chi" />중국어<br />
+		자기소개 :		<textarea rows="5" cols="20" name="introduction" onclick="this.value='';">간단하게 입력하세요.</textarea><br />	
+					<!-- onclick="this.value='';"로 함수 지정 안하고 바로 지울 수 있다.  -->
+		국적 : 		<select name="nation" id="nation">
+						<option value="kor">KOREA</option>
+						<option value="usa" selected="selected">USA</option>	<!-- selected는 기본으로 골라져 있는 속성 -->
+						<option value="jap">JAPAN</option>
+						<option value="chi">CHINA</option>
+					</select><br />
+		좋아하는 음식 : 	<select name="food" id="food" multiple="multiple">
+						<option value="kimchi" selected="selected">김치</option>
+						<option value="bulgogi">불고기</option>
+						<option value="pajeon" selected="selected">파전</option>
+						<option value="bibimbap">비빔밥</option>
+					</select><br />
+					<input type="submit" value="전송" />
+					<input type="reset" value="취소" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form exam</title>
+	<script>
+		function nameClear() {
+			document.form.name.value='';
+		}
+		function emailClear() {
+			document.form.email.value='';
+		}
+	</script>
+</head>
+<body>
+	<form name="form"> <!-- 폼에 name 넣는 것 잊지 말자 -->
+		<table>
+			<tr>
+				<td>
+					이름
+				</td>
+				<td>
+					<input type="text" name="name" id="name" value="이름을 입력하세요" onClick="nameClear();"
+					onKeypress="if(event.keyCode == 13) {return false};"/>
+					<!-- onKeypress 키 입력중에, 키코드 13 = 엔터, 엔터 입력시 전송을 막는 속성 -->
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					이메일
+				</td>
+				<td>
+					<input type="email" name="email" id="email" value="이메일을 입력하세요" onClick="emailClear();"
+					onKeypress="if(event.keyCode == 13) {return false};"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="전송" />
+					<input type="reset" value="취소" />
+				</td>
+							<!-- 오답 -->
+<!-- 				<td> -->
+<!-- 					<input type="submit" value="전송" /> -->
+<!-- 				</td> -->
+<!-- 				<td> -->
+<!-- 					<input type="reset" value="취소" /> -->
+<!-- 				</td> -->
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

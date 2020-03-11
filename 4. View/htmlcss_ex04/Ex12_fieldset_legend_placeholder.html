@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>fieldset legend</title>
+</head>
+<body>
+	<form name="form"> <!-- 폼에 name 넣는 것 잊지 말자 -->
+		<fieldset>
+		<legend>입력 양식</legend> 
+		<!-- legend : 범례, 제목 -->
+			<table>
+			<tr>
+				<td>
+					이름
+				</td>
+				<td>
+					<input type="text" name="name" id="name" placeholder="이름을 입력하세요" onClick="nameClear();"
+					onKeypress="if(event.keyCode == 13) {return false};"/>
+					<!-- value는 값을 주는 속성, placeholder는 입력창에서 빈칸일때 표기하는 속성ㅡ -->
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					이메일
+				</td>
+				<td>
+					<input type="email" name="email" id="email" placeholder="이메일을 입력하세요" onClick="emailClear();"
+					onKeypress="if(event.keyCode == 13) {return false};"/>
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="전송" />
+					<input type="reset" value="취소" />
+				</td>
+			</tr>
+		</table>
+		</fieldset>
+	</form>
+</body>
+</html>
