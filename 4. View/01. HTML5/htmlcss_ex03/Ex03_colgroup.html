@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>colgroup</title>
+</head>
+<body>
+	<table border="1">
+	<caption>Caption</caption>
+	<colgroup>
+		<col span="2" style="background: red">		<!-- n만큼 가로 방향으로 열 지정 -->
+		<col span="1" style="background: green">
+		<col span="1" style="background: blue">
+	</colgroup>
+	<thead style="background: green">
+		<tr>
+			<th colspan="2">Table Header 1</th> 	<!-- colspan n 만큼 칸이 가로로 합쳐짐 -->
+			<th colspan="2">Table Header 2</th>			
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr>
+			<td colspan="2">Table Data 1</td>
+			<td>Table Data 2</td>
+			<td rowspan="3">Table Data 3</td> 		<!-- rowspan n 만큼 칸이 세로로 합쳐짐 -->
+		</tr>
+		<tr>
+			<td>Table Data 4</td>
+			<td rowspan="2">Table Data 5</td>
+			<td>Table Data 6</td>
+		</tr>
+		<tr>
+			<td>Table Data 7</td>
+			<td>Table Data 8</td>
+		</tr>		
+	</tbody>
+	
+	<tfoot style="background: yellow">
+		<tr>
+			<td>Table Data 9</td>
+			<td>Table Data 10</td>
+			<td>Table Data 11</td>
+			<td>Table Data 12</td>
+		</tr>
+	</tfoot>
+	</table>
+</body>
+</html>

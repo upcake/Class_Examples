@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>영상에 자막 넣기, videojs(구버전)</title>
+ <link href="https://vjs.zencdn.net/4.9/video-js.css" rel="stylesheet" />
+ <script src="https://vjs.zencdn.net/4.9/video.js"></script>
+</head>
+<body>
+	<video src="wildlife.mp4" type="video/mp4" width="640" height="480" controls="controls"
+	class="video-js vjs-default-skin" data-setup="{}">
+		<track kind="subtitles" src="wildlife2.vtt" srclang="ko" label="Korean" default/>
+		<track kind="subtitles" src="wildlife2.vtt" srclang="en" label="English"/>
+		<track kind="subtitles" src="wildlife2.vtt" srclang="jp" label="Japanese"/>
+		<track kind="subtitles" src="wildlife2.vtt" srclang="ch" label="Chinese"/>
+		<!-- track은 자막을 넣는 기능을 하며 단독태그이다, default를 넣으면 설정할 필요 없이 자동으로 나옴 -->
+		<!-- class="video-js vjs-default-skin" data-setup="{}" 를 추가하면 플레이어가 바뀐다 -->
+</body>
+</html>
