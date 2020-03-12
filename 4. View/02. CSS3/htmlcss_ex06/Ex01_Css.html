@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div {
+		background-color: #ffd800;		/* 구글 - colorpicker 활용 */
+	}
+		/* 색을 줄때 헥스코드로 써도 되고 색 이름을 적어도 된다 */
+
+	mark {
+		background-color: lime;
+		font-weight: bold;
+	}
+</style>
+</head>
+<body>
+	<!-- HTML에는 정보만 쓰고 CSS에서 디자인을 한다. -->
+	<h1>제목 입니다.</h1>
+	<p>본문 입니다.</p>
+
+	<div>
+		<h1>제목 입니다.</h1>
+		<p>본문 입니다.</p>
+	</div>
+
+	<pre> <!-- pre 태그 : preformatted text, 미리 형식이 지정된 문자열
+	입력한 그대로 출력, Code, 공백과 줄 바꿈을 모두 유지, 태그속성은 적용됨-->
+    
+    	<h3>
+    	           더 많이 사랑하자
+    	           더 많이 고민하고
+    	           더 많이 웃어보자
+    	</h3>
+    	 
+    	 function(index){
+    	 	for(int i=0; i < index; i++){
+    	 	 i++
+    	 	}
+    	 }
+    
+	</pre>
+
+
+	<p>
+		<mark>입실은 오후 2시부터이며 퇴실은 오전11시</mark> <!-- mark태그 : 형광펜 효과를 내는 태그 -->
+		입니다
+	</p>
+	<p>
+		<b>1인</b> 3000원<br /> 
+		<b>2인</b> 5500원<br /> 
+		<b>3인</b> 8000원
+	</p>
+	<p>
+		이곳은 관광지가 아니며 <strong>귤농사</strong>를 짓는곳입니다.<br /> <!-- strong 태그 : 볼드체 -->
+		<em>인터넷 전화와 인터넷 TV가 연결되는곳이고요 !!!</em><br /> 
+				<!-- em 태그 : 기울임체, emphasize, 중요한 문구를 강조하는 HTML 태그 중 하나 -->
+		<i>인터넷 전화와 인터넷 TV가 연결되는곳이고요 !!!</i>
+	</p>
+
+	<!-- q 태그 : 짧은 인용문 사용시 넣는 태그, 자동으로 따옴표("")를 붙여 출력, 
+	출처가 명확할 경우 cite=""을 사용하지만 링크는 제공하지 않음. (인라인 태그) -->
+	<p>
+		웹의 창시자 팀 버너스 리의 
+		<q cite="http://www.w3.org/standards/webdesign/accessibility">
+		웹의 힘은 보편성에 있다</q>
+		 라고 말했다.
+	</p>
+</body>
+</html>

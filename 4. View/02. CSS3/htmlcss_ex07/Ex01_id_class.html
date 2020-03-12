@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>id, class</title>
+<style type="text/css">
+	/* #id */
+	/* solid = 실선 */
+	#header	{
+		width: 500px;
+		background-color: #ffd800;
+		border: 1px solid #808080;
+		text-align: center;
+	}					
+
+	#wrap {
+		width: 500px;
+		background-color: #66dbf6;
+		border: 2px solid #808080;
+		text-align: left;
+		overflow: hidden;
+	}	/* overflow: hidden을 붙여야 하위태그들이 제대로 나옴 */
+	
+	#content {
+		width: 350px;
+		border: 1px solid red;	
+		float: left;
+	}
+	
+	#side_banner {
+		border: 1px solid red;
+		float: left;
+	}
+</style>
+</head>
+<body>
+	<div id="header">		<!-- form에서는 name을 썼지만 대부분은 id를 사용한다 -->
+		<h1>HEADER</h1>
+	</div>
+
+	<div id="wrap">
+		<div id="content">
+			<h1>CONTENT</h1>
+			<ul>
+				<li class="menu1">menu1</li>	<!-- class는 id와 사용처가 비슷하지만 비슷한것끼리 묶을때 사용 -->
+				<li class="menu2">menu2</li>	<!-- id는 안겹치는게 권장되지만 class는 중복시켜도 상관이 없다. -->
+				<li class="menu3">menu3</li>
+				<li class="menu4">menu4</li>
+				<li class="menu5">menu5</li>
+			</ul>
+		</div>
+		<div id="side_banner">
+			<h1>BANNER</h1>
+			<a href="http://www.sba.seoul.kr" target="_blank"> 
+			<img src="http://www.sba.seoul.kr/kr/images/footer/f_logo.png">
+			</a>
+		</div>
+	</div>
+
+	<div id="footer">
+		<h1>FOOTER</h1>
+	</div>
+	<!-- DOM : 문서 객체 모델 -->
+</body>
+</html>

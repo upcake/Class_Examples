@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<title>오디오 태그</title>
+</head>
+<body>
+	<!-- 플러그인 도움 없이 음악 재생 -->
+	<!-- 지원하는 파일 : IE -> mp3, Chrome -> mp3, ogg, wav -->
+	<!--속성 
+		volume  //  소리의 크기를 결정
+		autoplay // 자동 재생 지정
+		muted // 음소거
+		preload // 페이지 로드시 audio를 미리 로딩여부 지정, 재생전에 모두 불러올지 지정
+		src // 소스 파일 경로 지정
+		loop // 반복 재생 지정
+		controls // 음악재생 도구 출력할지 지정
+	-->
+	<!-- 크롬 X, 익스플로러 O -->
+	<audio src="Kalimba.mp3" type="audio/mp3" controls="controls"
+		autoplay="autoplay" loop="loop"></audio>
+	<br />
+	<!-- type="audio/mp3" 파일 재생 가능한지 확인하려고 
+    트래픽 발생하여 꼭 type 속성 지정해주는게 좋음 -->
+	<audio src="Kalimba.ogg" type="audio/ogg" controls="controls"
+		loop="loop"></audio>
+</body>
+</html>
