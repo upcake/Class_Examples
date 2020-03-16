@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sibling</title>
+<style type="text/css">
+	h3 ~ div {
+		background-color: yellow;
+		color: orange;
+		font-size: 20px;
+		width: 200px;
+	}
+	
+	h3 + div {
+		font-size: 30px;
+		font-weight: bold;
+		color: blue;
+	}
+</style>
+</head>
+<body>
+	<!-- 생긴 것이 틀려도 라인이 같으면 형제 -->
+	<!-- +는 밑에 동생 딱 한 명, ~는 나 포함 밑에 동생 전부 -->
+	<h3 id="title">동위 선택자(+, ~)</h3>
+	<!--<h2>h2</h2>  -->
+	<div>div_01</div>
+	<div>div_02</div>
+	<div>div_03</div>
+	<div>div_04</div>
+	<div>div_05</div>
+</body>
+</html>

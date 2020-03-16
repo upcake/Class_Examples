@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test01_style</title>
+<style type="text/css">
+	#header {
+		width: 500px;
+		background-color: #ffd800;
+		border: 1px solid #808080;
+		text-align: center;
+	}
+	
+	#wrap {
+		width: 500px;
+		background-color: #66dbf6;
+		border: 2px solid #808080;
+		text-align: left;
+		overflow: hidden;
+	}
+	
+	#content {
+		width: 350px;
+		border: 1px solid red;
+		float: left;
+	}
+	
+	#side_banner {
+		border: 1px solid red;
+		float: left;
+		text-align: left;
+	}
+
+	#footer {
+		width: 500px;
+		background-color: #ffd800;
+		border: 1px solid #808080;
+		text-align: center; 
+	}
+	
+	#content ul li.menu1 {
+		color: red;
+		font-size: 30px;
+		font-weight: bold;
+	}
+	
+	#content ul li.menu {
+		color: purple;
+		font-size: 30px;
+		font-weight: bold;
+	}
+	
+</style>
+</head>
+<body>
+<div id="header">
+		<h1>HEADER</h1>
+	</div>
+
+	<div id="wrap">
+		<div id="content">
+			<h1>CONTENT</h1>
+			<ul>
+				<li class="menu1">menu1</li>
+				<li>menu2</li>
+				<li class="menu">menu3</li>
+				<li>menu4</li>
+				<li class="menu">menu5</li>
+			</ul>
+			<ol>
+				<li class="menu1">menu1</li>
+				<li>menu2</li>
+				<li class="menu">menu3</li>
+				<li>menu4</li>
+				<li class="menu">menu5</li>
+			</ol>
+		</div>
+		<div id="side_banner">
+			<h1>BANNER</h1>
+			<a href="http://www.sba.seoul.kr" target="_blank"> 
+				<img src="http://www.sba.seoul.kr/kr/images/footer/f_logo.png">
+			</a>
+
+			<ol>
+				<li class="menu1">menu1</li>
+				<li>menu2</li>
+				<li class="menu">menu3</li>
+				<li>menu4</li>
+				<li class="menu">menu5</li>
+			</ol>
+		</div>
+	</div>
+	<div id="footer">
+		<h1>FOOTER</h1>
+	</div>
+</body>
+</html>

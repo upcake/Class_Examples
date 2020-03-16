@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form style</title>
+<style type="text/css">
+	form {
+		width: 500px;
+		border: 3px dashed red;
+	}
+	
+	/* input 안의 글자 설정 */
+	/* padding 입력 창 안의 여백 조절 */
+	input {
+		color: green;
+		font-size: 30px;
+		font-weight: bold;
+		padding-left: 10px;
+	}
+	
+	/* 속성 선택자는 브라켓으로 묶는다 */
+	/*	# : id 선택자 
+		태그[속성] 
+		.클래스 */
+	input[type=text] {
+		color: orange;
+		font-size: 50px;
+		width: 200px;
+	}
+	
+	input[type=password] {
+		color: red;
+		border: 5px solid red;
+	}
+	
+	input[type=tel] {
+		color: red;
+		border: 5px solid green;
+	}
+	
+	/* img는 [src]를 붙여주자 */
+	img[src] {
+		border: 5px solid green;
+	}
+</style>
+</head>
+<body>
+	<form method="post">
+		이름 : 
+			<input type="text" name="name" id="name" /><br />
+		아이디 : 
+			<input type="text" name="user_id" id="user_id" /><br />
+		비밀번호 : 
+			<input type="password" name="password" id="password" /><br />
+		전화번호 : 
+			<input type="tel" name="tel" id="tel" /><br />
+	</form>
+	
+	<img src="https://www.sba.seoul.kr/kr/images/header/Navi_dr.png" /><br />
+</body>
+</html>

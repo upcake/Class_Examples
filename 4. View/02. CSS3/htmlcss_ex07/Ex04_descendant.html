@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>descendant</title>
+<style type="text/css">
+	#header, #wrap, #footer {
+		width: 500px;
+		border: 1px solid #cccccc;
+	}
+	
+	#header {
+		text-align: center;
+	}
+	
+	/* .logo { */
+	/* 한 칸 띄는 것은 후손 연산자 (자손=자식과 구분할 것, 자손은 바로 밑에 것만 선택 가능) */
+	/* #header h1 { */
+	/* 꺽쇠는 자손 */
+	div > h1 {
+		color: yellow;
+		font-weight: bold;
+	}
+	
+	/* .copy { */
+	div > h2{
+		color: red;
+	}
+	
+	/* #wrap p { */
+	div > p {
+		font-size: 25px;
+	}
+	
+	/* #wrap ul li { */
+	/* #wrap li { */
+	/* div li { */
+	ul li {
+		background-color: red;	
+	}
+	
+	li > p {
+		font-size: 25px;
+	}
+	
+	li > h1 {
+		color: blue;
+	}
+</style>
+</head>
+<body>
+<div id="header">
+		<!-- <div class="logo"> -->
+		<div>
+			<h1>LOGO</h1>
+		</div>
+		<!-- <div class="copy"> -->
+		<div>
+			<h2>global company</h2>
+		</div>
+	</div>
+
+	<div id="wrap">
+		<p>서울시 8대 신성장동력의 하나인 녹색산업을 집중 육성하기 위해 녹색기업에 특화된 지원기관인 녹색산업지원센터는
+			녹색중소기업의 종합 지원체계를 구축하고 실질적 성과창출을 유도하여 서울형 녹색산업 인프라 조성과 효율적인 지원사업 시행으로
+			녹색중소기업의 경영내실화 및 산업 저변확대에 기여하는 것이 목적
+		</p>
+		<ul>
+			<li><p>서울애니메이션센터</p></li>
+			<li><h1>서울시녹색산업지원센터</h1></li>
+			<li><p>DMC(디지털미디어시티)</p></li>
+			<li><h1>서울게임콘텐츠센터</h1></li>
+			<li><p>서울시우수사회적기업지원</p></li>
+			<li><h1>캐릭터포털사이트</h1></li>
+			<li><p>재미로/재미랑</p></li>
+		</ul>
+	</div>
+
+	<div id="footer">
+		<img src="http://www.sba.seoul.kr/kr/images/footer/copyright.png">
+	</div>
+</body>
+</html>
