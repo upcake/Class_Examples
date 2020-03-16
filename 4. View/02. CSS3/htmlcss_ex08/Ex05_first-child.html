@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	li>a:first-child {	/* 리스트의 자식 태그 앵커, 첫번째 아이를 붙였지만 다 선택됨 */
+		color: blue;
+	}
+	li:first-child>a {	/* 리스트의 첫번째 아이의 자식 태그 앵커, 첫째 줄만 선택됨 */
+		color: red;
+	}
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#">first child</a></li>
+		<li><a href="#">first child</a></li>
+		<li><a href="#">first child</a></li>
+		<li><a href="#">first child</a></li>
+		<li><a href="#">first child</a></li>
+	</ul>
+</body>
+</html>

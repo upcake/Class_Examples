@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>checkbox_hide</title>
+
+<script src="prefixfree.min.js"></script>
+
+<style>
+	/* input타입 checkbox가 체크가 되면 바로 밑에 div에 */
+	input[type=checkbox]:checked+div {
+		height: 0px;
+	}
+	div {
+		width: 650px;
+		height: 300px;
+		background-color: yellow;
+		overflow: hidden;			/* 박스를 넘어간 내용물을 숨긴다 */
+		transition-duration: 1s;	/* 변환 시간 */
+	}
+</style>
+</head>
+<body>
+	<label for="hide">감추기</label>
+	<input type="checkbox" id="hide" />
+	<div class="page">
+		<h1>Lorem ipsum</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	</div>
+</body>
+</html>

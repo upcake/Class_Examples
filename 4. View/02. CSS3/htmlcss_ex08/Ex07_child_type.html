@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>child, type 구분</title>
+<style type="text/css">
+	#lower {width: 300px; font-size: 1em;}			/* 한 줄로 써도 상관 없다 */
+	
+	div p:first-child {		/* div p중에 첫번째 아이가 없어서 해당하는 태그가 없다 */
+		color: green;
+	}
+	
+	div p:first-of-type {	/* div 아이 중에서 첫 번째 p 타입 */
+		color: red;
+	}
+		
+	div h1:first-of-type {
+		color: blue;
+	}
+</style>
+</head>
+<body>
+	<div id="Lower">
+		<div>text1</div>		<!-- div div:first-child, div div:first-of-type-->
+		<p>text2</p>			<!-- div p:first-of-type -->
+		<p>text3</p>
+	</div>
+	
+	<div class="parent">
+		<h1>h1-Child1</h1>		<!-- .parent h1:first-child, .parent h1:first-of-type -->
+		<div>div-Child2</div>	<!-- .parent div:nth-child, .parent div:first-of-type -->
+		<p>p-Child3</p>			<!-- div p:first-of-type -->
+		<div>div-Child4</div>
+	</div>
+</body>
+</html>

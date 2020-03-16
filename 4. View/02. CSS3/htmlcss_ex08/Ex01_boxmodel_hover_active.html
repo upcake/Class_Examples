@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>box model, hover, active</title>
+<style type="text/css">
+	/* padding : 안 여백, border : 경계선, margin : 바깥 여백 */
+	/* 0은 px 안붙여도 됨 */
+	/* auto는 창크기 따라서 자동으로 가운데에 조절해 줌 */
+	/* div를 가운데 정렬하려면 margin을 auto를 준다 */
+	div {
+		width: 300px;
+		background-color: red;
+	}
+	
+	ol > li {
+		font-size: 20px;
+		font-weight: bold;
+		color: orange;
+	}
+	
+	/* 반응 선택자 hover */
+	/* 커서를 위에 올려놨을 때 반응 */
+	li:hover {
+		font-size: 2em;
+		color: black;
+		cursor: pointer;
+	}
+	
+	/* active : 클릭했을때 반응 */
+	li:active {
+		color: blue;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<ol>
+			<li>menu1</li>
+			<li>menu2</li>
+			<li>menu3</li>
+			<li>menu4</li>
+			<li>menu5</li>
+		</ol>
+	</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>enabled, disabled</title>
+<style>
+	/* input 태그에 초점이 맞추어진 경우에 */
+	input:focus {
+		border: 2px solid #ff0000;
+		padding: 10px;
+	}
+	/* input 태그가 사용 가능할 경우에 */
+	input:enabled {
+		color: 00ff00;
+		font-weight: bold;
+	}
+	/* input 태그가 사용 불가능할 경우에 */
+	input:disabled {
+		color: #ff0000;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<form>
+			이름 : <input type="text" name="name" id="name" /><br />
+			아이디 : <input type="text" name="id" id="id" /><br />
+			비밀번호 : <input type="password" name="pw" id="pw" value="12345" disabled="disabled" /><br />
+		</form>
+	</div>
+</body>
+</html>

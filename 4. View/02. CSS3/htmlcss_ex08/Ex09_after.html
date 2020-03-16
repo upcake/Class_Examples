@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>전후문자 선택</title>
+<style type="text/css">
+	#wrap {width: 800px; margin: 0 auto;}
+	
+	#header {border-bottom: 1px solid #cccccc;}
+	
+	#content a {text-decoration: none;}		/* 앵커 태그의 밑줄을 없앰 */
+	
+	#content a:link::after{content: ' - ' attr(href);}
+	/* href 속성을 가지는 a 태그 선택하고 뒤에 href 속성의 요소를 표기함 */
+	
+	#footer ul {
+		overflow: hidden;
+		border: 2px solid #cccccc;
+	}
+	
+	#footer ul li {
+		list-style: none;
+		float: left;
+		padding: 20px;
+	}
+</style>
+</head>
+<body>
+	<div id="wrap">
+
+		<div id="header">
+			<h1>주간 웹 사이트 접속</h1>
+		</div>
+
+		<div id="content">
+			<ul>
+				<li><a>링크 없음</a></li>
+				<li><a href="http://www.sba.seoul.kr" target="_blank">서울산업진흥원</a></li>
+				<li><a href="http://wiz.center" target="_blank">위즈센터</a></li>
+				<li><a href="http://www.yahoo.com" target="_blank">야후</a></li>
+				<li><a href="http://www.google.com" target="_blank">구글</a></li>
+			</ul>
+		</div>
+
+		<div id="footer">
+			<ul>
+				<li><img src="http://www.sba.seoul.kr/kr/images/footer/f_logo.png"></li>
+				<li><img src="http://www.sba.seoul.kr/kr/images/footer/copyright.png"></li>
+			</ul>
+		</div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		#wrap {
+			width: 800px; margin: 0 auto;
+		}
+		
+		#header {
+			border-bottom: 1px solid #cccccc;
+		}
+		
+		#content p:first-child::selection {
+			background-color: blue;
+			color: red;
+		}
+		
+		#history2::first-line, #history1::first-line {
+			font-weight: bold; color: blue;
+		}
+		
+		#history2::first-letter, #history1::first-letter {
+			font-size: 2em;
+		}
+		
+		#footer ul {
+			overflow: hidden; border: 2px solid #cccccc;
+		}
+		
+		#footer ul li {
+			float: left;
+			list-style: none;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+
+		<div id="header">
+			<h1>설립개요</h1>
+		</div>
+
+		<div id="content">
+			<p>중소기업 지원업무의 전문성과 효율성을 확보하고 중소기업에 대한 기술, 경영, 인력 등의 종합지원체계를
+				구축함으로써 중소기업의 경쟁력 제고를 위해 설립된 서울산업진흥원은 중소기업의자생력을 키우고 안정적인 경영여건을 조성하기
+				위하여 끊임없이 노력하고 있습니다.
+			</p>
+			
+			<p id="history2">
+      			201<span style="font-size: 32px; color: red;">4</span>년 04월 09일<br />
+      			서울산업진흥원 사명변경 06월 30일 서울산업진흥원 상암 DMC 이전
+			</p> 
+	
+			<p id="history1">
+				2013년 01월 12일<br />
+				다누리 시민청 개관 05월 09일 꿈꾸는청년가게 명동점 개관 05월 10일 큐비드 광화문
+				개관 06월 21일 다누리 강남점 개관 07월 20일 서울크리에티브랩 개관 08월 27일 다누리 성북점 개관
+			</p>
+		</div>
+
+		<div id="footer">
+			<ul>
+				<li><img src="http://www.sba.seoul.kr/kr/images/footer/f_logo.png"></li>
+				<li><img src="http://www.sba.seoul.kr/kr/images/footer/copyright.png"></li>
+			</ul>
+		</div>
+
+	</div>
+</body>
+</html>
