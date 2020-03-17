@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>화면 보고 따라 만들기</title>
+<style type="text/css">
+	/* header */
+	#header {
+		width: 1000px;
+		height: 150px;
+		overflow: hidden;
+		margin: 0 auto;
+	}
+	#header .left_space {
+		width: 150px;
+		height: 150px;
+		background-color: red;
+		border: 1px solid black;
+		border-radius: 30px 0 30px 0;
+		float: left;
+	}
+	#header .center_space {
+		width: 694px;
+		height: 150px;
+		background-color: green;
+		border: 1px solid black;
+		border-radius: 0 0 30px 30px;
+		float: left;
+	}
+	#header .right_space {
+		width: 150px;
+		height: 150px;
+		background-color: blue;
+		border: 1px solid black;
+		border-radius: 0 30px 0 30px;
+		float: left;
+	}
+
+	/* content */
+	#content {
+		width: 1000px;
+		height: 300px;
+		overflow: hidden;
+		margin: 0 auto;
+	}
+	#content .left_space {
+		width: 150px;
+		height: 300px;
+		background-color: red;
+		border: 1px solid black;
+		border-radius: 0 30px 30px 0;
+		float: left;
+	}
+	#content .center_space {
+		width: 694px;
+		height: 300px;
+		background-color: green;
+		border: 1px solid black;
+		border-radius: 30px;
+		float: left
+	}
+	#content .right_space {
+		width: 150px;
+		height: 300px;
+		background-color: blue;
+		border: 1px solid black;
+		border-radius: 30px 0 0 30px;
+		float: left;
+	}
+	ul {
+	margin: 0;
+	}
+	ul > li {
+		list-style: none;
+		font-weight: bold;
+		font-size: 1.5em;
+		float: left;
+		padding: 15px 35px 25px 35px;
+	}
+	#content .hiseoul {
+		clear: both;
+	}
+	#content .hiseoul>h1 {
+		padding: 0 0 0 10px;
+	} 
+	#content .hiseoul>p {
+		padding: 0 10px 0 10px;
+	}
+	
+	/* footer */
+	#footer {
+		width: 1000px;
+		height: 150px;
+		overflow: hidden;
+		margin: 0 auto;
+	}
+	#footer .left_space {
+		width: 150px;
+		height: 150px;
+		background-color: red;
+		border: 1px solid black;
+		border-radius: 0 30px 0 30px;
+		float: left;
+	}
+	#footer .center_space {
+		width: 694px;
+		height: 150px;
+		background-color: green;
+		border: 1px solid black;
+		border-radius: 30px 30px 0 0;
+		float: left;
+	}
+	#footer .right_space {
+		width: 150px;
+		height: 150px;
+		background-color: blue;
+		border: 1px solid black;
+		border-radius: 30px 0 30px 0;
+		float: left;
+	}
+	
+
+
+
+</style>
+</head>
+<body>
+<div id="header">
+		<div class="left_space"></div>
+		<div class="center_space"></div>
+		<div class="right_space"></div>
+	</div>
+
+	<div id="content">
+		<div class="left_space"></div>
+		<div class="center_space">
+			<div>
+				<ul>
+					<li>menu1</li>
+					<li>menu2</li>
+					<li>menu3</li>
+					<li>menu4</li>
+				</ul>
+			</div>
+			<div class="hiseoul">
+				<h1>하이서울브랜드</h1>
+				<p>서울시와 서울산업진흥원(SBA)이 공동으로 지원하는 하이 서울브랜드 사업은 우수한 기술력과 상품력을 보유하고
+					있으나 고유브랜드 육성에 어려움을 겪고 있는 우수기업들이 서울시가 인정한 기업 공동브랜드인 하이서울브랜드를 활용하여 제품
+					경쟁력을 강화할 수 있도록 각종 홍보 마케팅을 지원하는 사업입니다.</p>
+			</div>
+		</div>
+
+		<div class="right_space"></div>
+	</div>
+
+	<div id="footer">
+		<div class="left_space"></div>
+		<div class="center_space"></div>
+		<div class="right_space"></div>
+	</div>
+</body>
+</html>
