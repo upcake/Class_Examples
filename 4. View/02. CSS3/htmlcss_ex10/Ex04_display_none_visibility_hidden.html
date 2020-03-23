@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>display none, visibility hidden</title>
+<style type="text/css">
+#display_none div, #visibility_hidden div {
+	width: 100px;
+	height: 100px;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+#display_none div:nth-child(1) {
+	background-color: red;
+}
+
+#display_none div:nth-child(2) {
+	background-color: green;
+	display: none;
+}
+
+#display_none div:nth-child(3) {
+	background-color: blue;
+}
+
+#visibility_hidden div:nth-child(1) {
+	background-color: red;
+}
+
+#visibility_hidden div:nth-child(2) {
+	background-color: green;
+	visibility: hidden;
+}
+
+#visibility_hidden div:nth-child(3) {
+	background-color: blue;
+}
+</style>
+</head>
+<body>
+	<div id="display_none">
+		<div>none_con1</div>
+		<div>none_con2</div>
+		<div>none_con3</div>
+	</div>
+	
+	<div id="visibility_hidden">
+		<div>hide_con1</div>
+		<div>hide_con2</div>
+		<div>hide_con3</div>
+	</div>
+</body>
+</html>

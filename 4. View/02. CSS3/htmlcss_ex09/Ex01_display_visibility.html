@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>display, visibility</title>
+<style type="text/css">
+	#box {
+		display: inline-block;	
+		/* none : 태그를 없는 것 처럼 만듦 */
+		/* block : inline 태그를 block 처럼 만듦 */
+		/* inline : block 태그를 inline 처럼 만듦 */
+		/* inline-block : inline 처럼 되지만, 줄 안에서 크기를 가질 수 있음 */
+		background-color: red;
+		width: 500px;
+		height: 200px;
+		/* display: inline은 width와 height가 안 먹힘 */
+		margin: 10px;
+		/* inline은 margin이 좌우만 먹힘 위아래는 안먹힘 */
+		visibility: hidden;
+		/* visibility: hidden은 자리는 유지하고 안보이게만 만듦 */
+	}
+</style>
+</head>
+<body>
+	<span>Dummy</span>
+	<div id="box">
+		<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+	</div>
+	<span>Dummy</span>
+</body>
+</html>

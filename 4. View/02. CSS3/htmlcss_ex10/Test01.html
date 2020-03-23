@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>화면보고 따라 만들기</title>
+<style type="text/css">
+/* 전체 범위 */
+#content {
+	width: 810px;
+	background-color: black;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#content li {
+	list-style: none;
+}
+#content p {
+	padding: 10px 10px 10px 20px;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+/* 공지사항1 */
+#content div:nth-child(1) {
+	width: 250px;
+	background-color: white;
+	display: inline-block;
+	margin: 10px;
+	border-radius: 10px;
+	float: left;
+}
+
+/* 공지사항2 */
+#content div:nth-child(2) {
+	width: 250px;
+	background-color: white;
+	display: inline-block;
+	margin: 10px;
+	border-radius: 10px;
+	float: left;
+}
+
+/* 공지사항3 */
+#content div:nth-child(3) {
+	width: 250px;
+	background-color: white;
+	display: inline-block;
+	margin: 10px;
+	border-radius: 10px;
+	float: left;
+}
+</style>
+</head>
+<body>
+	<div id="content">
+		<div>
+			<p>공지사항1</p>
+			<ul>
+				<li>게시물_01</li>
+				<li>게시물_02</li>
+				<li>게시물_03</li>
+				<li>게시물_04</li>
+				<li>게시물_05</li>
+			</ul>
+		</div>
+
+		<div>
+			<p>공지사항2</p>
+			<ul>
+				<li>게시물_01</li>
+				<li>게시물_02</li>
+				<li>게시물_03</li>
+				<li>게시물_04</li>
+				<li>게시물_05</li>
+			</ul>
+		</div>
+
+		<div>
+			<p>공지사항3</p>
+			<ul>
+				<li>게시물_01</li>
+				<li>게시물_02</li>
+				<li>게시물_03</li>
+				<li>게시물_04</li>
+				<li>게시물_05</li>
+			</ul>
+		</div>
+		
+	</div>
+</body>
+</html>

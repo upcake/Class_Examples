@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>하위 메뉴 만들기</title>
+<style type="text/css">
+a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+#mainMenu {
+	overflow: hidden;
+}
+
+#mainMenu > li {
+	float: left;
+	list-style: none;
+}
+
+#mainMenu > li > a {
+	display: block;
+	padding: 15px;
+	width: 50px;
+	text-align: center;
+}
+
+#mainMenu > li:nth-child(2n+1) {
+	background-color: green;
+}
+
+#mainMenu > li:nth-child(2n) {
+	background-color: red;
+}
+
+
+#mainMenu > li:first-child {
+	border-radius: 20px 0 0 20px;
+}
+
+#mainMenu > li:last-child {
+	border-radius: 0 20px 20px 0;
+}
+
+#subMenu {
+	display: none;
+	background-color: gray;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#mainMenu > li > a:hover+ul {
+	display: block;
+}
+
+#subMenu li {
+	list-style: none;
+}
+
+#subMenu:hover {
+	display: block;
+}
+
+#subMenu li a:hover {
+	background-color: white;
+	color: blue;
+}
+
+#subMenu li a:active {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<ul id="mainMenu">
+		<li>
+			<a href="#">First</a>
+		</li>
+		<li>
+			<a href="#">Second</a>
+		</li>
+		<li>
+			<a href="#">Third</a>
+		</li>
+		<li>
+			<a href="#">Fourth</a>
+		</li>
+		<li>
+			<a href="#">Fifth</a>
+		</li>
+		<li>
+			<a href="#">Sixth</a>
+			<ul id="subMenu">
+				<li><a href="#">Sub61</a></li>
+				<li><a href="#">Sub62</a></li>
+				<li><a href="#">Sub63</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Seventh</a>
+			<ul id="subMenu">
+				<li><a href="#">Sub71</a></li>
+				<li><a href="#">Sub72</a></li>
+				<li><a href="#">Sub73</a></li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

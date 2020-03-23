@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>박스모델과 inline-block</title>
+<style type="text/css">
+body {
+	margin: 0;	
+}
+
+div {
+	width: 100px;
+	height: 100px;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+#content1 {
+	background-color: red;
+	margin: 10px;
+	display: inline-block;
+}
+/* inline-block 일때는 margin이 안겹치지만 block일때는 큰 margin이 덮는다 */
+#content2 {
+	background-color: green;
+	margin: 20px;
+}
+
+#content3 {
+	background-color: blue;
+	padding: 20px;
+	display: inline-block;
+}
+
+#content4 {
+	background-color: lime;
+	margin: 10px;
+	padding: 10px;
+}
+
+
+</style>
+</head>
+<body>
+	<div id="content1">
+		100*100<br /> content1
+	</div>
+	<div id="content2">
+		100*100 <br /> content2<br /> margin
+	</div>
+	<div id="content3">
+		100*100 <br /> content3<br /> padding
+	</div>
+	<div id="content4">
+		100*100	<br /> content4<br /> margin <br /> padding
+	</div>
+</body>
+</html>
