@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>absolute</title>
+<style type="text/css">
+div {
+	width: 100px;
+	height: 100px;
+	background-color: black;
+}
+
+#static1 {
+	background-color: aqua;
+	position: static;
+}
+
+/* position: absolute -> 브라우저 시작점(0, 0)을 기준으로 절대 좌표로 위치 지정 */
+/* 기본은 static */
+#absolute2 {
+	background-color: yellow;
+	position: absolute;
+	top: 0px;
+	left: 100px;
+}
+
+#absolute3 {
+	background-color: red;
+	position: absolute;
+	top: 0px;
+	right: 200px;
+}
+</style>
+</head>
+<body>
+	<div id="static1">static1</div>
+	<div id="absolute2">absolute2</div>
+	<div id="absolute3">absolute3</div>
+</body>
+</html>

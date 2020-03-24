@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>box-sizing</title>
+<style type="text/css">
+body {
+	margin: 0;
+}
+
+div {
+	width: 200px;
+	height: 200px;
+	padding: 10px;
+	border: 10px solid yellow;
+	margin: 10px;
+}
+
+div:nth-child(1) {
+	padding: 0;
+	border: 0;
+	margin: 0;
+	background-color: red;
+}
+
+/* box-sizing으로 크기 기준이 되는 박스 모델을 정할 수 있다. */
+/* 기본은 content-box
+/* border-box : 200px을 border까지해서 200으로 */
+/* content-box : 200px을 내용만해서 200으로 */
+div:nth-child(2) {
+	background-color: blue;
+	box-sizing: border-box;	
+}
+
+div:nth-child(3) {
+	background-color: green;
+	box-sizing: content-box;
+}
+}</style>
+</head>
+<body>
+	<div>200*200</div>
+	<div>200*200</div>
+	<div>200*200</div>
+</body>
+</html>

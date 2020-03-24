@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클래스 여러 개 주기,</title>
+<style type="text/css">
+.font_big {
+	font-size: 2em;
+}
+.font_italic {
+	font-style: italic;
+}
+
+.font_bold {
+	font-weight: bold;
+}
+
+.font_center {
+	text-align: center;	
+}
+
+.button {
+	width: 150px;
+	height: 70px;
+	background-color: red;
+	border: 10px solid white;
+	border-radius: 30px;
+	box-shadow: 5px 5px 5px 5px gray;
+	line-height: 70px;
+}
+	/* box-shadow로 그림자 효과 줄 수 있다. */
+	/* box-shaddow 가로 세로 블러 확장 색*/
+	
+a {
+	display: block;
+}
+	/* 줄 간격(line-height)과 상위태그 블럭의 높이(height)가 같으면 세로 가운데 정렬이 된다. */
+	/* line-height를 상위태그로 옮겨도 세로 가운데 정렬이 된다. */
+</style>
+</head>
+<body>
+<div class="button">
+	<!-- 클래스는 띄어쓰기로 여러 개를 줄 수 있다 -->
+	<a href="#" class="font_big font_italic font_bold font_center">Click</a>
+</div>
+</body>
+</html>

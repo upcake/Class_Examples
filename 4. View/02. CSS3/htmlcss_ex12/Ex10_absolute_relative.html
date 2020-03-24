@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>앱솔루트 렐러티브</title>
+<style type="text/css">
+/* relative는 absolute속성을 같이 갖는다. */
+#relative1 {
+	width: 300px;
+	height: 300px;
+	background-color: green;
+	position: relative;
+	top: 100px;
+	left: 100px;
+}
+
+/* 하위 태그는 fixed를 제외하고 상위 태그 영역을 벗어나지 못한다 */
+#absolute2 {
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+	position: absolute;
+	top: 0px;
+	left: 100px;
+}
+
+#absolute3 {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: absolute;
+	top: 0px;
+	left: 200px;
+}
+</style>
+</head>
+<body>
+	<div id="relative1">
+		<div id="absolute2">absolute2</div>
+		<div id="absolute3">absolute3</div>
+	</div>
+</body>
+</html>

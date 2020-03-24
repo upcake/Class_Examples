@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>border 꾸미기</title>
+<style type="text/css">
+div {
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	background-color: black;
+	font-weight: bold;
+	color: white;
+}
+
+div:nth-child(1) {
+	border-width: 5px;
+	border-style: dotted;
+	border-color: red;
+}
+
+div:nth-child(2) {
+	border-width: 10px;
+	border-style: dashed;
+	border-color: green;
+}
+
+div:nth-child(3) {
+/* 	border-width: 15px;
+	border-style: solid;
+	border-color: blue; */
+	border: 15px solid blue;
+	border-radius: 10px 10px 0 0;
+}
+
+
+</style>
+</head>
+<body>
+	<div>border테두리1</div>
+	<div>border테두리2</div>
+	<div>border테두리3</div>
+</body>
+</html>

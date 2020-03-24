@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 링크 걸기</title>
+</head>
+<body>
+<img src="display.jpg" usemap="#imagemap" />
+
+<map name="imagemap">
+	<area alt="" shape="circle" href="https://www.naver.com"
+	target="_blank" coords="330, 350, 150" >
+	<!-- circle 좌표는 중심점, 반지름 -->
+	
+	<area alt="" shape="rect" href="https://www.google.com"
+	target="_blank" coords="700, 200, 1100, 350">
+	<!-- rect는 좌표는 왼쪽위 꼭지점, 오른쪽 아래 꼭지점 -->
+	
+	<area alt="" shape="poly" href="https://www.yahoo.com"
+	target="_blanke" coords="1430, 145, 1400, 275, 1570, 275, 1530, 145">
+	<!-- poly는 다각형, 필요한 꼭지점을 다 찍어줘야함--->
+</map>
+</body>
+</html>

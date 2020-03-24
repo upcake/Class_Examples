@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>background size</title>
+<style type="text/css">
+div:nth-child(1) {
+	width: 100%;
+	margin: 0 auto;
+	height: 400px;
+	background-image: url('visual5.jpg');
+	background-size: 100%;
+}
+/* width: 100%을 주면 창 크기의 100%에 맞춰 변화함 */
+/* background-size: 100%을 주면 width의 100%만큼 조절되며 전체 사진이 표시됨 */
+
+div:nth-child(2) {
+	width: 80%;
+	margin: 0 auto;
+	height: 400px;
+	background-image: url('visual5.jpg');
+	background-size: 100%;
+}
+/* width: 80%을 주면 창 크기의 100%에 맞춰 변화함 */
+
+div:nth-child(3) {
+	width: 80%;
+	margin: 0 auto;
+	height: 400px;
+	background-image: url('visual5.jpg');
+	background-size: 80%;
+}
+/* background-size 80%을 주면 width의 80%만큼 채우고 남는 부분을 다시 채움 */
+
+div:nth-child(4) {
+	width: 80%;
+	margin: 0 auto;
+	height: 400px;
+	background-image: url('visual5.jpg');
+	background-size: 30%;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+/* background-repeat를 주면 이미지가 한번만 표시되고 반복하지 않음 */
+/* background-position을 주면 이미지가 배당된 공간의 지정된 위치로 감 */
+
+
+</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

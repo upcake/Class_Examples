@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>렐러티브</title>
+<style type="text/css">
+#red {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+
+/* absolute는 body의 margin때문에 위치가 틀어질 수 있으므로 relative가 조금 더 정확할 수 있다. */
+#yellow {
+	width: 400px;
+	height: 400px;
+	background-color: yellow;
+	top: 200px;
+	left: 100px;
+	position: relative;
+}
+
+#green {
+	width: 100px;
+	height: 100px;
+	background-color: green;
+	position: absolute;
+	left: 100px;
+}
+
+#blue {
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	position: absolute;
+	top: 200px;
+	left: 100px;
+}
+</style>
+</head>
+<body>
+	<div id="red"></div>
+	<div id="yellow">
+		<div id="green"></div>
+		<div id="blue"></div>
+	</div>
+</body>
+</html>

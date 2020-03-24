@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	width: 800px;
+	margin: 0 auto;
+	border: 1px solid red;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+div p:nth-child(1) {
+	font-size: 2em;
+	text-align: center;
+	height: 100px;
+	line-height: 100px;
+	text-decoration: underline;
+}
+
+div p:nth-child(2) {
+	font-size: 1.2em;
+}
+
+div p:nth-child(4) {
+	font-size: 1.2em;
+	text-align: right;
+}
+
+/* 가로선에 색 입히는 법 */
+div hr:nth-child(5) {
+	background-color: red;
+	height: 1px;
+	border: 0px;	
+}
+
+div p:nth-child(6) {
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	font-size: 1.5em;
+}
+</style>
+</head>
+<body>
+	<div>
+		<p>HTML5, CSS3 Document</p>
+		<p>To. all member</p>
+		<p>html5, CSS3 study is very easy
+			html5, CSS3 study is very easy html5,CSS3 study is very easy
+		</p>
+		<p>From. SBA</p>
+		<hr />
+		<p>
+			<a href="http://sba.seoul.kr" target="_balnk">서울산업진흥원</a>
+		</p>
+	</div>
+</body>
+</html>

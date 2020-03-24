@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>깊이값 z-index</title>
+<style type="text/css">
+#contain {
+	width: 800px;
+	margin: 0 auto;
+	border: 1px solid #cccccc;
+}
+
+#header, #footer {
+	height: 50px;
+	line-height: 50px;
+	background-color: #cccccc;
+	text-align: center;
+}
+
+#wrap {
+	height: 200px;
+	position: relative;
+	/* overflow: scroll; */
+}
+/* overflow: hidden 은 넘친 부분 숨김 */
+/* overflow: scroll 은 넘친 부분 만큼 스크롤이 생김 */
+
+#wrap>div {
+	width: 100px;
+	height: 100px;
+	background: aqua;
+}
+
+/* z-index는 깊이값, 클수록 위로 올라온다 */
+#wrap #content1 {
+	background-color: red;
+	border: 2px dashed green;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 15;
+}
+
+#wrap #content2 {
+	background-color: yellow;
+	border: 2px dashed green;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	z-index: 10;
+}
+
+#wrap #content3 {
+	background-color: blue;
+	border: 2px dashed green;
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	z-index: 5;
+}
+
+#wrap #content4 {
+	background-color: purple;
+	border: 2px dashed green;
+	position: absolute;
+	top: 150px;
+	left: 150px;
+	z-index: 1;
+}
+
+#wrap #content1:hover {
+	z-index: 100;
+}
+#wrap #content2:hover {
+	z-index: 100;
+}
+#wrap #content3:hover {
+	z-index: 100;
+}
+#wrap #content4:hover {
+	z-index: 100;
+}
+</style>
+</head>
+<body>
+	<div id="contain">
+		<div id="header">HEADER</div>
+		<div id="wrap">
+			<div id="content1">content1</div>
+			<div id="content2">content2</div>
+			<div id="content3">content3</div>
+			<div id="content4">content4</div>
+		</div>
+		<div id="footer">FOOTER</div>
+	</div>
+</body>
+</html>
