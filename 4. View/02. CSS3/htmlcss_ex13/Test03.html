@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>transition-duration, hover, active 활용</title>
+<!-- 너비가 100 높이가 200인 상태에서
+올려놨을때 너비 200, 높이가 100으로 자연스럽게 변경하고
+클릭했을때 너비 200, 높이 200인 원형으로 바꾸세요
+색깔은 알아서 -->
+<style type="text/css">
+#wrap .rec {
+	width: 100px;
+	height: 200px;
+	background-color: blue;
+	transition-duration: 1s;
+	transition-delay: 1s;
+}
+
+#wrap .rec:hover {
+	width: 200px;
+	height: 100px;
+	background-color: red;
+}
+
+#wrap .rec:active {
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	background-color: green;
+}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="rec"></div>
+	</div>
+</body>
+</html>

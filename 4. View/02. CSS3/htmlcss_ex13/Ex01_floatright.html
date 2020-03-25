@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>float right 우측으로 일렬 세우기</title>
+<style type="text/css">
+#row1, #row2 {
+	width: 500px;
+	margin: 0 auto;
+	border: 5px solid red;
+	overflow: hidden;
+}
+
+#row1 #first {
+	width: 100px;
+	height: 100px;
+	border: 1px solid red;
+	margin: 5px;
+	padding: 5px;
+	float: left;
+}
+
+#row1 #second {
+	width: 100px;
+	height: 100px;
+	border: 1px solid red;
+	margin: 5px;
+	padding: 5px;
+	float: left;
+}
+
+#row2 #first {
+	width: 100px;
+	height: 100px;
+	border: 1px solid red;
+	margin: 5px;
+	padding: 5px;
+	float: right;
+}
+
+#row2 #second {
+	width: 100px;
+	height: 100px;
+	border: 1px solid red;
+	margin: 5px;
+	padding: 5px;
+	float: right;
+}
+
+
+</style>
+</head>
+<body>
+	<div id="row1">
+		<div id="first">row1_first</div>
+		<div id="second">row1_second</div>
+	</div>
+<br />
+	<div id="row2">
+		<div id="first">row2_first</div>
+		<div id="second">row2_second</div>
+	</div>
+</body>
+</html>

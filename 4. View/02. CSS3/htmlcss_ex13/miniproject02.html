@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>miniproject 02. 화면 보고 따라 만들기</title>
+<style type="text/css">
+#wrap {
+	width: 805px;
+	height: 885px;
+	border: 1px solid red;
+	margin: 0 auto;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+#header {
+	width: 780px;
+	height: 160px;
+	line-height: 160px;
+	text-align: center;
+	font-size: 1.5em;
+	border: 1px solid red;
+	margin: 0 0 5px 0;
+}
+
+/* nav */
+#nav {
+	width: 780px;
+	height: 160px;
+	border: 1px solid red;
+	margin: 0 0 5px 0;
+}
+#nav p {
+	font-size: 1.5em;
+	text-align: center;
+}
+#nav ul li {
+	list-style: none;
+	float: left;
+	width: 120px;
+	height: 20px;
+	padding: 10px;
+	text-align: center;
+	border: 1px solid red;
+	border-left: 0;
+}
+#nav ul li:nth-child(1) {
+	list-style: none;
+	float: left;
+	width: 120px;
+	height: 20px;
+	padding: 10px;
+	text-align: center;
+	border: 1px solid red;
+}
+
+/* content */
+#content {
+	width: 770px;
+	height: 350px;
+	border: 1px solid red;
+	margin: 0 0 5px 0;
+	padding: 5px;
+	overflow: hidden;
+}
+#content #section {
+	width: 610px;
+	height: 340px;
+	border: 1px solid red;
+	float: left;
+	font-size: 1.5em;
+	text-align: center;
+	margin: 5px;
+}
+#content #banner {
+	width: 135px;
+	height: 340px;
+	border: 1px solid red;
+	float: left;	
+	font-size: 1.5em;
+	text-align: center;
+	margin: 5px;
+}
+
+#footer {
+	width: 780px;
+	height: 160px;
+	line-height: 160px;
+	border: 1px solid red;
+	font-size: 1.5em;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">HEADER</div>
+
+		<div id="nav">
+			<p>NAVIGATION</p>
+			<ul>
+				<li>menu1</li>
+				<li>menu2</li>
+				<li>menu3</li>
+				<li>menu4</li>
+				<li>menu5</li>
+			</ul>
+		</div>
+
+		<div id="content">
+			<div id="section">SECTION</div>
+			<div id="banner">BANNER</div>
+		</div>
+
+		<div id="footer">FOOTER</div>
+	</div>
+</body>
+</html>
