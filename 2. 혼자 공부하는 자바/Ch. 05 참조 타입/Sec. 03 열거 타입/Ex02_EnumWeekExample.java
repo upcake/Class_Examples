@@ -4,15 +4,15 @@ import java.util.Calendar;
 
 public class Ex02_EnumWeekExample {
 	public static void main(String[] args) {
-		Ex01_Week today = null;		// ¿­°Å Å¸ÀÔ º¯¼ö ¼±¾ğ
+		Ex01_Week today = null;		// ì—´ê±° íƒ€ì… ë³€ìˆ˜ ì„ ì–¸
 		
 		Calendar cal = Calendar.getInstance();
-		// Calendar º¯¼ö ¼±¾ğ, Caledndar.getInstance() ¸Ş¼Òµå·Î Calendar °´Ã¼ »ı¼º
-		int week = cal.get(Calendar.DAY_OF_WEEK);	// ÀÏ(1) ~ Åä(7)±îÁöÀÇ ¼ıÀÚ¸¦ ¸®ÅÏ
+		// Calendar ë³€ìˆ˜ ì„ ì–¸, Caledndar.getInstance() ë©”ì†Œë“œë¡œ Calendar ê°ì²´ ìƒì„±
+		int week = cal.get(Calendar.DAY_OF_WEEK);	// ì¼(1) ~ í† (7)ê¹Œì§€ì˜ ìˆ«ìë¥¼ ë¦¬í„´
 		
 		switch(week) {
 			case 1:
-				today = Ex01_Week.SUNDAY; break;	// ¿­°Å »ó¼ö ´ëÀÔ
+				today = Ex01_Week.SUNDAY; break;	// ì—´ê±° ìƒìˆ˜ ëŒ€ì…
 			case 2:
 				today = Ex01_Week.MONDAY; break;
 			case 3:
@@ -27,12 +27,12 @@ public class Ex02_EnumWeekExample {
 				today = Ex01_Week.SATURDAY; break;
 		 } // switch
 		
-		System.out.println("¿À´Ã ¿äÀÏ : " + today);
+		System.out.println("ì˜¤ëŠ˜ ìš”ì¼ : " + today);
 		
 		if(today == Ex01_Week.SUNDAY) {
-			System.out.println("ÀÏ¿äÀÏ¿¡´Â Ãà±¸¸¦ ÇÕ´Ï´Ù.");
+			System.out.println("ì¼ìš”ì¼ì—ëŠ” ì¶•êµ¬ë¥¼ í•©ë‹ˆë‹¤.");
 		} else {
-			System.out.println("¿­½ÉÈ÷ ÀÚ¹Ù °øºÎÇÕ´Ï´Ù.");
+			System.out.println("ì—´ì‹¬íˆ ìë°” ê³µë¶€í•©ë‹ˆë‹¤.");
 		} // if else
 	} // main()
 } // class
