@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<title>화면 보고 따라 만들기</title>
+<style>
+#header {
+	width: 1000px;
+	height: 200px;
+	margin: 0 auto;
+	border: 1px solid red;
+	box-sizing: border-box;
+	margin-bottom: 5px;
+	overflow: hidden;
+	padding: 5px;
+}
+#header #gnb ul {
+	padding-left: 0px;
+}
+#header #gnb ul li {
+	float: left;
+	border: 1px dotted red;
+	list-style: none;
+	padding: 5px;
+	border-right-color: white;
+}
+#header #gnb ul li:last-child {
+	border-right-color: red;
+}
+#header #lnb ul {
+	padding-top: 130px;
+}
+#header #lnb ul li {
+	float: right;
+	border: 1px dotted red;
+	list-style: none;
+	padding: 5px;
+	border-right-color: white;
+}
+#header #lnb ul li:first-child {
+	border-right-color: red;
+}
+a {
+	text-decoration: none;
+	color: blue;
+}
+
+#content {
+	width: 1000px;
+	height: 400px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	overflow: hidden;
+	margin-bottom: 5px;
+}
+#content #section {
+	width: 795px;
+	height: 400px;
+	border: 1px solid red;
+	box-sizing: border-box;
+	float: left;
+	padding: 5px 10px;
+}
+#content #aside {
+	width: 200px;
+	height: 400px;
+	border: 1px solid red;
+	box-sizing: border-box;
+	float: right;
+	padding: 10px;
+}
+
+footer {
+	width: 1000px;
+	height: 150px;
+	line-height: 150px;
+	text-align: center;
+	margin: 0 auto;
+	box-sizing: border-box;
+	border: 1px solid red;
+}
+</style>
+
+</head>
+<body>
+	<div id="header">
+		<div id="gnb">
+			<ul>
+				<li><a href="#">gnb01</a></li>
+				<li><a href="#">gnb02</a></li>
+				<li><a href="#">gnb03</a></li>
+				<li><a href="#">gnb04</a></li>
+				<li><a href="#">gnb05</a></li>
+			</ul>
+		</div>
+		<div id="lnb">
+			<ul>
+				<li><a href="#">lnb01</a></li>
+				<li><a href="#">lnb02</a></li>
+				<li><a href="#">lnb03</a></li>
+				<li><a href="#">lnb04</a></li>
+				<li><a href="#">lnb05</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="content">
+		<div id="section">It is a professional display space in which
+			exhibitions under diverse subjects including the cultural contents
+			are held. Such exhibitions include the ARTTOON ART, Exhibition for
+			100 Modern Cartoonists of Korea, and SF Mania Exhibition.
+		</div>
+		<div id="aside">It is equipped with a stop-motion animation
+			experience space and experience display room in which it is possible
+			to create an animation video clip of one’s own by creating a
+			character in clay and taking photos with a camera.
+		</div>
+	</div>
+	<footer>
+		<div id="office">office information</div>
+	</footer>
+</body>
+</html>

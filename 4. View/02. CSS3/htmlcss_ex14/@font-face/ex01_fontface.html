@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>font-face</title>
+<style type="text/css">
+/*
+	@font-face 규칙 ▶ 웹 폰트 생성할 때 사용하는 규칙
+	웹 폰트 업체에서 지원하지 않는 폰트를 자체적으로 지원할 때
+	반드시 'font-family', 'src' 속성이 포함되어야 함
+	src 안의 local() 함수 : 사용자 컴퓨터에 설치된 폰트명을 local("Font Name")형식으로 지정
+	src 안의 url() 함수 : 원격 폰트(remote font) 파일의 위치를 나타내는 URL 값을 지정
+*/
+
+@font-face {
+	font-family: 'AAA';
+	src: local('NanumGothic'),
+		url('NanumGothic.eot'),
+		url('NanumGothic.ttf'),
+		url('NanumGothic.woff');
+}
+
+* {
+	font-family: 'AAA';
+}
+</style>
+</head>
+<body>
+	<h1>나눔 고딕</h1>
+	<p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+	<p>남산 위에 저 소나무 철갑을 두른듯 바람서리 불면함은 우리 기상일세</p>
+	<p>가을하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일편 단심일세</p>
+	<p>이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세</p>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>miniproject04</title>
+<style type="text/css">
+#wrap {
+	width: 1000px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/* header */
+#header {
+	margin-bottom: 5px;
+	overflow: hidden;
+	border-bottom: 1px solid red;
+}
+#header span {
+	color: red;
+}
+/* ---------------------------------------- */
+#header #topmenu {
+	padding: 0px;
+	margin-top: 21px;
+}
+#header #topmenu li {
+	list-style: none;
+	float: left;
+}
+#header #topmenu li a {
+	text-decoration: none;
+	padding: 18px 26px;
+	background-color: black;
+	color: white;
+}
+/* ---------------------------------------- */
+#header #logobox {
+	padding: 0 40%;
+	padding-top: 90px;
+	padding-bottom: 60px;
+}
+#header #logobox #logo a{
+	display: inline-block;
+	width: 200px;
+	height: 55px;
+	line-height: 55px;
+	text-align: center;
+	border: 1px solid red;
+}
+/* ---------------------------------------- */
+#header #hitmenu {
+	float: right;
+	margin-bottom: 5px;
+}
+#header #hitmenu li {
+	float: left;
+	list-style: none;
+}
+#header #hitmenu li a {
+	padding: 15px 30px;
+	border: 1px solid red;
+	margin-left: -1px;
+}
+#header #hitmenu li:first-child a {
+	border-radius: 20px 0 0 20px;
+}
+#header #hitmenu li:last-child a {
+	border-radius: 0 20px 20px 0;
+}
+/* ---------------------------------------- */
+#header #lnb_menu {
+	margin-top: 60px;
+	border-top: 1px dashed red;
+	text-align: center;
+}
+#header #lnb_menu li {
+	list-style: none;
+	float: left;
+}
+#header #lnb_menu li a {
+	display: inline-block;
+	padding: 14px 16px;
+}
+
+/* ======================================== */
+
+/* banner */
+#banner div:first-child a {
+	display: block;
+	width: 690px;
+	height: 500px;
+	line-height: 500px;
+	text-align: center;
+	border: 1px solid red;
+	float: left;
+}
+#banner div:last-child a {
+	display: block;
+	float: right;
+	width: 300px;
+	height: 500px;
+	line-height: 500px;
+	text-align: center;
+	border: 1px solid red;
+}
+
+/* product */
+#product a {
+	color: blue;
+}
+#product li {
+	list-style: none;
+	float: left;
+}
+#product ul {
+	padding: 0;
+}
+/* ---------------------------------------- */
+#product ul:first-child li a{
+	display: block;
+	width: 245px;
+	height: 400px;
+	line-height: 400px;
+	text-align: center;
+	border: 1px solid red;
+	margin: 10px 4px 3px 0px;
+} 
+#product ul:first-child li:last-child a {
+	margin-right: 0px;
+}
+/* ---------------------------------------- */
+#product ul:last-child li a{
+	display: block;
+	width: 245px;
+	height: 400px;
+	line-height: 400px;
+	text-align: center;
+	border: 1px solid red;
+	margin: 3px 4px 10px 0px;
+} 
+#product ul:last-child li:last-child a {
+	margin-right: 0px;
+}
+
+/* office */
+#office ul {
+	padding: 0;
+	margin-bottom: 5px;
+}
+#office li {
+	float: left;
+	list-style: none;
+}
+#office li:nth-child(1) a {
+	display: block;
+	width: 200px;
+	height: 300px;
+	margin-right: 3px;
+	border: 1px solid red;
+}
+#office li:nth-child(2) a {
+	display: block;
+	width: 450px;
+	height: 300px;
+	margin-right: 3px;
+	border: 1px solid red;
+}
+#office li:nth-child(3) a {
+	display: block;
+	width: 338px;
+	height: 300px;
+	border: 1px solid red;
+}
+
+/* footer */
+#footer {
+	width: 1000px;
+	display: inline-block;
+	height: 100px;
+	line-height: 100px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	margin-top: 10px;
+}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<header id="header">
+			<ul id="topmenu">
+				<li><a href="#" class="first">Login</a></li>
+				<li><a href="#">Join US</a></li>
+				<li><a href="#">Wish List</a></li>
+				<li><a href="#">Cart</a></li>
+				<li><a href="#">Order</a></li>
+				<li><a href="#">Mypage</a></li>
+				<li><a href="#">Notice</a></li>
+				<li><a href="#">QnA</a></li>
+				<li><a href="#">Review</a></li>
+				<li><a href="#" class="last">Favorite</a></li>
+			</ul>
+			<div id="logobox">
+				<div id="logo"><a href="#">logo</a></div>
+			</div>
+			<ul id="hitmenu">
+				<li><a href="#">hit_menu1</a></li>
+				<li><a href="#">hit_menu2</a></li>
+				<li><a href="#">hit_menu3</a></li>
+				<li><a href="#">hit_menu4</a></li>
+			</ul>
+			<ul id="lnb_menu">
+				<li><a href="#">lnb_menu1</a> <span>|</span></li>
+				<li><a href="#">lnb_menu2</a> <span>|</span></li>
+				<li><a href="#">lnb_menu3</a> <span>|</span></li>
+				<li><a href="#">lnb_menu4</a> <span>|</span></li>
+				<li><a href="#">lnb_menu5</a> <span>|</span></li> 
+				<li><a href="#">lnb_menu6</a> <span>|</span></li> 
+				<li><a href="#">lnb_menu7</a> <span>|</span></li> 
+				<li><a href="#">lnb_menu8</a></li>
+			</ul> 
+		</header>
+		
+		<nav id="banner">
+			<div><a href="#">left banner</a></div>
+			<div><a href="#">right banner</a></div>
+		</nav>
+		
+		<section id="product">
+			<ul>
+				<li><a href="#">hit_product1</a></li>
+				<li><a href="#">hit_product2</a></li>
+				<li><a href="#">hit_product3</a></li>
+				<li><a href="#">hit_product4</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">md_product1</a></li>
+				<li><a href="#">md_product2</a></li>
+				<li><a href="#">md_product3</a></li>
+				<li><a href="#">md_product4</a></li>
+			</ul>
+		</section> 
+		
+		<div id="office">
+			<ul>
+				<li><a href="#">office_logo</a></li>
+				<li><a href="#">office_address</a></li>
+				<li><a href="#">shopping_info</a></li>
+			</ul>
+		</div>
+		<footer id="footer">copyright</footer>
+	</div>
+</body>
+</html>
