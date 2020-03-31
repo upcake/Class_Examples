@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>miniproject 답안</title>
+<style type="text/css">
+/* wrap에는 height를 주지 않아도 내용물만큼 알아서 늘어난다 */
+div {
+	border: 1px solid red;
+	padding: 5px;
+	margin: 5px;
+	text-align: center;
+}
+
+#wrap {
+	width: 800px;
+	margin: 0 auto;
+}
+
+#header, #footer {
+	width: 778px;
+	height: 100px;
+	line-height: 100px;
+}
+
+#nav {
+	width: 778px;
+	height: 100px;
+}
+
+#nav ul {
+	overflow: hidden;
+}
+
+/* 패딩 조절, width 조절 할 때 크롬 콘솔로 몇을 줘야 할지 확인해 볼 수 있다. */
+#nav ul li {
+	float: left;
+	list-style: none;
+	border: 1px solid red;
+/* 	padding: 5px 44px; */
+	width: 138px;
+	height: 40px;
+	line-height: 40px;
+/* 	margin-left: -1px; */ /* 중간 겹치는 부분 제거 방법 ① - 이게 더 깔끔함 */
+	border-right-color: white;	/* 중간 겹치는 부분 제거 방법 ② */
+}
+#nav ul li:last-child {
+	border-right-color: red;
+}
+
+#content {
+	overflow: hidden;
+	width: 778px;
+}
+
+#section {
+	float: left;
+	width: 600px;
+	height: 300px;
+}
+
+#banner {
+	float: right;
+	width: 134px;
+	height: 300px;
+}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">HEADER</div>
+
+		<div id="nav">
+			<p>NAVIGATION</p>
+			<ul>
+				<li>menu1</li>
+				<li>menu2</li>
+				<li>menu3</li>
+				<li>menu4</li>
+				<li>menu5</li>
+			</ul>
+		</div>
+
+		<div id="content">
+			<div id="section">SECTION</div>
+			<div id="banner">BANNER</div>
+		</div>
+
+		<div id="footer">FOOTER</div>
+	</div>
+</body>
+</html>
