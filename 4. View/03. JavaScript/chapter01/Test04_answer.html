@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+form, p, h1 {
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+var visitstr;
+function text_see() {
+	visitstr = document.formtext.textstr.value;
+	document.getElementById("txt").innerHTML += "글" + visitstr + "<br />"
+	// 쌍따옴표 안에 html 태그를 쓰면 문자가 아닌, 태그로 인식된다.
+}
+</script>
+</head>
+<body>
+<p>방명록을 남겨주세요</p>
+<h1>글쓰기</h1>
+<form name="formtext">
+	<textarea rows="15" cols="50" name="textstr">여기에 글을 써주세요.</textarea><br />
+	<input type="button" value="확인" onclick="text_see();">
+	<input type="reset" value="취소">
+	
+	<div name="txt" id="txt"></div>
+</form>
+</body>
+</html>
