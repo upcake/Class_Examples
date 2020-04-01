@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>짝수홀수판단</title>
+<script type="text/javascript">
+// 질의응답 창을 띄워 숫자를 입력받는다.
+var num = prompt("입력하실 숫자는?", "");
+
+// 조건식에 0, null, ''(빈문자), undefined일때 false 반환,
+// 나머지는 true 반환
+if (num % 2 == 0) {
+	document.write("입력하신 숫자는 " + num + "이고, 짝수입니다.");
+} else {
+	document.write("입력하신 숫자는 " + num + "이고, 홀수입니다.");
+}
+/*
+if (num % 2) {	// 나머지가 0이면 false 값이 나오니 이렇게 해도 작동된다.
+	document.write("입력하신 숫자는 " + num + "이고, 홀수입니다.");
+} else {
+	document.write("입력하신 숫자는 " + num + "이고, 짝수입니다.");
+}
+*/
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>주소 이동</title>
+<script type="text/javascript">
+var site = prompt("네이버, 다음, 네이트, 구글 중\n즐겨 사용하는 포털 검색 사이트는?", "")
+
+/*
+switch (site) {
+case "네이버":
+	location.href="https://www.naver.com";
+	break;
+case "다음":
+	location.href="https://www.daum.net";
+	break;
+case "네이트":
+	location.href="https://www.nate.com";
+	break;
+case "구글":
+	location.href="https://www.google.com";
+	break;
+
+default:
+	alert("보기 중에 다시 고르세요");
+	location.reload();
+	break;
+}
+*/
+
+if (site == "네이버") {
+	location.href="https://www.naver.com";
+} else if (site == "다음") {
+	location.href="https://www.daum.net";
+} else if (site == "네이트") {
+	location.href="https://www.nate.com";
+} else if (site == "구글") {
+	location.href="https://www.google.com";
+} else {
+	alert("보기 중에 다시 고르세요");
+	location.reload();
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

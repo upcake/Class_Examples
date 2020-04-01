@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>id pw</title>
+<script type="text/javascript">
+var id = "aaa";
+var pw = "aaa";
+
+var user_id = prompt("아이디를 입력하세요.", "");
+var user_pw = prompt("비밀번호를 입력하세요.", "");
+
+if (id == user_id) {
+	if (pw == user_pw) {
+		document.write(user_id + "님 반갑습니다.");
+	} else {
+		alert("비밀번호가 일치하지 않습니다.");
+		location.reload();
+	}
+} else {
+	alert("아이디가 일치하지 않습니다.");
+	location.reload();
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

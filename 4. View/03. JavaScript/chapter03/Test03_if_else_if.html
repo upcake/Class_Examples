@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>if else if</title>
+<script type="text/javascript">
+while(true) {
+	var month = prompt("현재는 몇 월 입니까? (1 ~ 12)", "");
+	if ((month <= 0) || (month >= 13)) {
+		alert("잘못 입력하셨습니다.");
+	} else {
+		break;
+	}
+}
+
+/*
+if (month >= 13 || month <= 0) {
+	alert("잘못 입력하셨습니다.");
+	location.reload();	// 현재 페이지를 다시 불러오는 메서드
+} else if ((month >= 3) && (month <= 5)) {
+	document.write("현재 계절은 봄입니다.");
+} else if ((month >= 6) && (month <= 8)) {
+	document.write("현재 계절은 여름입니다.");
+} else if ((month >= 9) && (month <= 11)) {
+	document.write("현재 계절은 가을입니다.");
+} else {
+	document.write("현재 계절은 겨울입니다.");
+}
+ */
+
+if ((month >= 3) && (month <= 5)) {
+	document.write("현재 계절은 봄입니다.");
+} else if ((month >= 6) && (month <= 8)) {
+	document.write("현재 계절은 여름입니다.");
+} else if ((month >= 9) && (month <= 11)) {
+	document.write("현재 계절은 가을입니다.");
+} else {
+	document.write("현재 계절은 겨울입니다.");
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

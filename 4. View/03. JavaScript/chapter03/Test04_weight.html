@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>체중</title>
+<script type="text/javascript">
+/*
+정상(평균) 체중=(키-100)*0.9
+저(평균이하) 체중=(키-100)*0.75
+과(평균이상) 체중=(키-100)*1.05
+ */
+ 
+var height = prompt("키를 입력하세요.", "0");
+var weight = prompt("몸무게를 입력하세요.", "0");
+var properWeight = (height - 100) * 0.9;
+var underWeight = (height - 100) * 0.75;
+var overWeight = (height - 100) * 1.05;
+
+alert("적정 몸무게는 " + properWeight + "입니다.");
+document.write("적정 몸무게는 " + properWeight + "입니다. <br />");
+// alert은 \n으로 개행, document.write는 <br />으로 개행한다.
+if (weight < overWeight && weight > underWeight) {
+	alert("당신의 키는 " + height + ", 당신의 몸무게는 " + weight + "(으)로써 \n적정체중입니다.");
+	document.write("당신의 키는 " + height + ", 당신의 몸무게는 " + weight + "(으)로써 <br />적정체중입니다.");
+} else if (weight >= overWeight) {
+	alert("당신의 키는 " + height + ", 당신의 몸무게는 " + weight + "(으)로써 \n과체중입니다.");
+	document.write("당신의 키는 " + height + ", 당신의 몸무게는 " + weight + "(으)로써 <br />과체중입니다.");
+} else if (weight <= underWeight) {
+	alert("당신의 키는 " + height + ", 당신의 몸무게는 " + weight + "(으)로써 \n저체중입니다.");
+	document.write("당신의 키는 " + height + ", 당신의 몸무게는 " + weight + "(으)로써 <br />저체중입니다.");
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>
