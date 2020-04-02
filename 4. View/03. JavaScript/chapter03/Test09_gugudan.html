@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단</title>
+<script type="text/javascript">
+var num = prompt("몇 단을 출력할까요?", "");
+var result;
+
+/*
+for (i = 2; i <= 9; i++) {
+	document.write("<h1>" + i + "단" + "</h1>");
+	for (j = 1; j <= 9; j++) {
+		result = i * j;
+		document.write(i + " * " + j + " = " + result + "<br />");
+	} // for j
+} // for i
+*/
+
+// 입력받은 단 수 출력
+document.write("<h1>" + num + "단" + "</h1>");
+for (i = 1; i <= 9; i++) {
+	result = num * i;
+	document.write(num + " * " + i + " = " + result + "<br />");
+} // for i
+</script>
+</head>
+<body>
+</body>
+</html>

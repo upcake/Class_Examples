@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Table 만들기</title>
+<script type="text/javascript">
+// 문제
+document.write("<table border='1'>");
+	var cnt = 1;
+	for (var i = 1; i <= 4; i++) {
+		document.write("<tr>");
+		for (var j = 1; j <= 3; j++) {
+				document.write("<td>" + cnt + "</td>");
+				cnt++;
+		} // for j
+		document.write("</tr>");
+	} // for i
+document.write("</table>");
+
+// 답안
+var num = 1;
+var t = "<table border='1'>";
+
+for (var i = 1; i <= 4; i++) {
+	t += "<tr>";
+	for (var j = 1; j <= 3; j++) {
+		t += "<td>" + num + "</td>";
+		num++;
+	} // for j
+	t += "</tr>";
+} // for i
+t += "</table>";
+
+document.write(t);
+
+// prompt로 입력받아서 행, 열 정하기
+var row = prompt("몇 행으로 할까요?", "");
+var col = prompt("몇 열로 할까요?", "");
+var num2 = 1;
+var t2 = "<table border='1'>";
+
+for (var i = 1; i <= row; i++) {
+	t2 += "<tr>";
+	for (var j = 1; j <= col; j++) {
+		t2 += "<td>" + num2 + "</td>";
+		num2++;
+	} // for j
+	t2 += "</tr>";
+} // for i
+t2 += "</table>";
+
+document.write(t2);
+</script>
+</head>
+<body>
+<table><tr></tr></table>
+</body>
+</html>
