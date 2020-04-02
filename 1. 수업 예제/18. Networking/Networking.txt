@@ -1,0 +1,14 @@
+○ IP Address : 네트워크에 연결되어 있는 터미널(단말기)을 구분하기 위한 고유의 주소
+	- CMD > ipconfig
+	- IPv4 : 32bit 구성
+	- IPv6 : 128bit 구성
+	
+○ Port Number : 네트워크에 연결되어 있는 터미널의 데이터가 전송되는 통로
+	- CMD > netstat /an
+	- 0 ~ 65535 할당
+	- 0 ~ 1023 : 예약된 포트에서 사용할 수 없다.
+	
+○ Socket : IP Address + Port Number
+	- Server Socket : Response(응답) ▶ ServerSocket, Socket
+	- Client Socket : Request(요청) ▶ Socket
+	- Socket간의 통신은 JAVA의 IO를 이용해서 통신(IO의 연장선)
