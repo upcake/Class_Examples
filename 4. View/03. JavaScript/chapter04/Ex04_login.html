@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 함수 만들기</title>
+<script type="text/javascript">
+var id = "aaa";
+var pw = "aaa";
+
+function login(user_id, user_pw) {
+	if (id == user_id) {
+		if (pw == user_pw) {
+			document.write(user_id + "환영합니다.")
+		} else {
+			alert("잘못된 비밀번호입니다.")
+			location.reload();
+		} // if else pw
+	} else {
+		alert("존재하지 않는 아이디입니다.")
+		location.reload();
+	} // if else
+} // login()
+
+var user_id = prompt("아이디를 입력하세요.", "");
+var user_pw = prompt("비밀번호를 입력하세요.", "");
+
+login(user_id, user_pw);
+</script>
+</head>
+<body>
+
+</body>
+</html>

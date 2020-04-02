@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배경색 바꾸기 버튼</title>
+<script type="text/javascript">
+var color = ["white", "yellow", "aqua", "purple"];
+
+var i = 0;
+
+function colorBg() {
+	i++;
+	if (i >= color.length) {
+		i = 0;
+	} // if
+// 		document.getElementsByTagName("body")[0].style.backgroundColor = color[i];	// 한번에 쓰기
+		var bodyTag = document.getElementsByTagName("body")[0];		// 나눠서 쓰기
+		bodyTag.style.backgroundColor = color[i];
+} // colorBg()
+</script>
+<style type="text/css">
+button {
+	/* background-color: style 태그에서는 -color지만 스크립트에서는 Color라는 차이가 있다.*/ 
+}
+</style>
+</head>
+<body>
+	<button onclick="colorBg();">배경색 바꾸기</button>
+</body>
+</html>

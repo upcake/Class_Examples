@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수 만들기</title>
+<script type="text/javascript">
+var i = 0;
+function myFunc() {	// 선언적 함수
+	i++;
+	document.write("hello" + i + "<br />");
+}
+
+myFunc();
+
+
+var theFunc = function() {	// 익명 함수
+	i++;
+	document.write("bye" + i + "<br />");	
+}
+
+theFunc();
+</script>
+</head>
+<body>
+
+</body>
+</html>
