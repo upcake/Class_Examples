@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>miniproject06 컴퓨터 가위, 바위, 보 맞추기</title>
+<script type="text/javascript">
+/* 출력 예시
+내가 입력한 것 : 가위
+내가 낸 것을 숫자로 치환한 것 : 1
+컴퓨터가 낸 것 : 3
+컴퓨터가 낸 것을 치환한 것 : 보
+틀렸습니다! 다시 한 번 도전하세요!
+맞췄습니다!
+컴퓨터 가위, 바위, 보 맞추기
+*/
+var mine = 0;
+while(true) {
+	mine = prompt("무엇을 내시겠어요? (가위, 바위, 보)", "");
+	if (mine == "가위" || mine == "바위" || mine == "보") {
+		break;
+	}
+	alert("가위, 바위, 보 중에 입력해 주세요!")
+}
+alert("내가 입력한 것 : " + mine);
+
+if (mine == "가위") {
+	mine = 1;
+} else if (mine == "바위") {
+	mine = 2;
+} else if (mine == "보") {
+	mine = 3;
+}
+
+alert("내가 입력한 것을 숫자로 치환한 것 : " + mine);
+
+var com = Math.ceil(Math.random() * 3);
+alert("컴퓨터가 낸 것 : " + com);
+
+if (com == 1) {
+	com = "가위";
+} else if (com == 2) {
+	com = "바위";
+} else if (com == 3) {
+	com = "보";
+}
+
+alert("컴퓨터가 낸 것을 치환한 것 : " + com);
+
+if (mine == com) {
+	alert("맞췄습니다!");
+} else {
+	alert("틀렸습니다! 다시 한 번 도전하세요!");
+}
+
+document.write("<h1>" + "컴퓨터 가위, 바위, 보 맞추기" + "</h1>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

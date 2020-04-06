@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>유효성 검사</title>
+<script type="text/javascript">
+	var arrUrl = [".co.kr", ".com", ".net", ".or.kr", ".go.kr"]
+
+	var userEmail = prompt("당신의 이메일 주소를 입력하세요.", "");
+	var check1 = false;
+	var check2 = false;
+
+	if (userEmail.indexOf("@") > 0) {
+		check1 = true;
+	} // if
+	
+	for (var i = 0; i < arrUrl.length; i++) {
+		if (userEmail.indexOf(arrUrl[i]) > 0) {
+			check2 = true;
+		} // if
+	} // for
+	
+	if (check1 == true && check2 == true) {
+		document.write(userEmail)
+	} else {
+		alert("이메일 형식이 잘못되었습니다.")
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열의 출력</title>
+<script type="text/javascript">
+var arr = ["사당", "교대", "방배", "강남"];
+
+for ( var i in arr) {
+	document.write(arr[i] + "<br />");
+}
+document.write("==============" + "<br / >")
+
+document.write(arr + "<br />");				// 일렬로 출력, 쉼표로 구분
+document.write(typeof(arr) + "<br />");		// object, 객체
+document.write("==============" + "<br / >")
+
+document.write(arr.join("-") + "<br />");			// 일렬로 출력, -로 구분
+document.write(typeof(arr.join("-")) + "<br />");	// string, 문자열
+document.write("==============" + "<br / >")
+
+document.write(arr.reverse() + "<br />");			// 역순
+document.write(arr.sort() + "<br / >");				// 오름차순
+document.write(arr.sort().reverse() + "<br / >");	// 내림차순
+document.write(arr.sort().reverse().join("-") + "<br / >");
+document.write("==============" + "<br / >")
+</script>
+</head>
+<body>
+
+</body>
+</html>

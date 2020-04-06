@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열의 연결, 삭제, 삽입</title>
+<script type="text/javascript">
+var greenLine = ["사당", "교대", "방배", "강남"];
+var yellowLine = ["미금", "정자", "모란", "수서"];
+
+// concat() : 연결하다
+var twoLine = greenLine.concat(yellowLine);
+document.write(twoLine + "<br />");
+document.write("==========================" + "<br / >")
+
+// pop() : 마지막 값 삭제
+document.write(greenLine + "<br />");
+greenLine.pop();
+document.write(greenLine + "<br />");
+document.write("==========================" + "<br / >")
+
+// push() : 마지막 값에 새 데이터 삽입
+greenLine.push("삼성");
+document.write(greenLine + "<br />");
+document.write("==========================" + "<br / >")
+
+// shift() : 첫번째 값 삭제
+greenLine.shift()
+document.write(greenLine + "<br />");
+document.write("==========================" + "<br / >")
+
+// unshift() : 0번 값에 데이터 삽입
+greenLine.unshift("신도림");
+document.write(greenLine + "<br />");
+</script>
+</head>
+<body>
+
+</body>
+</html>

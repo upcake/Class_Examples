@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>정규 표현식 2</title>
+<script type="text/javascript">
+	var userName = prompt("당신의 이름은?", "");
+	var regName = /^[가-힣]{2,5}$/;	// 가부터 힣까지, 2글자부터 5글자
+	// ^x : 문자열이 x로 시작, x$ : 문자열이 x로 끝남
+	// [x-y] : x부터 y까지의 문자중 하나를 찾는다.
+	// x{n,m} : x를 n번 이상 m번 이하 반복한 문자를 찾는다. 
+	while (true) {
+		if(regName.test(userName)) {
+			break;
+		} else {
+			alert("이름 입력 형식이 잘못되었습니다.");
+			userName = prompt("당신의 이름은?", "");
+		} // if else
+	} // while
+		
+	var userCell = prompt("당신의 핸드폰 번호는?", "");
+	var regTel = /^(010|011|016|017|018|019)\d{3,4}\d{4}$/;
+	// 010, 011, 016, 017, 018, 019를 찾고 \숫자로 3 ~ 4자리 찾고\숫자로 4자리 찾는다.
+	// | : or 연산자
+	// \d : digit, 숫자로
+	while (true) {
+		if (regTel.test(userCell)) {
+			break;
+		} else {
+			alert("핸드폰 번호 형식이 잘못되었습니다.")
+			userCell = prompt("당신의 핸드폰 번호는?", "");
+		} // if else
+	} // while
+		
+	var userEmail = prompt("당신의 이메일은?", "");
+	var regEmail = /^\w{5,12}@[a-z]{2,10}[\.][a-z]{2,3}[\.]?[a-z]{0,2}$/;
+	// 알파벳, 숫자, "-"를 5 ~ 12자 찾고 @후에 a ~ z까지 2 ~ 10자 찾고 .후에 2 ~ 3자 찾고 (.후에 0 ~ 2자 찾는다.)
+	// \w : 알파벳, 숫자, "_"를 찾는다.
+	// ? : 생략 가능
+			
+	while (true) {
+		if (regEmail.test(userEmail)) {
+			break;
+		} else {
+			alert("이메일 입력 형식이 잘못되었습니다.");
+			userEmail = prompt("당신의 이메일은?", "");
+		} // if else
+	} // while
+	
+	document.write(userName + "<br />")
+	document.write(userCell + "<br />")
+	document.write(userEmail + "<br />")
+</script>
+</head>
+<body>
+
+</body>
+</html>

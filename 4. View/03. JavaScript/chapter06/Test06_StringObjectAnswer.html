@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문자열 객체 정답</title>
+<script type="text/javascript">
+var userName = prompt("당신의 영문 이름은?", "honggildong");
+var upperName = userName.toUpperCase();
+document.write(upperName + "<br />");
+
+var userPhoneNumber = prompt("당신의 휴대폰 번호는?", "01012345678");
+var result1 = userPhoneNumber.substring(0, userPhoneNumber.length - 4) + "****";
+document.write(result1 +"<br />");
+
+var result2 = userPhoneNumber.substr(0, userPhoneNumber.length - 4) + "****";
+document.write(result2 + "<br />");
+
+var result3 = userPhoneNumber.substring(0, userPhoneNumber.length - 8) + "****" + userPhoneNumber.substring(userPhoneNumber.length - 4, userPhoneNumber.length);
+document.write(result3 + "<br />");
+
+var result4 = userPhoneNumber.substr(0, userPhoneNumber.length - 8) + "****" + userPhoneNumber.substr(userPhoneNumber.length - 4, 4);
+document.write(result4 + "<br />");
+</script>
+</head>
+<body>
+
+</body>
+</html>

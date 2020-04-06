@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문자열 객체 활용</title>
+<script type="text/javascript">
+	var name = prompt("당신의 영문 이름은?", "honggildong");
+	document.write(name.toUpperCase() + "<br />");
+	
+	var tel = prompt("당신의 전화 번호는?", "01011111111");
+// 끝 4자리 별표
+	document.write(tel.substring(tel.length - 4, tel.length) + "<br />");
+	var tel1 = tel.replace(tel.substring(tel.length - 4, tel.length), "****");
+	document.write(tel1 + "<br />");
+
+	var tel2 = tel.replace(tel.substr(tel.length - 4, 4), "****");
+	document.write(tel2 + "<br />");
+	
+// 가운데 4자리 별표
+	var tel3 = tel.replace(tel.substring(3, tel.length - 4), "****");
+	document.write(tel3 + "<br />");
+
+	var tel4 = tel.replace(tel.substr(3, 4), "****");
+	document.write(tel4 + "<br />");
+</script>
+</head>
+<body>
+
+</body>
+</html>

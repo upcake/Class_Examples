@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>정규 표현식</title>
+<script type="text/javascript">
+	var str = "Html Css Jquery";
+
+	// 	var reg1 = new RegExp("Css");	// 변수에 css라는 문자열이 있는지 확인한다
+	var reg1 = /css/;	// 슬래쉬로 시작해서 슬래쉬로 끝나면 정규 표현식
+	var result_1 = reg1.test(str);
+	document.write(result_1 + "<br />");	// false, 대소문자 구분한다
+	
+	// 	var reg2 = new RegExp("css", "i");
+	var reg2 = /css/i;	// i : ignoreCase 대소문자 구분 X
+	var result_2 = reg2.test(str);
+	document.write(result_2) + "<br />";	// false, 대소문자 구분한다
+</script>
+</head>
+<body>
+
+</body>
+</html>

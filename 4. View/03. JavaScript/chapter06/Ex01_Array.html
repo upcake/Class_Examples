@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열</title>
+<script type="text/javascript">
+var d = [30, "홍길동", true];	// 배열 선언
+// 출력 방법 1
+document.write(d[0] + "<br />");
+document.write(d[1] + "<br />");
+document.write(d[2] + "<br />");
+document.write("========" + "<br />")
+
+// 출력 방법 2
+for (var i = 0; i < 3; i++) {
+	document.write(d[i] + "<br />");
+}
+document.write("========" + "<br />")
+
+// 출력 방법 3
+for (var i = 0; i < d.length; i++) {
+	document.write(d[i] + "<br />");
+}
+document.write("========" + "<br />")
+
+// 출력 방법 4 : forin 반복문★
+for ( var i in d) {
+	document.write(d[i] + "<br />");
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

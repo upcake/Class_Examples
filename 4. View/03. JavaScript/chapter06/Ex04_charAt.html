@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>charAt</title>
+</head>
+<body>
+<p>
+	<strong>var x = 'abcde';</strong>
+</p>
+<script type="text/javascript">
+	var x = 'abcde';
+	document.write(x.charAt(3) + "<br />");		// 3번 인덱스에 있는 문자 출력
+	document.write(x.charCodeAt(3) + "<br />");	// 3번 인덱스에 있는 문자 코드 출력
+	document.write(x.charAt(10) + "<br />");		// 10번 인덱스에 있는 문자 출력, 아무것도 없으므로 빈 칸 출력
+	document.write(x.charCodeAt(10) + "<br />");	// 10번 인덱스에 있는 문자 코드 출력, 아무것도 업으므로 NaN 출력
+	// ※ 대문자 A = 65, 소문자 a = 97
+</script>
+</body>
+</html>

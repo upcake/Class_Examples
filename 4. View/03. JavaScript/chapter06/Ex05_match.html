@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>정규 표현식과 match() 메서드</title>
+</head>
+<body>
+	<p id = "ab">Lorem Ipsum Dolor</p>
+	<hr>
+	<p>
+		<strong>RegExp - /Lo/</strong>
+	</p>
+	<p>
+		<script type="text/javascript">
+		var jbStr = document.getElementById('ab').innerHTML;	// ab란 id를가진 html태그안에 있는 값을 가져옴
+		var jbMatch = jbStr.match(/Lo/);	// jbStr에 문자 Lo가 있는지 검색후 있으면 가져옴
+		// 정규 표현식은 /로 시작해서 /로 끝난다.
+// 		var jbMatch = jbStr.match("Lo");	// 문자를 찾을 때는 / 가 아닌 "로 해도 작동함	
+		
+		document.write(jbMatch);	// Lo
+		</script>
+	</p>
+	<hr>
+	<p>
+		<strong>RegExp - /Lo/w+</strong>
+	</p>
+	<p>
+		<script type="text/javascript">
+		var jbStr = document.getElementById('ab').innerHTML;	// ab란 id를가진 html태그안에 있는 값을 가져옴
+		var jbMatch = jbStr.match(/Lo\w+/);	// jbStr에 Lo가 있는 문자열이 있는지 검색후 있으면 가져옴. \w는 알파벳, 숫자, _중에서, +는 1회 이상
+
+		document.write(jbMatch);	// Lorem
+		</script>
+	</p>
+	<hr>
+	<p>
+		<strong>RegExp - /LoI/</strong>
+	</p>
+	<p>
+		<script type="text/javascript">
+		var jbStr = document.getElementById('ab').innerHTML;	// ab란 id를가진 html태그안에 있는 값을 가져옴
+		var jbMatch = jbStr.match(/LoI/);	// jbStr에 문자 LoI가 있는지 검색후 있으면 가져옴, 없으면 null
+		
+		document.write(jbMatch);	// null
+		</script>
+	</p>
+</body>
+</html>

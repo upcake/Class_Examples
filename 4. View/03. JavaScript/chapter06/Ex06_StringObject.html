@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문자열 객체</title>
+<script type="text/javascript">
+// 			 0	   6	 12  16   21   26 29
+	var t = "Hello Thank you good luck to you";
+	
+	document.write(t.charAt(16) + "<br />");		// t의 16번지 문자를 출력 : g
+	document.write("============================" + "<br />");
+
+	document.write(t.indexOf("you") + "<br />");		// t의 you의 번지 값을 출력 : 12
+	document.write(t.indexOf("you", 16) + "<br />");	// t의 you의 번지 값을 찾는데 16번지 이후의 값 : 29
+	document.write("============================" + "<br />");
+	
+	document.write(t.match("luck") + "<br />");		// 문자열 luck이 있는지 확인후 있다면 출력
+	document.write(t.search("luck") + "<br />");	// luck의 번지 값 : 21
+	document.write("============================" + "<br />");
+	
+	document.write(t.substr(6, 11) + "<br />");		// t의 6번지부터 11글자 : Thank you g
+	document.write(t.substring(6, 11) + "<br />");	// t의 6번지부터 11번지 미만 : Thank
+	document.write("============================" + "<br />");
+	
+	document.write(t.replace("you", "me") + "<br />");	// t에서 you를 me로 바꾼다. : Hello Thank me good luck to you
+	document.write("============================" + "<br />");
+	
+	document.write(t.toLowerCase() + "<br />");	// t를 전부 소문자로 바꾼다.
+	document.write(t.toUpperCase() + "<br />");	// t를 전부 대문자로 바꾼다.
+	document.write("============================" + "<br />");
+	
+	document.write(t.length + "<br />");	// 문자열의 길이 : 32
+	document.write("============================" + "<br />");
+
+	var s = t.split(" ");				// t를 " "를 기준으로 쪼개서 배열로 만든다.
+	document.write(s[0] + "<br />");	// s의 0번지 값 : Hello
+	document.write(s[4] + "<br />");	// s의 4번지 값 : luck
+	document.write("============================" + "<br />");
+	
+	for ( var i in s) {
+		document.write(s[i] + "<br />");
+	}
+	document.write("============================" + "<br />");
+	
+	var str = "A";
+	var t = str.charCodeAt(0);
+	document.write(t + "<br />");	// 65
+</script>
+</head>
+<body>
+
+</body>
+</html>
