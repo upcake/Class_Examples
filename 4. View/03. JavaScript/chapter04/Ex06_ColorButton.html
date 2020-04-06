@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>버튼 눌러서 배경색 바꾸기</title>
+<script type="text/javascript">
+var color=["white", "yellow", "aqua", "purple"];
+var i = 0;	// color의 인덱스 값 설정
+
+function colorBg() {
+	i++;
+	if (i >= color.length) {
+		i = 0;
+	}
+	var bodyTag = document.getElementsByTagName("body")[0]; // <body> 태그 지정
+	bodyTag.style.backgroundColor = color[i];
+}
+
+window.onload = function () { // window.onload 문서가 준비된 이후에 실행해라
+	var btn2 = document.getElementById("btn2");
+	btn2.onclick = function() {	//btn.2onclick = colorBg(); 가 아닌 익명 함수를 하나 더 작성해서 그 안에 넣는다.
+		colorBg();
+	}		
+	
+	var btn4 = document.getElementById("btn4");
+	btn4.onmouseover = btn4.onfocus = function() {	// 이렇게 한 줄로 작성해도 작동한다.
+		colorBg();
+	}
+}
+
+</script>
+</head>
+<body>
+<p>
+	<button onclick="colorBg();">버튼 1</button>
+</p>
+<p>
+	<button id="btn2">버튼 2</button>
+</p>
+<p>
+	<button onmouseover="colorBg();" onfocus="colorBg();">버튼 3</button>
+	<!-- onmouseover="함수();" 마우스를 위에 올려놨을때 함수 작동 -->
+	<!-- onfocus="함수();" 키보드로 선택됐을때 작동 -->
+</p>
+<p>
+	<button id="btn4">버튼 4</button>
+</p>
+</body>
+</html>

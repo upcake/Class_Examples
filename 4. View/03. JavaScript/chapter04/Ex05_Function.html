@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수 설명</title>
+<script type="text/javascript">
+// 매개 변수에 인수 전달하기
+function myFunc1(a, b) {	// 인수를 전달받기 때문에 매개 변수가 필요하다.
+	var num1 = a * b;
+	return num1;	// num 값을 호출한 곳으로 되돌린다.
+}
+
+var result1 = myFunc1(10, 3);	// myFunc라는 함수에 10과 3이라는 인수를 전달한다.
+
+document.write(result1);
+
+
+// return 설명
+function myFunc2() {
+	document.write("hello");
+	return;		// return 밑의 행은 출력되지 않는다.
+	document.write("javascript");
+}
+
+myFunc2(); // javascript는 출력되지 않는다.
+
+
+// 재귀 함수
+var num3 = 0;
+function myFunc3() {
+	num3++;
+	document.write(num3 + "<br />");
+	if (num3 == 10) {
+		return;
+	}
+	myFunc3();	// 재귀 함수, return이 없으면 무한 루프에 빠진다, break는 반복문이 아니기 때문에 적용되지 않는다.
+}
+
+myFunc3();
+
+
+//전역 변수, 지역 변수
+var num4 = 200;	// 전역 변수
+function myFunc4() {
+	var num4 = 500;	// 지역 변수
+	return;
+}
+
+myFunc4();	// 함수안의 num은 지역 변수기 때문에 함수 밖으로 나오질 못한다.
+
+document.write(num4);	// 200이 출력된다.
+</script>
+</head>
+<body>
+
+</body>
+</html>
