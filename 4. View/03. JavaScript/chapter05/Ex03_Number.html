@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Number</title>
+<script type="text/javascript">
+var num1 = new Number(34.5678);	// Number() 함수는 자료형을 숫자로 바꿔준다.
+// var num1 = 34.5678;
+var num2 = 700000;
+var num3 = "34.5678px";
+var num4 = "34.5678";
+
+document.write("표현 가능한 가장 큰 수 : " + Number.MAX_VALUE + "<br />");
+document.write("표현 가능한 가장 작은 수 : " + Number.MIN_VALUE + "<br />");
+document.write("숫자가 아닌 경우의 표기 : " + Number.NaN + "<br />"); // Not a Number
+document.write("양의 무한대 수 표기 : " + Number.POSITIVE_INFINITY + "<br />");
+document.write("음의 무한대 수 표기 : " + Number.NEGATIVE_INFINITY + "<br />");
+
+document.write(num1.toString() + "<br />");
+document.write(num1.valueOf() + "<br />");
+
+document.write(num4 + "<br />");
+document.write(Number(num4) + "<br />");	// 생긴건 같게 생겼지만 위의 num4는 문자열, Number(num4)는 숫자다.
+
+document.write(Number(num3) + "<br />");	// NaN
+document.write(parseInt(num3) + "<br />");	// 숫자로 바꿀수 있는 부분 중 정수부만 가져옴
+document.write(parseFloat(num3) + "<br />");	// 숫자로 바꿀 수 있는 부분 중 소수부까지 가져옴
+</script>
+</head>
+<body>
+
+</body>
+</html>

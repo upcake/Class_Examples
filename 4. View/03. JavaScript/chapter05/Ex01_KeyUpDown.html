@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>keyup, keydown</title>
+<script type="text/javascript">
+// 파이어폭스, 크롬, 사파리, 오페라, IE9 이상에서 이벤트 객체 생성
+// 키보드의 아무 키나 눌렀을 때
+/*
+document.onkeydown = function(e) {
+	alert(e); // [object KeyboardEvent]
+}
+*/
+
+// 모든 브라우저에서 적용하기
+document.onkeydown = function(e) {
+	var eventObj = e ? e : window.event;
+	// e가 입력 되었을때 IE9 이상이라면 e 이벤트를, 아니라면 window.event를 발생시킨다.
+	alert(eventObj);
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

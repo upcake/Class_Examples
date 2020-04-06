@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>날짜 Date</title>
+<script type="text/javascript">
+var today = new Date();
+var nowMonth = today.getMonth();	// 월
+var nowDate = today.getDate();		// 일
+var nowDay = today.getDay();		// 요일
+
+document.write("현재 월 : " + (nowMonth + 1) + "<br />"); // 달은 1이 낮게 나온다.
+document.write("현재 일 : " + nowDate + "<br />");
+document.write("현재 요일 : " + nowDay + "<br />");
+</script>
+</head>
+<body>
+
+</body>
+</html>
