@@ -1,0 +1,21 @@
+○ 외부 API(Library) 등록하는 방법 1
+	- 등록하고자 하는 API(라이브러리)를 복사한다.
+	- JRE 설치된 폴더\lib\ext(C:\Program Files\Java\jre1.8.0_241\lib\ext) 붙여넣기
+	- Eclipse 재시작(File MenuBar > Restart)
+	- 모든 프로젝트에서 해당 API를 활용할 수 있다.
+	- Export 할 때 별도로 해당 라이브러리를 함께 내보내기 해야한다.
+
+○ 외부 API(Library) 등록하는 방법 2 (권장)
+	- 해당 프로젝트 > 우클릭 > Build Path > Configure Build Path
+	- 상단 탭 : Libraries > Add External JARs... > 해당 라이브러리를 선택 > Apply and Close
+	- 해당 프로젝트에서만 API를 활용할 수 있다.
+	- Export 할 때 해당 라이브러리도 같이 내보내기 된다.
+	
+★ 방법1과 방법2를 혼용할 시 오류가 발생할 수 있다 : 둘 중 하나를 삭제
+
+1. 오라클
+2. 이클립스
+3. 소스포지
+4. 아파치
+5. 메이븐 리파지터리
+6. 깃허브
