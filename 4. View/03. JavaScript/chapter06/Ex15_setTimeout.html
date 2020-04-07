@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>setTimeout</title>
+<script type="text/javascript">
+var i = 0;
+var auto = setTimeout(function() {	// 지정한 ms가 지난 후 함수를 한 번 실행한다.
+	console.log(i++);
+}, 3000)
+</script>
+</head>
+<body>
+<button onclick="clearTimeout(auto);">clearInterval</button>
+<!-- 변수에 지정된 setTimeout 메서드를 삭제한다. -->
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>팝업창 이동, setInterval()</title>
+<script type="text/javascript">
+var child = window.open("", "", "width = 300, height = 200");
+var width = screen.width;
+var height = screen.height;
+
+child.moveTo(0,0);	// child를 0,0 좌표로 이동
+child.resizeTo(width, height);	// child를 최대창으로
+
+setInterval(function() {	// 지정한 ms마다 함수 실행, 1000ms = 1초
+	child.resizeBy(-20, -20);	// x, y 만큼 창크기가 변함
+	child.moveBy(10, 10);	// 지정한 좌표만큼 이동
+}, 10)
+</script>
+</head>
+<body>
+
+</body>
+</html>

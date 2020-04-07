@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var i = 0;
+	var auto = setInterval(function() {
+		console.log(i++);
+	}, 1000)
+</script>
+</head>
+<body>
+	<button onclick = "clearInterval(auto);">정지 버튼</button>
+	<!-- clearInterval(변수명) 변수에 저장된 setInterval을 제거함 -->
+</body>
+</html>

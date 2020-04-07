@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<h1>선호하는 음식</h1>
+		<div id="food_1">
+			<h2 id="title">한식</h2>
+			<ol>
+				<li><a href="#">김치</a></li>
+				<li>불고기</li>
+				<li>비빔밥</li>
+			</ol>
+		</div>
+
+		<div>
+			<h2>양식</h2>
+			<ol id="list">
+				<li>돈까스</li>
+				<li id="pizza">피자</li>
+				<li>파스타</li>
+			</ol>
+		</div>
+	</div>
+	<script type="text/javascript">	// 내용을 전부 읽어들이고 스크립트를 줘야하므로 HTML 밑에다 스크립트를 작성한다.
+		// 태그를 가져올때 배열로 가져오므로 원하는 인덱스를 지정할 수 있다.
+		document.getElementsByTagName("h1")[0].style.color = "green";
+		document.getElementById("title").style.color = "red";
+		
+// 		document.getElementById("food_1").getElementsByTagName("li")[1].style.backgroundColor = "red";
+		var list = document.getElementById("food_1").getElementsByTagName("li")[1]
+		list.style.backgroundColor = "red";
+	</script>
+</body>
+</html>

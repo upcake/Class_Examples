@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>버튼 활용</title>
+<script type="text/javascript">
+	var popup1 = window.open("", "popup1",
+			"width = 300, height = 400, left = 300, top = 100, scrollbars = no, toolbars = no, locations=no");
+	var popup2 = window.open("", "popup2",
+			"width = 300, height = 400, left = 600, top = 100, " +
+			", scrollbars = no, toolbars = no, locations=no");
+</script>
+</head>
+<body>
+	<button onclick="popup1.moveTo(200, 300); popup1.focus();">
+	popup1 브라우저 창 위치(200, 300)</button><br /><br />
+	<button onclick="popup1.resizeTo(200, 300); popup1.focus();">
+	popup1 브라우저 창 크기(200, 300)</button><br /><br />
+	
+	<button onclick="popup1.moveTo(300, 100); popup1.resizeTo(300, 400); popup1.focus();">
+	popup1 브라우저 창 위치(300, 100), 창 크기(300, 400)</button><br /><br />
+	
+	<button onclick="popup1.moveTo(screen.width/2 - 300/2, screen.height/2 - 400/2); popup1.focus();">
+	popup1 가운데로 창 띄우기(200, 300)</button>
+</body>
+</html>

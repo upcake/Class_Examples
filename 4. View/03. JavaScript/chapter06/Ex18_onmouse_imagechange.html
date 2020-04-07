@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>onmouse, 이미지 바꾸기</title>
+<script type="text/javascript">
+	// window.onload : 모든 요소를 불러온 뒤에 작업한다.
+	window.onload = function() {
+		var btnImage = document.getElementById("btnImage");
+		var imgSrc = document.getElementById("imgSrc");
+		var title = document.getElementById("title");
+		
+		btnImage.onmouseover = function(){
+// 			document.getElementById("title").innerHTML = "마우스 오버";
+			title.innerHTML = "마우스 오버";
+			// this = btnImage
+// 			this.src = "images/btn_over.gif";	// ★ 이걸 많이 쓴다
+			btnImage.src = "images/btn_over.gif";
+// 			document.getElementById("imgSrc").innerHTML = "images/btn_over.gif";
+			imgSrc.innerHTML = "images/btn_over.gif";
+		} // onmouseover function()
+
+		btnImage.onmouseout = function(){
+			document.getElementById("title").innerHTML = "마우스 아웃";
+			// this = btnImage
+			this.src = "images/btn_out.gif";	// ★ 이걸 많이 쓴다
+// 			document.getElementById("imgSrc").innerHTML = "images/btn_out.gif";
+			imgSrc.innerHTML = "images/btn_out.gif";
+		} // onmouseover function()
+	} // 바깥 function()
+</script>
+</head>
+<body>
+	<h1 id = "title">마우스 상태</h1>
+	<img src="images/btn_out.gif" id="btnImage" width="100" height="50" alt="버튼" />
+	<p id="imgSrc">이미지 원본</p>
+</body>
+</html>
