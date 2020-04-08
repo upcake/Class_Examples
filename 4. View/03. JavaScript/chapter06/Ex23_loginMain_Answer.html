@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 화면</title>
+<style>
+	a {
+		display: block;
+		width: 100px;
+		height: 50px;
+		line-height: 50px;
+		margin-top: 200px;
+		border: 1px solid black;
+		text-decoration: none;
+		text-align: center;
+	}
+</style>
+<script>
+	function login_window() {
+		window.open("login_window.html", "login", "width=400, height=200");
+	}
+</script>
+
+</head>
+<body>
+	<button type="button" id="login_button" 
+		onclick="location.href='login_view.html'">로그인 </button>
+	<button type="button" id="signup" 
+		onclick="location.href='signup.html'">회원가입</button>
+
+	<div>
+		<a href="#" onclick="login_window();">로그인</a>
+	</div>
+
+</body>
+</html>

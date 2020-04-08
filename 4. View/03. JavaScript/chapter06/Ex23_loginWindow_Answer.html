@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 화면</title>
+<style>
+	#table_form{
+		width: 300px;
+		margin: 0 auto;
+	}
+</style>
+<script>
+	window.onload = function() {
+		document.getElementById("member_id").focus();
+	}
+</script>
+</head>
+<body>
+<table id="table_form">
+	<tr>
+		<td>아이디</td>
+		<td><input type="text" id="member_id" name="member_id" tabindex="1" /></td>
+	</tr>
+	<tr>
+		<td>비밀번호</td>
+		<td>
+			<input type="password" id="member_pw" name="member_pw" tabindex="2" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<input type="button" id="login_form" tabindex="3" value="로그인" 
+			style ="width:100px;" />
+			<input type="button" id="login_cancel" tabindex="4" value="취소" 
+			style ="width:100px;" onclick="window.close();" />
+			
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

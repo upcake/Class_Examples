@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table style="width: 300px; margin: 0 auto;">
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" name="user_id" id="user_id" tabindex="1" autofocus="autofocus" /></td>
+			<!-- tabindex : 탭키 눌렀을 때 가는 순서,  -->
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="password" name="user_pw" id="user_pw" tabindex="2" /></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" id="login_form" tabindex="3" value="로그인" style="width: 100px;" />
+				<input type="button" id="login_cancel" tabindex="4" value="취소" style="width: 100px;"
+					onclick="window.close();"/>
+			</td>
+			<td></td>
+		</tr>
+	</table>
+</body>
+</html>

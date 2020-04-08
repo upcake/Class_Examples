@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function submit_chk(myForm) {
+	var regName=/^[가-힣]{2,5}$/;
+	var regTel=/^(010|011|016|017|018|019)\d{3,4}\d{4}$/;
+	
+	var user_name=document.myForm.user_name;
+	var user_tel=document.myForm.user_tel;
+	
+	if(!regName.test(user_name.value)){
+		alert("이름 입력이 잘못 되었습니다.");
+		user_name.value="";
+		user_name.focus();
+		return false;
+	}
+	
+	if(!regTel.test(user_tel.value)){
+		alert("연락처 입력이 잘못 되었습니다.");
+		user_tel.value="";
+		user_tel.focus();
+		return false;
+	}	
+}
+
+function reset_chk(myForm) {
+	var result=confirm("정말로 회원가입을 취소하시겠습니까?");
+	if (result) {
+		user_name.value="";
+		user_tel.value="";
+		user_name.focus();
+		return false;
+	}
+}
+
+</script>
+</head>
+<body>
+<form name="myForm" method="get" action="#"
+onsubmit="return submit_chk(this);"
+onreset="return reset_chk(this);">
+	<fieldset>
+		<legend>회원가입</legend>
+		<p>
+			<label for="user_name">이&nbsp;&nbsp;&nbsp;름</label> : 
+			<input type="text" name="user_name" id="user_name"
+			size="11" maxlength="4"
+			autofocus="autofocus" autocomplete="on">
+		</p>
+		<p>
+			<label for="user_tel">연락처</label> : 
+			<input type="text" name="user_tel" id="user_tel"
+			size="11" maxlength="11">
+		</p>
+		<p>
+			<input type="submit" value="회원가입" />
+			<input type="reset" value="가입취소" />
+		</p>
+	</fieldset>
+</form>
+</body>
+</html>

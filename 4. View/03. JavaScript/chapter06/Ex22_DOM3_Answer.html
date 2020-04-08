@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>DOM 객체</title>
+<style>
+#terms {
+	width: 500px;
+	height: 50px;
+	padding: 5px;
+	overflow: auto;
+	border: 1px solid red;
+}
+
+form {
+	width: 550px;
+}
+
+fieldset {
+	border: 1px solid red;
+}
+
+</style>
+
+	<script>
+	window.onload = function() {
+		
+		var user_pw = document.f1.user_pw;
+		var user_confirm_pw = document.f1.user_confirm_pw;
+		user_pw.focus();
+		
+		//첫 번째 폼요소에 전송버튼 눌렀을 때 실행
+		document.f1.onsubmit = function() {
+			if (!user_pw.value) {
+			//if (user_pw.value=='') {
+			//if (document.f1.user_pw.value=='') {
+				alert('비밀번호를 입력하세요');
+				//user_pw.focus(); ☞ input 태그 안에 autofocus="autofocus" 로 가능
+			} else {
+			user_confirm_pw.value = user_pw.value;
+			user_confirm_pw.disabled = true;
+			return false; //전송이 취소됨
+			}
+		}
+
+		//전체선택 체크박스를 클릭했을 때
+		document.f2.allChk.onclick = function() {
+			if (document.f2.allChk.checked) { //체크되어 있으면 true 반환
+			//if (document.f2.allChk.checked == true) { //체크되어 있으면 true 반환
+				document.f2.subject1.checked = true; //첫 번째 체크박스 체크됨
+				document.f2.subject2.checked = true; //두 번째 체크박스 체크됨
+				document.f2.subject3.checked = true; //세 번째 체크박스 체크됨
+			} else {
+				document.f2.subject1.checked = false; //첫 번째 체크박스 체크 해제됨
+				document.f2.subject2.checked = false; //두 번째 체크박스 체크 해제됨
+				document.f2.subject3.checked = false; //세 번째 체크박스 체크 해제됨
+			}
+		}
+		
+		//두 번째 폼요소에 전송버튼 눌렀을 때 실행
+		document.f2.onsubmit = function() {
+			
+			var accept = document.f2.accept;
+			//if (accept.checked == false) { //체크되어 있지 않으면 false
+			if (!accept.checked) { //체크되어 있지 않으면 false
+				alert("약관에 동의해야 합니다!");
+				accept.focus();
+				//accept.checked = true;
+				return false; //전송이 취소됨
+			} else {
+				alert("회원가입되었습니다.");	
+			}
+			
+		}
+		
+	}	
+	</script>
+
+</head>
+<body>
+	<form action="#" method="get" name="f1">
+		<fieldset>
+			<legend>폼 요소1</legend>
+			<p>
+				<label for="user_pw">비밀번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<input type="password" name="user_pw" id="user_pw" autofocus="autofocus" />
+				<input type="submit" value="비밀번호확인" />
+			</p>
+			<p>
+				<label for="user_confirm_pw">비밀번호 확인</label>
+				<input type="text" name="user_confirm_pw" id="user_confirm_pw" 
+					disabled="disabled" />
+			</p>
+		</fieldset>
+	</form>
+
+	<form action="#" method="get" name="f2">
+		<fieldset>
+			<legend>폼 요소2</legend>
+			<div id="terms">
+			회사는 법령이 정하는 바에 따라 "회원"의 개인정보를 보호하기 위해 노력합니다.
+			개인정보의 보호 및 사용에 대해서는 관련법 및 회사의 개인정보취급방침이 적용됩니다.
+			</div>
+			<p>
+				<input type="checkbox" name="accept" id="accept" />
+				<label for="accept">약관에 동의합니다.</label>
+			</p>
+			<p>
+				<input type="checkbox" name="allChk" id="allChk" />
+				<label for="allChk">전체선택</label><br />
+				
+				<input type="checkbox" name="subject1" id="subject1" value="s1" />
+				<label for="subject1">과목1</label><br />
+				
+				<input type="checkbox" name="subject2" id="subject2" value="s2" />
+				<label for="subject2">과목2</label><br />
+				
+				<input type="checkbox" name="subject3" id="subject3" value="s3" />
+				<label for="subject3">과목3</label>
+			</p>
+			<p>
+				<input type="submit" value="등록 완료" />
+				<input type="reset" value="등록 취소" />
+			</p>
+		</fieldset>
+	</form>
+	
+</body>
+</html>
