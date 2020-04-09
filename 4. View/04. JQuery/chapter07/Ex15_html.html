@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+// 		$("h2").html("<a href='#'>HTML메서드</a>");
+		// html() : text()랑 비슷하게 태그 안의 값을 지정해서 바꾸지만 html태그로 인식시킴
+
+		$("h2").text("<a href='#'>HTML메서드</a>");
+		
+// 		alert($("h1").html());
+		alert($("h1").text());
+	});
+</script>
+</head>
+<body>
+	<h1>
+		<strong>객체 조작 및 생성</strong>
+	</h1>
+	
+	<h2>
+		<em>html()</em>
+	</h2>
+</body>
+</html>

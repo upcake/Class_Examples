@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("li:eq(3)").css("background-color", "red");
+		// li태그 중 index 3번인 것
+		
+		$("li:lt(3)").css("background-color", "pink");
+		// li태그 중 less than, index 3번보다 이전 
+		
+		$("li:gt(3)").css("background-color", "blue");
+		// li태그 중 greater than, index 3번보다 이후
+	});
+</script>
+
+</head>
+<body>
+	<ul>
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+		<li>내용4</li>
+		<li>내용5</li>
+		<li>내용6</li>
+	</ul>
+</body>
+</html>

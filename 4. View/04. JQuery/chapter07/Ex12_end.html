@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+// 		$("#menu").css("border", "5px double blue");
+
+// 		$("#menu li:nth-child(2)").css("border", "1px dashed red");
+// 		$("#menu li:eq(1)").css("border", "1px dashed red");
+		
+		$("#menu").children("li:eq(1)").css("border", "1px dashed red")	// menu의 자손중 1번지의 li를 지정하고 end()메서드로 다시 상위 태그로 올라감
+		.end().css("border", "5px double blue");
+		
+	});
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<ul id="menu">
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(":text").css("border", "1px dashed red");
+		// :text ▶ type이 text 인 것 선택
+		
+		$(":checked").prop("checked", false);
+		$(":selected").prop("selected", false);
+		// prop() : true/false 값을 가지는 속성 값을 가져오거나 설정하는 메서드
+		
+// 		$(":checked").attr("checked", false);
+// 		$(":selected").attr("selected", false);
+		// attr() : 변할 수 있는 속성 값을 가져오거나 설정하는 메서드
+		
+	});
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<p>
+		<label for="user_name">이름</label>
+		<input type="text" name="user_name" id="user_name" />
+	</p>
+	<p>
+		<input type="checkbox" name="accept" id="accept" checked="checked" />
+		<label for="accept">사용자 동의</label>
+	</p>
+	<p>
+		<select name="rel_site" id="rel_site">
+			<option value="네이버">네이버</option>
+			<option value="네이트" selected="selected">네이트</option>
+		</select>
+	</p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#menu li:contains('내용3')").css("border", "1px dashed red");
+		// contains()는 텍스트를 찾는다
+		
+		$("#menu li:has('strong')").css("border", "2px dashed blue");
+		// has()는 태그를 찾는다
+		
+		$("#menu li").not(':first').css("background-color", "yellow");
+// 		$("#menu li:not(':first')").css("backgrouond-color", "yellow");
+		// not(':first') : menu의 li중에 첫번째가 아닌것을 모두 지정
+		
+		$("#menu li:eq(1)").find("strong").css("font-size", "22px");
+		
+		$("#menu").closest("div").css("border", "5px double green");
+		// closest("태그명") 가장 가까운 태그명 지정
+	});
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<div id="wrap">
+		<div id="inner_wrap">
+			<ul id="menu">
+				<li>내용1</li>
+				<li><span>내용<strong>2</strong></span></li>
+				<li><a href="#">내용3</a></li>
+				<li>내용4</li>
+				<li>내용5</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

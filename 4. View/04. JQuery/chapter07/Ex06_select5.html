@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#wrap li:first-of-type").css("background-color", "red");
+		// wrap의 자식중에 li 태그의 첫번째인 것
+		
+		$("#wrap li:last-of-type").css("background-color", "blue");
+		// wrap의 자식중에 li 태그의 마지막인 것
+		
+		$("#wrap li:nth-child(3n)").css("background-color", "purple");
+		// wrap의 자식중에 li 태그 중 3n번째인 것 (index번호가 아님)
+		
+		$("li:only-child").css("background-color", "aqua");
+		// li 태그 중 하나만 있는 것 
+	});
+</script>
+</head>
+<body>
+	<ul id="wrap">
+		<li>내용1</li>
+		<li class="second">내용2</li>
+		<li id="third">내용3</li>
+		<li>내용4</li>
+		<li>내용5</li>
+	</ul>
+	<ul>
+		<li>내용6</li>
+	</ul>
+</body>
+</html>

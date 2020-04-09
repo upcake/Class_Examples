@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".second").siblings().css("color", "red");
+		// siblings() : 자기 빼고 형제들 선택
+		
+		$("#wrap li").first().css("background-color", "yellow");
+// 		$("#wrap li:first").css("background-color", "yellow");
+		// first() : 첫번째 자식
+		
+		$("#wrap li").last().css("background-color", "green");
+// 		$("#wrap li:last").css("background-color", "green");
+		// last() : 마지막 자식
+	});
+</script>
+</head>
+<body>
+	<ul id="wrap">
+		<li>내용1</li>
+		<li class="second">내용2</li>
+		<li id="third">내용3</li>
+		<li>내용4</li>
+	</ul>
+</body>
+</html>

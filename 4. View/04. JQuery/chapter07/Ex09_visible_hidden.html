@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("p:visible").css("border", "1px solid red");
+		// p 태그중 보이는 것들 선택
+		
+		$("p:hidden").css("display", "block");
+		// p 태그중 안보이는 것을 선택
+	});
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<p>내용1</p>
+	<p style="display: none;">내용2</p>
+</body>
+</html>

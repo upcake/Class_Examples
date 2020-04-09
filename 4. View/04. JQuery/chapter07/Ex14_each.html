@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+// 		$("#menu li").text("리스트");
+		// text("텍스트") : 자바스크립트의 innerHTML처럼 텍스트 값을 바꿈
+		
+		$("#menu li").each(function(index, item){
+			$(item).text("리스트" + index);
+		});
+		// each(function(index, item){}) : 반복문처럼 하나씩 비교하면서 수행되는 메서드
+		// item : 매개변수로 받는 라인
+		
+		
+		$.each($("#menu li"),function(index, item){
+			console.log("index : " + index);
+			console.log(item);
+		});
+	});
+</script>
+</head>
+<body>
+	<ul id="menu">
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+	</ul>
+</body>
+</html>

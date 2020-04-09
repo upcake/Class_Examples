@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- jquery 준비 방법 -->
+<!-- <script src="js/jquery-3.4.1.js"></script> -->
+<!-- <script src="js/jquery-1.12.4.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		alert("레디 완료1");
+	}); // ready function()
+	// 구버전에서는 레디 완료가 먼저 나온다. 최신버전에서는 로딩 완료가 먼저 나온다.
+	// 레디끼리는 위에서 아래로 가기때문에 1이 먼저 나온다.
+
+	$(document).ready(function() {
+		alert("레디 완료2");
+	});
+	
+	window.onload = function() {
+		alert("로딩 완료");
+	} // window.onload function()
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

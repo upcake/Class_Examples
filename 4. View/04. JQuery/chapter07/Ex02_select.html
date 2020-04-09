@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("*").css("border", "1px solid red"); // * : 전체 지정
+	// JQuery 문장은 $(선택자).메서드() 형식으로 작성한다. 
+	
+	$("#title").css("border", "1px solid blue")
+	.css("background-color", "yellow");
+	// id는 #으로 접근한다, 메서드를 .으로 연결 : 메서드 체이닝
+	
+	$(".direct").css("background-color", "purple");
+	// class는 .으로 접근한다.
+	
+	$("h3").css("background-color", "aqua");
+	// 같은 태그 명이 있으면 여러 개 선택된다.
+	
+	$("h3, h4").css("background-color", "aqua");
+	// 쉼표로 구분하여 태그를 여러 개 선택가능하다.
+});
+</script>
+
+</head>
+<body>
+	<h1 id="title">제이쿼리</h1>
+	<h2 class="direct">직접 선택자 및 관계 선택자</h2>
+	<h3>직접 선택자</h3>
+	<h3>관계 선택자</h3>
+	<h4>관계 선택자</h4>
+</body>
+</html>

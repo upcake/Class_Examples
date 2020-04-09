@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		console.log($("#menu li:eq(0)").is(":visible"));	// false
+		console.log($("#menu li:eq(1)").is(":visible"));	// true
+		console.log($("#chk1").is(":checked"));	// true
+		console.log($("#chk2").is(":checked"));	// false
+		// is() : 객체의 속성이나 특징을 판별한 뒤 불 값을 반환
+	});
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<ul id="menu">
+		<li style="display: none;">내용 0</li>
+		<li>내용1</li>
+	</ul>
+	<p>
+		<input type="checkbox" name="chk1" id="chk1" checked="checked" />
+		<label for="chk1">체크1</label>
+	</p>
+	<p>
+		<input type="checkbox" name="chk2" id="chk2" />
+		<label for="chk2">체크2</label>
+	</p>
+</body>
+</html>

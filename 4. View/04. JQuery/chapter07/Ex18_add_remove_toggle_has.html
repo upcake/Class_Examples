@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.aqua {background-color: aqua;}
+	.red {background-color: red;}
+	.green {background-color: green;}
+	.yellow {background-color: yellow;}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#p1").addClass("aqua");
+		// $("요소 선택").addClass("클래스 값") : 선택한 요소에 클래스를 생성
+
+		$("#p2").removeClass("red");
+		// $("요소 선택").removeClass("") : 선택한 요소에 클래스를 제거
+
+		$("#p3").toggleClass("green");
+		$("#p4").toggleClass("green");
+		// $("요소 선택").toggleClass("") : 선택한 요소에 지정한 클래스가 없으면 생성하고 있을 경우 제거
+		
+		$("#p6").text($("#p5").hasClass("yellow"));	// true
+		// $("요소 선택").hasClass("") : 선택한 요소에 지정한 클래스가 있으면 true 반환 , 없으면 false 반환
+	});
+</script>
+</head>
+<body>
+	<p id="p1">내용1</p>
+	<p id="p2" class="red">내용2</p>
+	<p id="p3">내용3</p>
+	<p id="p4" class="green">내용4</p>
+	<p id="p5" class="yellow">내용5</p>
+	<p id="p6">내용6</p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".second").parent().css("border", "1px solid red");
+		// parent() : 선택한 요소의 부모 요소 선택
+		
+		$("#wrap > li").css("border", "1px solid blue");
+		// > : 자식 태그 선택자
+		// + : 바로 밑에 동생 선택
+		// ~ : 밑에 동생 전부 전부
+		
+		$("body").children().css("border", "1px solid yellow");
+		// > == children() 둘다 자식 태그 선택하는데 쓰임
+		
+		$("#third").prevAll().css("color", "red");
+		// prev() : 이전 형제 선택
+		// prevAll() : 이전 형제 전부 선택
+		
+		$(".second").next().css("color", "blue");
+// 		$(".second + li").css("color", "blue");
+		// next() : 다음 동생 선택
+		// nextAll() : 다음 동생 전부 선택
+		
+	});
+</script>
+</head>
+<body>
+	<h1>인접 관계 선택자</h1>
+	<ul id="wrap">
+		<li>내용
+			<ul>
+				<li>내용1</li>
+				<li class="second">내용2</li>
+				<li id="third">내용3</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

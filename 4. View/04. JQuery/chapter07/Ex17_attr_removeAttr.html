@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#txt").text($("#wrap img").attr("src"));
+		// $("요소 선택").attr("속성"); 			▶ 선택한 요소의 속성 값을 불러옴
+		// $("요소 선택").attr("속성", "값");		▶ 선택한 요소의 속성을 새로 지정하거나 변경함
+		
+		$("#wrap img").attr("width", "200");
+		
+		$("#box img").removeAttr("border");
+	});
+</script>
+</head>
+<body>
+	<h1>객체 조작 및 생성</h1>
+	<p id="wrap">
+		<img src="images/math_img_1.jpg" alt="가위" width="100" />
+	</p>
+	<p id="txt"></p>
+	<p id="box">
+		<img src="images/math_img_3.jpg" alt="보" width="100" border="2" />
+	</p>
+</body>
+</html>

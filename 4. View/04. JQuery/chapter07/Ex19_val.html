@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#my_name").val($("#user_name").val());
+// 		$("#my_name").val()=$("#user_name").val(); 이렇게는 안쓴다
+		// 자바스크립트의 value가 JQuery에선 val이다.
+	});
+</script>
+</head>
+<body>
+	<p>
+		<input type="text" name="user_name" id="user_name" value="홍길동" />
+	</p>
+	<p>
+		<input type="text" name="my_name" id="my_name" />
+	</p>
+
+</body>
+</html>
