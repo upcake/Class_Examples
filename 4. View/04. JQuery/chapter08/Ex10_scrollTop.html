@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body {
+		height: 3000px;
+	}
+	
+	#txt {
+		position: fixed;
+		top: 10px;
+		right: 10px;
+		border: 1px solid red;
+	}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(window).scroll(function() {	//스크롤바가 이동할 때마다
+			$("#txt").text($(this).scrollTop());	//스크롤바 이동 높이 값이						
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="txt">0</div>
+</body>
+</html>

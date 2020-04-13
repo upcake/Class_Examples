@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var num1 = 0;
+		var num2 = 0;
+		var num3 = 0;
+		
+		$("#btn1").click(function() {
+			num1++;
+			$("#cnt1").text(num1);
+		}); // click
+		
+		$("#btn2").on("click", function() {
+			num2++;
+			$("#cnt2").text(num2);
+		}); //on
+		
+	
+		$("#btn3").one("click", function() {
+			num3++;
+			$("#cnt3").text(num3);
+		}); //on
+	});
+</script>
+</head>
+<body>
+	<button id="btn1">증가 버튼1</button>
+	<p id="cnt1">0</p>
+	<button id="btn2">증가 버튼2</button>
+	<p id="cnt2">0</p>
+	<button id="btn3">증가 버튼3</button>
+	<p id="cnt3">0</p>
+</body>
+</html>

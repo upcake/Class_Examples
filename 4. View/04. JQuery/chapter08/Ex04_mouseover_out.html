@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#wrap").mouseover(function() {	// 하위 태그에 들어가도 적용됨
+			$("#inner").css("border", "2px solid red");
+		});	
+		
+		$("#wrap").mouseout(function() {	// 하위 태그에 들어가도 적용됨
+			$("#inner").css("border", "2px dashed blue");
+		});
+		
+		
+		$("#wrap").mouseenter(function() {	// 자기 자신만 적용됨
+			$("#inner2").css("border", "2px solid green");
+		});	
+		
+		$("#wrap").mouseleave(function() {	// 자기 자신만 적용됨
+			$("#inner2").css("border", "2px dashed yellow");
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<p id="inner">내용1</p>
+		<p id="inner2">내용2</p>
+	</div>
+</body>
+</html>

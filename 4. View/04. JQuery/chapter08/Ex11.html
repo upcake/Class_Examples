@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#btn").mouseover(function() {
+			$(this).css("border", "2px solid red");
+			$(this).text("Mouseover");
+		});
+		
+		$("#btn").mouseout(function() {
+			$(this).css("border", "2px solid blue");
+			$(this).text("MouseOut");
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btn">마우스 오버</button>
+</body>
+</html>

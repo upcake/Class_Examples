@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#pw").keyup(function() {
+			$("#statementpwCheck").html("");
+		});
+		
+		$("#pwCheck").keyup(function() {
+			if ($("#pw").val() != $("#pwCheck").val()) {
+				$("#statementpwCheck").html("일치하지 않음").css("color", "red");
+			} else {
+				$("#statementpwCheck").html("일치함").css("color", "black");
+			}
+		})
+	});
+</script>
+</head>
+<body>
+	비밀번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <input type="password" name="pw" id="pw" /><br />
+	비밀번호 확인 : <input type="password" name="pwCheck" id="pwCheck" />
+	<span id="statementpwCheck"></span>
+</body>
+</html>

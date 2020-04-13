@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#btn1").mouseover(function() {
+			alert("good");
+		});
+		
+		$("#btn2").on("mouseover focus", function(){
+			alert("hello");
+		});
+		// on() : 여러 메서드를 동시에 사용하는 메서드
+	});
+</script>
+</head>
+<body>
+	<p>
+		<a href="#" id="btn1">버튼1</a>
+	</p>
+	<p>
+		<a href="#" id="btn2">버튼2</a>
+	</p>
+	
+</body>
+</html>

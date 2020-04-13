@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#site").change(function() {
+			$("#txt").text($(this).val());
+		});
+	});
+</script>
+</head>
+<body>
+	<select name="site" id="site">
+		<option value="">사이트 선택</option>
+		<option value="https://www.naver.com">네이버</option>
+		<option value="https://www.daum.net">다음</option>
+		<option value="https://www.google.com">구글</option>
+	</select>
+	<p id="txt"></p>
+
+</body>
+</html>

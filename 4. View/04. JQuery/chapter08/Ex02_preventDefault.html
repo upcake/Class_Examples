@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#btn1").click(function() {
+			$("p").css("background-color", "aqua");
+			return false;	// 창이 안넘어가게 하는 방법 ①
+		}); // click
+
+		$("#btn2").click(function(e) {	// 아무 매개변수나 써준다.
+			$("p").css("background-color", "yellow");
+			e.preventDefault();	// 창이 안넘어가게 하는 방법 ②, 이벤트의 고유의 동작을 막아준다.	
+		}); // click
+
+		$("#btn3").click(function() {
+			$("p").css("background-color", "aqua");
+			return false;
+		}); // click
+	}); // ready
+</script>
+</head>
+<body>
+	<a href="https://www.naver.com" id="btn1">버튼1</a><br /><br />
+	<a href="https://www.nate.com" id="btn2">버튼2</a><br /><br />
+	<a href="https://www.google.com" id="btn3">버튼3</a><br /><br />
+	<p>내용</p>
+</body>
+</html>

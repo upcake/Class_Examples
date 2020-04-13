@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("h1 a").on({
+			"mouseover focus" : function() {
+				$(this).css("color", "red");
+			}, "mouseout blur" : function() {
+				$(this).css("color", "blue");
+			}
+		}); // on
+	}); // ready
+</script>
+</head>
+<body>
+	<h1>
+		<a href="#">버튼1</a>
+	</h1>
+</body>
+</html>

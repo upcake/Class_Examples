@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#btn1").click(function() {
+			$("p").css("background-color", "yellow");			
+		}); // click
+		
+		$("#btn2").dblclick(function() {
+			$("p").css("background-color", "purple");
+		});
+	}); // ready
+</script>
+</head>
+<body>
+	<button id="btn1">click</button>
+	<button id="btn2">dblclick</button>
+	<p>내용</p>
+</body>
+</html>

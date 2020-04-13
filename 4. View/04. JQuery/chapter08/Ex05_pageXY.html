@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(document).mousemove(function(e) {
+			var x = e.pageX; // pageX : X 위치 받아주는 속성
+			var y = e.pageY; // pageY : Y 위치 받아주는 속성
+			
+			$("#loc").text("x : " + x + " y : " + y)
+		});	
+	});
+</script>
+</head>
+<body>
+	<div id="loc"></div>
+</body>
+</html>

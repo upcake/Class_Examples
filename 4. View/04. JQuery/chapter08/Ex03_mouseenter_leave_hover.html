@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#btn1").mouseenter(function() {
+			$("p").css("background-color", "yellow");
+		}); // btn1 mouseenter
+		
+		$("#btn1").mouseleave(function() {
+			$("p").css("background-color", "aqua");
+		}); // btn1 mouseleave
+		
+		// hover는 들어갔을때, 나왔을때 작동하는 함수를 각각 작성한다.
+		$("#btn2").hover(function() {	// 커서가 들어갔을때 작동하는 함수
+			$("p").css("background-color", "yellow");
+		}, function() {		// 커서가 나왔을때 작동하는 함수
+			$("p").css("background-color", "aqua");
+		}); // btn2 hover
+	});
+</script>
+</head>
+<body>
+	<button id="btn1">mouseover/out</button>
+	<button id="btn2">hover</button>
+	
+	<p>내용</p>
+</body>
+</html>
