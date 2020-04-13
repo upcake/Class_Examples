@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#btn1").on("click", function() {
+			$("h1").fadeOut(1000);
+		});
+
+		$("#btn2").on("click", function() {
+			$("h1").fadeIn("slow");
+		});
+
+		$("#btn3").on("click", function() {
+			$("h1").fadeToggle("slow");
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btn1">Fade Out</button>
+	<button id="btn2">Fade In</button>
+	<button id="btn3">Fade Toggle</button>
+	<h1>내용</h1>
+</body>
+</html>

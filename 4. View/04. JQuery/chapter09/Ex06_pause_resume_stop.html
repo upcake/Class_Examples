@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="js/pauseresume.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("h1").animate({
+			marginLeft: "1000px"
+		}, 2000);		
+
+		$("h2").delay(1000).animate({
+			marginLeft: "1000px"
+		}, 1000);		
+		
+		$("#pauseBtn").on("click", function() {
+			$("h1").pause();
+			$("h2").pause();
+		});
+
+		$("#resumeBtn").on("click", function() {
+			$("h1").resume();
+			$("h2").resume();
+		});
+
+		$("#stopBtn").on("click", function() {
+			$("h1").stop();
+			$("h2").stop();
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="pauseBtn">pause</button>
+	<button id="resumeBtn">restart</button>
+	<button id="stopBtn">stop</button>
+	<h1>내용</h1>
+	<h2>내용</h2>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h1{
+		width: 50px;
+		height: 30px;
+		background-color: red;
+		font-size: 100%;
+	}
+
+	h2{
+		width: 50px;
+		height: 30px;
+		background-color: orange;
+		font-size: 100%;
+	}
+
+	h3{
+		width: 50px;
+		height: 30px;
+		background-color: aqua;
+		font-size: 100%;
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("h1").animate({
+			marginLeft: "250px"
+		}, 2000);
+
+		$("h2").animate({
+			marginLeft: "250px", 
+			opacity: 0.3,
+			width: "100px"
+		}, 2000);
+
+		$("h3").animate({
+			marginLeft: "250px", 
+		}, 500).animate({
+			marginLeft: "0px", 
+		}, 500).animate({
+			marginTop: "250px"
+		}, 500).animate({
+			marginTop: "0px"
+		}, 500);
+	});
+</script>
+</head>
+<body>
+	<h1>내용</h1>
+	<h2>내용</h2>
+	<h3>내용</h3>
+</body>
+</html>

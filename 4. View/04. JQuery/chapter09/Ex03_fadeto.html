@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#btn1").on("click", function() {
+			$("h1").fadeTo("slow", 0);
+		});
+
+		$("#btn2").on("click", function() {
+			$("h1").fadeTo("slow", 0.3);
+		});
+	
+		$("#btn3").on("click", function() {
+			$("h1").fadeTo("slow", 1);
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btn1">투명도(0%)</button>
+	<button id="btn2">투명도(30%)</button>
+	<button id="btn3">투명도(100%)</button>
+	<h1>내용</h1>
+</body>
+</html>
