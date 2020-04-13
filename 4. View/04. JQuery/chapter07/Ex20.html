@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#st1").prop("title", "단락 태그");
+		$("#txt1").text($("#st1").prop("title"));
+		$("#txt2").text($("#st1").prop("tagName"));
+		$("#txt3").text($("#sel").prop("selectedIndex"));
+		// selectedIndex : 선택된 값의 인덱스 번호
+	});
+</script>
+</head>
+<body>
+	<p id="st1">내용1</p>
+	<p id="txt1"></p>
+	<p id="txt2"></p>
+	
+	<select id="sel">	
+		<option value="naver">네이버</option>
+		<option value="nate" selected="selected">네이트</option>
+		<option value="daum">다음</option>
+	</select>
+	
+	<p id="txt3"></p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#line1 {
+		background-color: yellow;
+	}
+	
+	#line2 {
+		background-color: orange;
+	}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#line1").empty();
+		// empty() 내용물을 삭제
+		$("#line2").remove();
+		// remove() 태그를 삭제
+	});
+</script>
+</head>
+<body>
+	<ul id="listzone">
+		<li id="line1">내용1</li>
+		<li id="line2">내용2</li>
+	</ul>
+</body>
+</html>

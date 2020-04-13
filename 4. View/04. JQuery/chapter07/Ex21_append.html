@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		//$("요소선택").append("새요소") : 선택한 요소의 마지막 위치에 새 요소를 추가
+		//$("요소선택").prepend("새요소") : 선택한 요소의 맨 앞 위치에 새 요소를 추가
+		
+		//$("새요소").appendTo("요소선택") : 새 요소를 선택한 요소의 마지막 위치에 추가
+		//$("새요소").prependTo("요소선택") : 새 요소를 선택한 요소의 맨 앞 위치에 추가
+		//append : ~를 추가하다
+		
+		$("#listzone").append("<li>새 내용 추가2</li>");
+		$("#listzone").prepend("<li>새 내용 추가1</li>");
+		
+		$("<li>새 내용 추가2</li>").appendTo("#listzone");
+		$("<li>새 내용 추가1</li>").prependTo("#listzone");
+	});
+</script>
+</head>
+<body>
+	<ul id="listzone">
+		<li id="line1">내용1</li>
+		<li id="line2">내용2</li>
+	</ul>
+</body>
+</html>
