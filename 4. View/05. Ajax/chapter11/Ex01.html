@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="ui-lightness/jquery-ui.css" />
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="ui-lightness/jquery-ui.js"></script>
+<style type="text/css">
+	body {
+		font-size: 62.5%;
+	}
+	
+	h1 {
+		text-align: center;
+	}
+	
+	input[type="text"], label {
+		margin-bottom: 12px;
+		padding: 0.4em;
+		width: 95%;
+	}
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#open-button").click(function() {
+			$("#dialog").dialog("open");	// dialog창을 띄움
+		}); // click
+		
+		$("#dialog").dialog({
+			autoOpen: false,	// 자동으로 창이 열리는 것을 설정
+			buttons: {
+				확인: function() {
+					var eventName = $("#event-name").val();
+					var eventDate = $("#event-date").val();
+					
+					$("<h1></h1>").html(eventName + " : " + eventDate).appendTo("#output");
+					$("#event-name").val("");
+					$("#event-date").val("");
+					
+					$("#dialog").dialog("close");	// dialog창을 닫음
+				}, // 확인
+				초기화: function() {
+					$("#event-name").val("");
+					$("#event-date").val("");
+				},
+				취소: function() {
+					$("#event-name").val("");
+					$("#event-date").val("");
+					$("#dialog").dialog("close");	// dialog창을 닫음
+				},
+			}, // buttons
+			modal: true		// 닫지 않으면 메인 사이트를 접근할수 없게 하는 창을 modal이라 한다.
+		}); // dialog
+		
+		$("#event-date").datepicker({
+			dateFormat: "yy년 mm월 dd일",
+			numberOfMonths: 3
+		}); // datepicker
+	});
+</script>
+</head>
+<body>
+	<h1 id="open-button">일정 생성</h1>
+	<hr />
+	<div id="output"></div>
+
+	<div id="dialog" title="jQuery UI dialog">
+		<h1>Hello jQuery UI</h1>
+		
+		<label for="event-name">일정 이름</label>
+		<input id="event-name" type="text" />
+		
+		<label for="event-date">날짜</label>
+		<input id="event-date" type="text" />
+	</div>
+</body>
+</html>
