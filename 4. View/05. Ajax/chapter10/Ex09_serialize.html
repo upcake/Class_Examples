@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#execute").click(function() {
+			$.ajax({
+				url: "data/time.jsp",
+// 				data: {
+// 					timezone: $("#timezone").val(),
+// 					format: $("#format").val()
+// 				}, // data
+				data: $("form").serialize(), // 줄줄이 달아서 전송해 줌
+				
+				success: function(result) {
+					$("time").text(result);
+				} // success
+			}); // ajax
+		}); // click
+	}); // ready
+</script>
+</head>
+<body>
+	<p>time ☞ <span id="time"></span></p>
+	
+	<form>
+		<input type="text" id="timezone" name="timezone" />
+		<input type="text" id="format" name="format" />
+		<input type="button" id="execute" value="execute" />
+	</form>
+</body>
+</html>

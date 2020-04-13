@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#member").on("submit", function(){
+			var d = $(this).serialize()
+			
+			$.ajax({
+				url: "data/data.jsp",
+				data: d,
+				success: function(result) {
+					$("#txt").text("회원 이름은 " + result + "입니다.");
+				} // success
+			}); // ajax
+			return false;	// return false를 하면 전송을 하지 않고 17번 라인이 실행 된다.
+		}); // on
+	}); // ready
+</script>
+</head>
+<body>
+	<form action="#" name="member" id="member">
+		<fieldset>
+			<legend>회원가입</legend>
+			<p>
+				<label for="name">이름</label>
+				<input type="text" name="name" id="name" />
+			</p>
+			
+			<p>
+				<input type="submit" value="확인" />
+			</p>
+		</fieldset>
+	</form>
+	
+	<h1 id="txt"></h1>
+</body>
+</html>

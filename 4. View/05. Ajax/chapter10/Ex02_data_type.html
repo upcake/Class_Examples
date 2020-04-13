@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#start_ajax").click(function(){
+			$.ajax({
+				url: "data/data.jsp",	// 이 주소와 통신을 시작한다.
+				type: "post",			//get이면 주소창에 보이고 post면 안보임
+				
+				data: {name:"홍길동"},	// url에 data를 보내줌
+				
+				success: function(result) {
+					alert("통신 성공");
+					$("#name").text("이름 : " + result);
+				},
+				
+				error: function(xhr, status, error) {	//에러일때 써주는 매개 변수
+					alert("통신 에러")
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="start_ajax">서버와 통신 시작</button>
+	<p><span id="name"></span></p>
+</body>
+</html>

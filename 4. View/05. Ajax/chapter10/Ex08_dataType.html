@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.ajax({
+			url: "data/rank.xml",
+			dataType: "xml",
+			success: function(result) {
+				$(result).find("rank").each(function() {
+					var name = $(this).find("k").text();
+					var result = "<li>" + name + "</li>";
+					
+					$("#wrap ol").append(result);
+				}); // each			
+			} // success
+		}); // ajax
+	}); // ready
+</script>
+</head>
+<body>
+	<h1>인기 검색어</h1>
+	
+	<div id="wrap">
+		<ol></ol>
+	</div>
+</body>
+</html>

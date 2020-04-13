@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#start_ajax").click(function(){
+			$.ajax({
+				url: "data/data.html",	// 이 주소와 통신을 시작한다.
+				
+				success: function(result) {
+					$("body").append(result);
+				}		// 통신이 성공하면 받은 데이터 result를 body에 추가한다.
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="start_ajax">서버와 통신 시작</button>
+</body>
+</html>

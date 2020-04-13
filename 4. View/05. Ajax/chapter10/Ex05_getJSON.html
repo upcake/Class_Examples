@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+// 		$.getJSON('data/data.json', function(result) {	// getJSON : json 파일을 쉽게 가져올 수 있지만, 잘 사용되진 않음.
+		$.ajax({
+			url: "data/data.json",
+			success: function(result) {
+				$.each(result, function(key, value) {		// each	: 각 값을 하나씩 비교함
+					$('body').append('<h1>' + value.name + ' : ' + value.price + '</h1>');
+				}); // each
+			} // success
+		});  // ajax
+	}); // ready	
+</script>
+</head>
+<body>
+
+</body>
+</html>
