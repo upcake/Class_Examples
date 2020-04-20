@@ -1,7 +1,7 @@
---tblMember Å×ÀÌºí »ı¼º
+--tblMember í…Œì´ë¸” ìƒì„±
 drop table tblMember;
 
---tblMember Å×ÀÌºí »ı¼º
+--tblMember í…Œì´ë¸” ìƒì„±
 CREATE TABLE tblMember (
     num NUMBER PRIMARY KEY NOT NULL,
     name VARCHAR2(10),
@@ -10,15 +10,15 @@ CREATE TABLE tblMember (
     tel VARCHAR2(20)
 );
 
---ÀÓÀÇÀÇ ·¹ÄÚµå »ğÀÔ
+--ì„ì˜ì˜ ë ˆì½”ë“œ ì‚½ì…
 INSERT INTO tblMember (num, name, age, addr, tel)
-	VALUES (1, 'È«±æµ¿', 30, '±¤ÁÖ½Ã ¼­±¸ ³ó¼ºµ¿', '010-1111-1111');
+	VALUES (1, 'í™ê¸¸ë™', 30, 'ê´‘ì£¼ì‹œ ì„œêµ¬ ë†ì„±ë™', '010-1111-1111');
 	
 INSERT INTO tblMember (num, name, age, addr, tel)
-	VALUES (2, '¹Ú¹®¼ö', 33, '±¤ÁÖ½Ã ¼­±¸ ½ÖÃÌµ¿', '010-2222-2222');
+	VALUES (2, 'ë°•ë¬¸ìˆ˜', 33, 'ê´‘ì£¼ì‹œ ì„œêµ¬ ìŒì´Œë™', '010-2222-2222');
 	
---ÀüÃ¼ ·¹ÄÚµå °Ë»ö
-search * from tblMember;	
+--ì „ì²´ ë ˆì½”ë“œ ê²€ìƒ‰
+select * from tblMember;	
 
---Ä¿¹Ô ¸í·É
+--ì»¤ë°‹ ëª…ë ¹
 commit;
