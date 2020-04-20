@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#login_form {
+		width: 300px;
+		margin: 0 auto;
+	}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+	$(document).ready(function () {
+		/* --------------------------login-------------------------- */
+		$("#login").click(function() {
+			var user_id = $("#user_id").val()
+			var user_pw = $("#user_pw").val()
+			
+			if (user_id == "") {
+				alert("아이디를 입력하세요.");
+				$("#user_id").focus();
+				return;
+			}
+			if (user_pw == "") {
+				alert("비밀번호를 입력하세요.")
+				$("#user_pw").focus();
+				return;
+			}
+			
+			$.ajax({
+				url: "js/loginCheck.json",
+				dataType: "json",
+				
+				success: function(data) {
+					var i = 0;
+					while(true) {
+						if(i == data.length) {
+							alert("아이디나 비밀번호가 일치하지 않습니다.");
+							$("#user_id").val("");
+							$("#user_pw").val("");
+							$("#user_id").focus();
+							break;
+						} // if
+						if((user_id == data[i]["id"]) && (user_pw == data[i]["pw"])) {
+							alert("로그인 되었습니다.");
+							opener.location.href = "index_logout.html"
+							self.close();
+							break;
+						}
+						i++;
+					} // while
+				} // success
+			}); // ajax
+		}); // login click
+		
+		
+		/* ----------------------signUp----------------------------- */
+		$("#signUp").click(function() {
+			window.resizeTo(600, 350);
+			location.href = "signup.html"
+		}); // signUp click
+ 	}) // ready
+</script>
+</head>
+<body>
+	<table id="login_form">
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" name="user_id" id="user_id" tabindex="1" autofocus="autofocus" /></td>
+			<!-- tabindex : 탭키 눌렀을 때 가는 순서,  -->
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="password" name="user_pw" id="user_pw" tabindex="2" /></td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<input type="button" id="login" tabindex="3" value="로그인" style="width: 90px;" />
+				<input type="button" id="signUp" tabindex="4" value="회원가입" style="width: 90px;" />
+				<input type="button" id="login_cancel" tabindex="5" value="취소" style="width: 90px;"
+					onclick="window.close();"/>
+			</td>
+			<td></td>
+		</tr>
+	</table>
+</body>
+</html>

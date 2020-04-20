@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	* {	margin: 0px auto; padding: 0px; }
+	/* ------------------------Header---------------------- */
+	header {
+		width: 1024px;
+	}
+	#title { 
+		display: inline-block;
+		margin: 20px 0 20px 100px;
+		text-align: left;
+	}
+	button {
+		display: inline-block;
+		float: right;
+		margin: 35px 20px 5px 0;
+	}
+	
+	/* -----------------------Slide----------------------------- */
+	/* Animation Canvas */
+	.animation_canvas {
+		overflow: hidden;
+		position: relative;
+		width: 1000px;
+		height: 600px;
+		margin: 0 auto;
+	}
+	
+	/* Slider Panel */
+	.slider_panel {
+		width: 5000px;
+		position: relative;
+	}
+	
+	.slider_image {
+		float: left;
+		width: 1000px;
+		height: 600px;
+	}
+	
+	/* Slider Text Panel */
+	.slider_text_panel {
+		position: absolute;
+		top: 90%;
+		left: 50px;
+	}
+	
+	.slider_text {
+		position: absolute;
+		width: 250px;
+		height: 150px;
+		color: black;
+	}
+	
+	/* Control Panel */
+	.control_panel {
+		position: absolute;
+		top: 94%;
+		left: 47%;
+		height: 13px;
+		overflow: hidden;
+	}
+	
+	.control_button {
+		width: 12px;
+		height: 46px;
+		position: relative;
+		float: left;
+		cursor: pointer;
+		background: url('images/point_button.png');
+	}
+	
+	.control_button:hover {
+		top: -16px;
+	}
+	
+	.control_button.active {
+		top: -31px;
+	}
+	
+	/* -------------------------------Footer--------------------- */
+	footer {
+		width: 1024px;
+		overflow: hidden;
+	}
+	
+	footer li {
+		list-style: none;
+		float: left;
+	}
+	
+	#naver_logo, #google_logo, #daum_logo, #kakao_logo {
+		margin-right: 47px;
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="js/jquery-3.4.1.js"></script>
+<script>
+	$(document).ready(function() {
+		/* header */
+		var signupX = screen.width/2 - 600/2;
+		var signupY = screen.height/2 - 600/2;
+		
+		$("#signUp").click(function() {
+			window.open("signup.html", "signup", "width = 600, height = 600, " +
+					"left =" + signupX + ", top =" + signupY + ", scrollbars =no, toolbars = no, location = no, status = no");
+		}); // signUp click
+		
+		$("#logout").click(function() {
+			location.href = "index.html";
+		}); // logout click
+		
+		
+		/* slide */
+		var refreshInterval = null;
+		var timer = null;
+		var imgCnt = $('.slider_panel').children().length;
+		var imgIdx = 1;
+		
+		function moveSlider(index) {											// index를 매개 변수로 받는 moveSlider()라는 메서드를 생성
+			var willMoveLeft = -(index * 1000)									// 이미지가 왼쪽으로 이동해야할 픽셀, 왼쪽으로 가야해서 -를 붙여준다.
+				
+			$('.slider_panel').animate({										// slider_panel 클래스들에 animate() 메서드 작동
+				left: willMoveLeft												// 왼쪽으로 willMoveLeft만큼 이동
+			}, 'slow'); // animate()											// 천천히
+			
+			$('.slider_text[data-index =' + index + ']').show().animate({		// slider_text의 data-index 속성의 index번째 값을 보여주고 animate() 메서드 작동
+				left: 0
+			}, 'slow'); // animate()
+
+			$('.slider_text[data-index !=' + index + ']').hide('slow', function() { // slider_text의 data-index 속성의 index번째 값이 아닌 것을 천천히 숨기고 함수 작동
+				$(this).css('left', -1000);											// 왼쪽으로 300만큼 이동
+			}); // hide
+			
+			$('.control_button[data-index =' + index + ']').addClass('active');
+			$('.control_button[data-index !=' + index + ']').removeClass('active');
+		} // moveSlider()
+		
+		timer = function() {													// 변수 timer에 함수 설정
+			moveSlider(imgIdx);
+			
+			if (imgIdx < imgCnt - 1) {
+				imgIdx++;
+			} else {
+				imgIdx = 0;
+			} // if else
+		} // timer
+		
+		$('.animation_canvas').on({												// 마우스 들어오면 정지, 나가면 다시 자동으로 돌아가게 하기
+			mouseenter: function() {
+				clearInterval(refreshInterval);
+			}, // mouseenter
+			mouseleave: function() {
+				refreshInterval = setInterval(timer, 5000);
+			} // mouseleave
+			
+		}); // on()
+		
+		$('.control_button').each(function(index) {								// control_button 클래스를 가진 값들을 각각 지정
+			$(this).attr('data-index', index).click(function() {				// data-index라는 속성으로 index를 주고 클릭시 함수를 작동한다.
+				var index = $(this).attr('data-index');							// 현재 객체의 data-index라는 속성의 값을 index 라는 변수에 대입한다.
+				imgIdx = index;													// 클릭한 index를 imgIdx로 받는다.
+				moveSlider(index);												// index를 매개 변수로 받는 moveSlider()라는 메서드를 작동
+			}); // click()
+		}); // each()
+		
+		$('.slider_text').css('left', -300).each(function(index) { 				// slider_text 클래스를 가진 값들을 각각 지정
+			$(this).attr('data-index', index);									// 각각에 data-index라는 속성으로 index를 주겠다.
+		}); // each()		
+	
+		$('.slider_text[data-index =' + 0 + ']').show().animate({				// slider_text 클래스중에 0번째 값을 지정하고 animate 메서드를 보여줌.
+			left: 0
+		}, 'slow');	
+		
+		$('.control_button[data-index=' + 0 + ']').addClass('active');			// control_button 클래스중에 0번째 값을 활성화
+		
+		refreshInterval=setInterval(timer,5000);								// timer함수를 1초마다 돌림
+// 		var randomNumber = Math.round(Math.random() * 4);	// 0 ~ 4 랜덤 생성
+// 		moveSlider(randomNumber);
+	});
+</script>
+</head>
+<body>
+	<header>
+		<h1 id="title">사회적 거리두기</h1>
+		<button id="signUp">회원가입</button>
+		<button id="logout">로그아웃</button>
+	</header>
+	
+	<div class="animation_canvas">
+		<div class="slider_panel">
+			<a href="https://www.naver.com" target="_blank"><img src="images/1_naver.gif" class="slider_image" /></a> 
+			<a href="https://www.google.com" target="_blank"><img src="images/2_google.gif" class="slider_image" /></a> 
+			<a href="https://www.youtube.com" target="_blank"><img src="images/3_youtube.gif" class="slider_image" /></a> 
+			<a href="https://www.daum.net" target="_blank"><img src="images/4_daum.gif" class="slider_image" /></a> 
+			<a href="https://www.kakaocorp.com/" target="_blank"><img src="images/5_kakao.png" class="slider_image" /></a>
+		</div>
+		<div class="slider_text_panel">
+			<div class="slider_text">
+				<h1>네이버</h1>
+			</div>
+			<div class="slider_text">
+				<h1>구글</h1>
+			</div>
+			<div class="slider_text">
+				<h1>유튜브</h1>
+			</div>
+			<div class="slider_text">
+				<h1>다음</h1>
+			</div>
+			<div class="slider_text">
+				<h1>카카오</h1>
+			</div>
+		</div>
+		<div class="control_panel">
+			<!-- control_button과 같은 요소는 div태그로 만들고 
+			스타일시트에서 background속성으로 이미지를 설정 
+			이렇게 하면 스타일시트의 hover필터와 active필터 사용 가능-->
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+		</div>
+	</div>
+	
+	<footer>
+		<ul>
+			<li><a href="https://www.naver.com" target="_blank"><img src="images/1_naver_logo.png" id="naver_logo" /></a></li>
+			<li><a href="https://www.google.com" target="_blank"><img src="images/2_google_logo.png" id="google_logo" /></a></li>
+			<li><a href="https://www.youtube.com" target="_blank"><img src="images/3_youtube_logo.png" id="youtube_logo" /></a></li>
+		</ul>
+		<ul>
+			<li><a href="https://www.daum.net" target="_blank"><img src="images/4_daum_logo.png" id="daum_logo" /></a> </li>
+			<li><a href="https://www.kakaocorp.com/" target="_blank"><img src="images/5_kakao_logo.png" id="kakao_logo" /></a></li>
+			<li><a href="http://ncov.mohw.go.kr/" target="_blank"><img src="images/6_covid_logo.png" id="covid_logo" /></a></li>
+		</ul>
+	</footer>
+</body>
+</html>
