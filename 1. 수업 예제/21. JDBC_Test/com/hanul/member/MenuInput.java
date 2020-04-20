@@ -1,6 +1,7 @@
 package com.hanul.member;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuInput {	// 회원 관리 서브 화면
@@ -118,4 +119,44 @@ public class MenuInput {	// 회원 관리 서브 화면
 			System.out.println("deleteInput() Exception!!!");
 		}
 	} // deleteInput()
+	
+	// 회원 정보 출력하는 서브 화면
+	public void searchAllInput() {
+		System.out.println("회원 정보 출력 화면입니다.");
+		MemberDAO dao = new MemberDAO();
+		dao.memberSearchAll();
+	} // searchAllInput()
+	
+	// 회원 이름 검색하는 서브 화면
+	public void searchNameInput() {
+		System.out.println("회원 이름 검색 화면입니다.");
+		System.out.print("검색할 회원 이름을 입력하세요> ");
+		String searchName = scanner.nextLine();
+		
+		ArrayList<MemberDTO> list = new ArrayList<>();
+		MemberDAO dao = new MemberDAO();
+		dao.memberSearchName(list, searchName);
+	} // searchNameInput()
+	
+	// 회원 주소 검색하는 서브 화면
+	public void searchAddrInput() {
+		System.out.println("회원 주소 검색 화면입니다.");
+		System.out.print("검색할 회원 주소를 입력하세요> ");
+		String searchAddr = scanner.nextLine();
+		
+		ArrayList<MemberDTO> list = new ArrayList<>();
+		MemberDAO dao = new MemberDAO();
+		dao.memberSearchAddr(list, searchAddr);
+	} // searchAddrInput()
+	
+	// 회원 전화번호 검색하는 서브 화면
+	public void searchTelInput() {
+		System.out.println("회원 전화번호 검색 화면입니다.");
+		System.out.print("검색할 회원 주소를 입력하세요> ");
+		String searchTel = scanner.nextLine();
+		
+		ArrayList<MemberDTO> list = new ArrayList<>();
+		MemberDAO dao = new MemberDAO();
+		dao.memberSearchTel(list, searchTel);
+	} // searchTelInput()
 } // class
