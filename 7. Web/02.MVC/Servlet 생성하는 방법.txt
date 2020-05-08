@@ -1,0 +1,38 @@
+★ Servlet(Controller) 생성
+	- servlet-api.jar(C:\tomcat\lib) ▶ JRE → lib → ext : 복사&붙여넣기
+	① JAVA Resources → 우클릭 → New → Servlet : Servlet 마법사 실행
+	② URL mapping → /xx.do ▶ <form action="xx.do" ~~>
+	※ Domain은 대소문자를 구분하지 않지만 URL은 대소문자를 구분한다.
+		- Domain : www.naver.com = WWW.NAVER.COM
+		- URL : https://www.naver.com/~~~~~
+	③ [V]service 체크 → Finish
+	- 불필요한 코드 삭제 : service() 삭제하지 말 것
+	- Servlet Mapping(수동 설정) : WebContent → WEB-INF → web.xml
+	<!-- Servlet Class 정의 -->
+	<servlet>
+	  <display-name>HelloServlet</display-name>
+	  <servlet-name>HelloServlet</servlet-name>
+	  <servlet-class>HelloServlet</servlet-class>
+	</servlet>
+  
+	  <!-- Servlet Mapping 설정 -->
+	  <servlet-mapping>
+	  	<servlet-name>HelloServlet</servlet-name>
+	  	<url-pattern>/hs.do</url-pattern>
+	  </servlet-mapping>
+================================================================================================
+○ HelloServlet
+	HelloServlet.html → web.xml → hs.do → HelloServlet.java → HelloServlet.class
+
+○ Servlet01
+	SuCalc01.html → sc01.do → Servlet01.java
+	================>|
+	[Client]     		  |<========[Server]
+	
+○ Servlet02
+	①클라이언트의 요청을 받는다.
+	Model[SuCalc02.html(request) → web.xml → sc02.do(Servlet02.java)
+	②비즈니스 로직을 수행한다.
+	→ SumMachine.getSum() → sum →] Controller[return(Servlet02.java) 
+	③프레젠테이션 로직을 수행한다
+	→] View[result.jsp(response)] 
