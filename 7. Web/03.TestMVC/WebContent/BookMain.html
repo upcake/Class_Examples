@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>도서 정보 입력 화면</title>
+<style type="text/css">
+	* {
+		margin: 0 auto;
+		text-align: center;
+	}
+	
+	fieldset {
+		width: 400px;
+	}
+
+	legend {
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+
+	td {
+		padding: 5px;
+	}
+	
+	.attribute {
+		font-weight: bold;
+	}
+	
+	.inputData {
+		text-align: left;
+	}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//정규 표현식
+		var regIsbn = /^\d{3}[\-]\d{2}[\-]\d{4}[\-]\d{3}[\-]\d{1}$/ // 숫자 3글자 - 2글자 - 4글자 - 3글자 - 1글자
+		//ISBN의 정규 표현식은 국립중앙도서관에서 소개하는 ISBN 구조와 ISBN 영문 위키를 참조하여 10진수 숫자로만 구성되게끔 정하였다. 
+		//※ 국립중앙도서관 ISBN 구조 : http://seoji.nl.go.kr/front/service/isbn_info09.jsp
+		//※ ISBN 영문 위키 : https://en.wikipedia.org/wiki/International_Standard_Book_Number
+		
+		//확인 버튼
+		var isbnCheck = 0;
+		var isbn_val = document.getElementById("isbn");
+		$("#submit").click(function() {
+			//ISBN 유효성 검사
+			if(!regIsbn.test(isbn_val.value)) {
+				alert("ISBN 형식이 잘못되었습니다." + "\nISBN은 숫자로 구성되어 있으며 XXX-XX-XXXX-XXX-X 형식으로 입력해주세요.");
+				$("#isbn").val("");
+				$("#isbn").focus();
+				return false;
+			}
+			
+			var submitConfirm = confirm("정말 입력하시겠습니까?");
+			if(submitConfirm) {
+				return true;
+			} else {
+				return false;
+			}
+		}); // submit click()
+		
+		//취소 버튼
+		$("#cancel").click(function() {
+			var cancelConfirm = confirm("정말 취소하시겠습니까?");
+			if(cancelConfirm) {
+				return true;
+			} else {
+				return false;
+			}
+		}); // cancel click()
+	}); // ready()
+</script>
+</head>
+<body>
+	<fieldset>
+		<legend>도서 정보 입력</legend>
+		<form action="is.do" method="get">
+			<table border="1">
+				<tr>
+					<td class="attribute">도서명</td>
+					<td><input type="text" name="title" required="required" class="inputData" /></td>
+				</tr>
+				<tr>
+					<td class="attribute">저&nbsp;&nbsp;&nbsp;자</td>
+					<td><input type="text" name="auth" required="required" class="inputData" /></td>
+				</tr>
+				<tr>
+					<td style="letter-spacing: 3px" class="attribute">ISBN</td>
+					<td><input type="text" name="isbn" required="required" class="inputData" placeholder="xxx-xx-xxxx-xxx-x" id="isbn"/></td>
+				</tr>
+				<tr>
+					<td class="attribute">출판사</td>
+					<td><input type="text" name="comp" required="required" class="inputData" /></td>
+				</tr>
+				<tr>
+					<td class="attribute">단&nbsp;&nbsp;&nbsp;가</td>
+					<td><input type="number" name="cost" required="required" class="inputData" /></td>
+				</tr>
+				<tr>
+					<td class="attribute">수&nbsp;&nbsp;&nbsp;량</td>
+					<td><input type="number" name="su" required="required" class="inputData" /></td>
+				</tr>
+				<tr >
+					<td colspan="3">
+						<input type="submit" value="도서 정보 입력" id="submit" />
+						<input type="reset" value="입력 정보 취소" id="cancel"/>
+						<input type="button" value="도서 목록 조회" onclick="location.href='gals.do'"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</fieldset>
+</body>
+</html>
