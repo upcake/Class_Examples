@@ -31,16 +31,39 @@ public class InsertServlet extends HttpServlet {
 		//프레젠테이션 로직
 		response.setContentType("text/html; charset=utf-8"); //MIME Type
 		PrintWriter out = response.getWriter();
+		//CSS
+		out.println("<style type=\"text/css\">");
+			out.println("* {");
+				out.println("margin: 0 auto;");
+			out.println("}");
+			
+			out.println("fieldset {");
+				out.println("width: 250px;");
+				out.println("text-align: center;");
+			out.println("}");
+		
+			out.println("legend {");
+				out.println("font-size: 1.5em;");
+				out.println("font-weight: bold;");
+			out.println("}");
+
+		out.println("</style>");
+
+		//HTML
 		if(succ > 0) {
 			out.println("<script>alert('도서 정보 입력 성공');</script>");
-			out.println("<a href='BookMain.html'>도서 정보 입력 하기</a>");
-			out.println("<br />");
-			out.println("<a href='gals.do'>도서 목록 조회 하기</a>");
+			out.println("<fieldset>");
+				out.println("<legend>도서 정보 입력 성공</legend>");
+				out.println("<input type=\"button\" value=\"도서 정보 입력\" onclick=\"location.href='BookMain.html'\"/>");
+				out.println("<input type=\"button\" value=\"도서 목록 조회\" onclick=\"location.href='gals.do'\"/>");
+			out.println("</fieldset>");
 		} else {
 			out.println("<script>alert('도서 정보 입력 실패');</script>");
-			out.println("<a href='BookMain.html'>도서 정보 입력 하기</a>");
-			out.println("<br />");
-			out.println("<a href='gals.do'>도서 목록 조회 하기</a>");
+			out.println("<fieldset>");
+				out.println("<legend>도서 정보 입력 실패</legend>");
+				out.println("<input type=\"button\" value=\"도서 정보 입력\" onclick=\"location.href='BookMain.html'\"/>");
+				out.println("<input type=\"button\" value=\"도서 목록 조회\" onclick=\"location.href='gals.do'\"/>");
+			out.println("</fieldset>");
 		} //if else
 	} //service()
 } //class
