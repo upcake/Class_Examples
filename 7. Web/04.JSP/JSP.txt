@@ -1,0 +1,37 @@
+○ JSP(Java Server Page) : WebContent → New → JSP File
+	- HTML 코드에 자바 코드를 삽입해서 만든 페이지
+	- 서버측에서 동작되는 언어(Server Side Language)
+	- 확장자는 *.jsp
+	- 동작 방식 : 컴파일 과정 거쳐야 하므로 최초 실행은 느리다.
+		① test.jsp가 서블릿으로 변경 : test_jsp.java(서블릿)
+		② test_jsp.java가 컴파일 : test_jsp.class(클래스)
+		③ test_jsp.class가 실행
+		\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\work\Catalina\localhost\fp\org\apache\jsp
+
+★ JSP 구성 요소
+1. 스크립트적인 요소(프로그래밍적인 요소)
+	① 스크립틀릿(<%, %>) : 가장 많이 사용되는 요소
+		- <% 자바 코드 %>
+	
+	② 지시자 : MIME Type, import, JSTL
+		- <%@ page contentType = "text/html; charset=UTF-8" %>
+		- <%@ page import = "com.hanul.study.MemberDTO" %>
+		- <%@ taglib prefix = "c" url = "http://java.sun.com/jsp/jstl/core" %>
+		
+	③ 선언문 : 메서드 정의 → 별도의 클래스에 구현
+		- <%! public void 메서드명(매개 변수) { ~~코드 구현~~ } %>
+	
+	④ 표현식 : 값을 출력
+		- <%= 변수명 %>
+		- <%= 수식 %>
+		- <%= 메서드 호출문 %>
+
+2. UI 요소(화면구현 요소)
+	⑥ html
+	⑦ css
+	⑧ javascript, jQuery
+	
+★ JSP Action Tag : 프로그래밍적인 요소 → 태그적인 요소
+	- <jsp : useBean ~~ /> : 객체를 생성하는 태그
+	- <jsp : setProperty ~~ /> : DTO 객체에 있는 setter Method 호출
+	- <jsp : getProperty ~~ /> : DTO 객체에 있는 getter Method 호출

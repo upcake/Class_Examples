@@ -31,6 +31,7 @@ public class InsertServlet extends HttpServlet {
 		//프레젠테이션 로직
 		response.setContentType("text/html; charset=utf-8"); //MIME Type
 		PrintWriter out = response.getWriter();
+		
 		//CSS
 		out.println("<style type=\"text/css\">");
 			out.println("* {");
@@ -46,7 +47,6 @@ public class InsertServlet extends HttpServlet {
 				out.println("font-size: 1.5em;");
 				out.println("font-weight: bold;");
 			out.println("}");
-
 		out.println("</style>");
 
 		//HTML

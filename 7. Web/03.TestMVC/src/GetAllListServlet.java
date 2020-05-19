@@ -21,6 +21,7 @@ public class GetAllListServlet extends HttpServlet {
 		//프레젠테이션 로직
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
+	
 		//CSS
 		out.println("<style type=\"text/css\">");
 			out.println("* {");
