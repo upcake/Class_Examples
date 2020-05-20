@@ -35,3 +35,4 @@
 	- <jsp : useBean ~~ /> : 객체를 생성하는 태그
 	- <jsp : setProperty ~~ /> : DTO 객체에 있는 setter Method 호출
 	- <jsp : getProperty ~~ /> : DTO 객체에 있는 getter Method 호출
+	- <jsp : forward ~~ /> : request.forward() 방식으로 동적 페이지 전환

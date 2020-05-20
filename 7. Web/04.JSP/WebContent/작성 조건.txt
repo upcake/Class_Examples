@@ -1,0 +1,12 @@
+BookMain.html → InsertServlet.java(is.do) → BookDAO.java → InsertServlet.java(is.do)
+
+목록 보기 → GetAllListServlet.java(galas.do) → BookDAO.java → GetAllListServlet.java(galas.do)
+
+삭제 → DeleteServlet.java(ds.do) → BookDAO.java → DeleteServlet(ds.do)
+=================================================================================================
+도서 정보 등록(jsp05) : BookMain.html → bookInsert.jsp → BookDAO.java → bookSearchAll.jsp
+전체 목록 조회(jsp06) : BookMain.html → bookSearchAll.jsp → BookDAO.java → bookSearchAll.jsp
+도서 정보 삭제(jsp07) : bookSearchAll.jsp → bookDelete.jsp → BookDAO.java → bookSearchAll.jsp
+도서 정보 수정(jsp08, jsp09) : bookSearchAll.jsp → bookGetByIsbn.jsp → BookDAO.java → bookGetByIsbn.jsp // → // bookUpdate.jsp → BookDAO.java → bookUpdate.jsp → bookSearchAll.jsp
+=================================================================================================
+5/27 완료 후 업로드

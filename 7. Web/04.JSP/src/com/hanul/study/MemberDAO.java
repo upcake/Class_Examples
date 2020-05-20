@@ -121,6 +121,32 @@ public class MemberDAO {
 		return dto;
 	} //getById()
 	
+	//회원 정보 수정
+	public int memberUpdate(MemberDTO dto) {
+		conn = getConn();
+		String sql = "UPDATE member SET irum = ?, pw = ?, age = ?, addr = ?, tel = ? WHERE id = ?";
+		//중간에 끊어서 적을 경우
+//		String sql = "UPDATE member SET irum = ?, pw = ?, age = ?, ";
+//		sql += "addr = ?, tel = ? WHERE id = ?";
+		int succ = 0;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, dto.getIrum());
+			ps.setString(2, dto.getPw());
+			ps.setInt(3, dto.getAge());
+			ps.setString(4, dto.getAddr());
+			ps.setString(5, dto.getTel());
+			ps.setString(6, dto.getId());
+			succ = ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("memberUpdate() Exception!!!");
+		} finally {
+			dbClose();
+		}
+		return succ;
+	} // memberUpdate()
+	
 	//DB 접속 해제
 	public void dbClose() {
 		try {
