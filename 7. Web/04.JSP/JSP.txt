@@ -35,4 +35,52 @@
 	- <jsp : useBean ~~ /> : 객체를 생성하는 태그
 	- <jsp : setProperty ~~ /> : DTO 객체에 있는 setter Method 호출
 	- <jsp : getProperty ~~ /> : DTO 객체에 있는 getter Method 호출
-	- <jsp : forward ~~ /> : request.forward() 방식으로 동적 페이지 전환
+	- <jsp : forward ~~ /> : request.forward() 방식으로 페이지 전환 (동적)
+	- <jsp : param ~~ /> : request.sendRedirect() 방식으로 페이지 전환 시 매개 변수 전달 (동적)
+	- <jsp : include ~~ /> : 특정 페이지를 포함한다.
+		○ include 방법
+			# <%@ include file = "~~~" %> : 지시자 ▶ 정적 페이지(예 : 회사 주소, 안 변함)
+			# <jsp : include page = "~~~" /> : Action Tag ▶ 동적 페이지(예 : 현재 시간, 자주 변함)
+
+★ Scope : 공유 범위
+	1. page scope
+		- pageContext 내장 객체를 이용하여 바인딩(연결) 객체를 공유
+		- 객체를 공유한 jsp 페이지(현재 페이지)에서만 사용 가능
+	
+	2. request scope
+		- request 내장 객체를 이용하여 바인딩(연결) 객체를 공유
+		- 객체를 공유한 jsp 페이지(현재 페이지)와 요청한 jsp 페이지에서 사용 가능
+	
+	3. session scope
+		- session 내장 객체를 이용하여 바인딩(연결) 객체를 공유
+		- 모든 jsp 페이지에서 사용 가능
+		- 세션 속성 값을 설정하여 지정한 시간 또는 웹 브라우저가 열려 있는 동안 사용 가능
+		
+	4. application scope
+		- application 내장 객체를 이용하여 바인딩(연결) 객체를 공유
+		- 모든 jsp 페이지에서 사용 가능
+		- 웹 브라우저가 종료되어도 서버가 중지되기 전까지 사용 가능
+		
+★EL(Expression Language) 문법(표현식)
+	○ 기본 형식 ▶ ${ 출력값 } 출력값은 아래와 같이 다양한 형태로 표현 가능
+		- ${ param.변수이름 }				ex) ${param.addr }				: jsp20.jsp, jsp24.jsp
+		- ${ 객체이름.속성이름 }			ex) ${dto.addr }				: jsp20.jsp, jsp28.jsp
+		- ${ 객체이름 }						ex) ${irum }					: jsp21.jsp, jsp22.jsp
+		- ${ paramValues.배열이름[인덱스] } ex)	${paramValues.animal[0] }	: jsp23.jsp, jsp24.jsp
+		- ${ 수식(계산식, 비교 연산) }		ex)	${param.num1 + param.num2 }	: jsp25.jsp, jsp26.jsp 
+		- ${ 배열이름[인덱스] }				ex) ${study[0] }				: jsp28.jsp
+		- ${ 배열이름[인덱스].속성이름 }	ex) ${mlist[0].irum }			: jsp28.jsp
+		
+★ JSTL[JSP Standard Tag Library]
+	○ JSTL 라이브러리 설치
+		- tomcat.apache.org → Download → Taglibs → Standard 1.1.2 다운로드
+		- jstl.jar, standard.jar 복사
+		- WebContent\WEB-INF\lib 붙여넣기
+		
+	○ JSTL Tag 종류 : JSP 문서 상단에 지시자를 작성할 것
+		- 기본 프로그래밍 Tag(변수, 배열, if, for, switch~case 등) ▶ core
+			<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+		- 포맷팅 Tag(날짜, 시간, 통화 기호 등 표시 형식) ▶ format
+			<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+		- JSTL 제공되는 함수(메서드) ▶ function
+			<%@ taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %>
