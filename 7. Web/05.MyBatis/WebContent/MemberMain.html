@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 입력 화면</title>
+</head>
+<body>
+<div align="center">
+	<form action="memberInsert.jsp" method="post">
+	<table border="1">
+		<tr>
+			<th>이름</th>
+			<td><input type="text" name="irum" required="required" /></td>
+		</tr>
+		<tr>
+			<th>아이디</th>
+			<td><input type="text" name="id" required="required" /></td>
+		</tr>
+		<tr>
+			<th>비밀번호</th>
+			<td><input type="password" name="pw" required="required" /></td>
+		</tr>
+		<tr>
+			<th>나이</th>
+			<td><input type="number" name="age" required="required" /></td>
+		</tr>
+		<tr>
+			<th>주소</th>
+			<td><input type="text" name="addr" required="required" /></td>
+		</tr>
+		<tr>
+			<th>전화번호</th>
+			<td><input type="text" name="tel" required="required" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"> 
+				<input type="submit" value="회원가입" />
+				<input type="reset" value="초기화" />
+				<input type="button" value="회원 목록 보기" onclick="location.href='memberList.jsp'" />
+			</td>
+		</tr>
+	</table>
+	</form>
+</div>
+</body>
+</html>
