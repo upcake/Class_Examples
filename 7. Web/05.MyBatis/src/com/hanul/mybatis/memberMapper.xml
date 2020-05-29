@@ -3,7 +3,38 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hanul.mybatis.memberMapper.xml">
-	<select id="selectBlog" resultType="Blog">
-		select * from Blog where id = #{id}
-	</select>
+	<!-- SQL 문장 작성 -->
+	<!-- 
+		<insert | delete | update | select 속성="값" 속성="값 ~~>
+			- id 속성 : DAO에서 설정한 값 ▶ session.insert("memberInsert", dto);
+			- parameterType 속성 : 매개 변수 타입(클래스타입, 기본데이터타입) : 생략 가능
+			- 입력 값 표기 : dto.getIrum() → #{dto 內 속성명} ▶ #{irum}
+			- SQL 문장의 마지막에 세미콜론(;)은 입력하지 않는다. 
+			- resultType 속성 : select 쿼리를 수행했을 때 결과 타입
+		</insert | delete | update | select>
+	 -->
+	 <!-- id에는 DAO에서 정한 메서드 이름을 적는다. -->
+	 <!-- 여기서 MemberDTO는 SqlMapConfig에서 지정한 alias이다. -->
+	 <insert id="memberInsert" parameterType="MemberDTO">
+	 	INSERT INTO member VALUES(#{irum}, #{id}, #{pw}, #{age}, #{addr}, #{tel})
+	 </insert>
+	 
+	 <!-- 가져오는 칼럼이 MemberDTO 타입 -->
+	 <select id="memberSearchAll" resultType="MemberDTO">
+	 	SELECT * FROM member
+	 </select>
+	 
+	 <delete id="memberDelete" parameterType="String">
+	 	DELETE FROM member WHERE id = #{id}
+	 </delete>
+	 
+	 <select id="getById" parameterType="String" resultType="MemberDTO">
+	 	SELECT * FROM member WHERE id = #{id}
+	 </select>
+	 
+	  <update id="memberUpdate" parameterType="MemberDTO">
+	 	UPDATE member SET irum = #{irum}, pw = #{pw}, age = #{age},
+	 						 addr = #{addr}, tel = #{tel} WHERE id = #{id} 
+	 </update>
+	
 </mapper>

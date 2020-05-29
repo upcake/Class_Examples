@@ -1,8 +1,10 @@
 package com.hanul.study;
 
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
@@ -21,4 +23,56 @@ public class MemberDAO {
 			System.out.println("SqlSessionFactory Exception!!!");
 		}
 	} //static
+	
+	//회원 가입
+	public int memberInsert(MemberDTO dto) {
+		//SqlSessionFactory(sqlMapper)에서 session 활성화
+		SqlSession session = sqlMapper.openSession();
+		int succ = 0;
+		succ = session.insert("memberInsert", dto); //insert SQL insert 쿼리 : memberMapper.xml
+		session.commit();	//커밋
+		session.close();	//session 비활성화
+		return succ;
+	} //memberInsert()
+	
+	//전체 회원 검색
+	public List<MemberDTO> memberSearchAll() {
+		SqlSession session = sqlMapper.openSession();
+		//mybatis에서는 arraylist가 아닌 list를 사용한다
+		List<MemberDTO> list = null;
+		//파라미터에 식별자 이름을 적는다. 
+		list = session.selectList("memberSearchAll");
+		session.close();
+		return list;
+	} //memberSearchAll()
+	
+	//회원 삭제
+	public int memberDelete(String id) {
+		SqlSession session = sqlMapper.openSession();
+		int succ = 0;
+		succ = session.delete("memberDelete", id);
+		session.commit();
+		session.close();
+		return succ;
+	} //memberDelete()
+	
+	//ID 검색
+	public MemberDTO getById(String id) {
+		SqlSession session = sqlMapper.openSession();
+		MemberDTO dto = null;
+		//정보를 하나만 받을 때는 selectOne 사용
+		dto = session.selectOne("getById", id);
+		session.close();
+		return dto;
+	} //getById()
+	
+	//회원 정보 수정
+	public int memberUpdate(MemberDTO dto) {
+		SqlSession session = sqlMapper.openSession();
+		int succ = 0;
+		succ = session.update("memberUpdate", dto);
+		session.commit();
+		session.close();
+		return succ;
+	} //memberUpdate()
 } //class

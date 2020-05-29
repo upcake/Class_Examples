@@ -69,7 +69,4 @@ public class MemberDTO implements Serializable {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	
-	
-	
 }
