@@ -38,7 +38,7 @@ public class MemberDAO {
 	//전체 회원 검색
 	public List<MemberDTO> memberSearchAll() {
 		SqlSession session = sqlMapper.openSession();
-		//mybatis에서는 arraylist가 아닌 list를 사용한다
+		//myBatis에서는 ArrayList가 아닌 List를 사용한다
 		List<MemberDTO> list = null;
 		//파라미터에 식별자 이름을 적는다. 
 		list = session.selectList("memberSearchAll");
@@ -75,4 +75,16 @@ public class MemberDAO {
 		session.close();
 		return succ;
 	} //memberUpdate()
+	
+	//조건 검색
+	public List<MemberDTO> memberSearch(String part, String searchData) {
+		SqlSession session = sqlMapper.openSession();
+		SearchDTO dto = new SearchDTO();
+		dto.setPart(part);
+		dto.setSearchData("%" + searchData + "%");	// LIKE절에 사용하기 때문에 앞뒤에 %%를 붙여준다.
+		List<MemberDTO> list = null;
+		list = session.selectList("memberSearch", dto);
+		session.close();
+		return list;
+	}//memberSearch()
 } //class

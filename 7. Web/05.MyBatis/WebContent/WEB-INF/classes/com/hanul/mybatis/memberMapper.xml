@@ -36,5 +36,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 	UPDATE member SET irum = #{irum}, pw = #{pw}, age = #{age},
 	 						 addr = #{addr}, tel = #{tel} WHERE id = #{id} 
 	 </update>
+	 
+	 <select id="memberSearch" parameterType="SearchDTO" resultType="MemberDTO">
+	 	SELECT * FROM member WHERE UPPER(${part}) LIKE UPPER(#{searchData})
+	 	<!-- SELECT * FROM member WHERE #{part} LIKE #{searchData} -->
+	 	<!-- #{part}는 네임값이라 검색 결과가 나오지 않는다 ${part} (EL)는 밸류값이라 정상적으로 나옴 -->
+	 </select>
 	
 </mapper>

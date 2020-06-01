@@ -10,6 +10,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<!-- 특정 클래스의 별칭(alias)을 지정 -->
 	<typeAliases>
 		<typeAlias type="com.hanul.study.MemberDTO" alias="MemberDTO"/>
+		<typeAlias type="com.hanul.study.SearchDTO" alias="SearchDTO"/>
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">

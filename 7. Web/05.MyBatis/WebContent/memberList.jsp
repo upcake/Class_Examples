@@ -66,7 +66,7 @@ function fnDelete(id){
 			}
 		--%>
 		<!-- ---------------------------------------------------------------------------------------- -->
-		<!-- EL 표기를 이용한 출력 -->
+		<!-- JSTL을 이용한 출력 -->
 		<c:forEach var="i" items="${list }">
 			<tr align="center">
 				<td>${i.irum }</td>
@@ -82,7 +82,17 @@ function fnDelete(id){
 		</c:forEach>
 		<tr align="center">
 			<td colspan="8">
-				<input type="button" value="회원가입" onclick="location.href='MemberMain.html'"/>
+				<form action="memberSearch.jsp" method="post"> 
+					<select name="part">
+						<option value="irum">이름</option>
+						<option value="id">아이디</option>
+						<option value="addr">주소</option>
+						<option value="tel">전화번호</option>
+					</select>
+					<input type="text" name="searchData" required="required" />
+					<input type="submit" value="검색하기" />
+					<input type="button" value="회원가입" onclick="location.href='MemberMain.html'"/>
+				</form>
 			</td>
 		</tr>
 	</table>
