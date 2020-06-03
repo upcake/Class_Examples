@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanul.mybatis.boardMapper.xml">
+	<select id="boardSearchAll" resultType="BoardDTO">
+		SELECT * FROM tblBoard ORDER BY b_num DESC
+	</select>
+	
+	<insert id="boardInsert" parameterType="BoardDTO">
+		INSERT INTO tblBoard
+		VALUES(b_num_seq.NEXTVAL,
+				#{b_subject },
+				#{b_pwd },
+				#{b_content },
+				#{b_writer},
+				SYSDATE,
+				0)
+	</insert>
+	
+	<select id="boardDetail" parameterType="String" resultType="BoardDTO">
+		SELECT * FROM tblBoard WHERE b_num = #{b_num}
+	</select>
+</mapper>
