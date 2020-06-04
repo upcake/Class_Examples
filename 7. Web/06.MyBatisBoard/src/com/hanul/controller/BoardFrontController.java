@@ -11,9 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.hanul.action.Action;
 import com.hanul.action.ActionForward;
+import com.hanul.action.BoardDeleteAction;
 import com.hanul.action.BoardDetailAction;
 import com.hanul.action.BoardInsertAction;
 import com.hanul.action.BoardListAction;
+import com.hanul.action.BoardUpdateAction;
+import com.hanul.action.BoardUpdateFormAction;
 
 @WebServlet("/BoardFrontController.do")
 public class BoardFrontController extends HttpServlet {
@@ -49,6 +52,15 @@ public class BoardFrontController extends HttpServlet {
 			forward = action.execute(request, response); //forward에 null값이 리턴된다.
 		} else if(command.equals("/boardDetail.do")) {
 			action = new BoardDetailAction();
+			forward = action.execute(request, response);
+		} else if(command.equals("/boardDelete.do")) {
+			action = new BoardDeleteAction();
+			forward = action.execute(request, response);
+		} else if(command.equals("/boardUpdateForm.do")) {
+			action = new BoardUpdateFormAction();
+			forward = action.execute(request, response);
+		} else if(command.equals("/boardUpdate.do")) {
+			action = new BoardUpdateAction();
 			forward = action.execute(request, response);
 		}
 		

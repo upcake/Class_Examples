@@ -16,7 +16,7 @@ List<BoardDTO> list = (List<BoardDTO>)request.getAttribute("list");
 <body>
 <div align="center">
 	<h3>[게시판 전체 목록 보기]</h3>
-	<table border="1">
+	<table border="1" style="width: 80%;">
 		<tr>
 			<th>번호</th>
 			<th>제목</th>

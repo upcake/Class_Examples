@@ -38,7 +38,7 @@ public class BoardDAO {
 	public int boardInsert(BoardDTO dto) {
 		SqlSession session = sqlMapper.openSession();
 		//alert 창을 사용할 경우에는 succ를 return 해야한다.
-		//PrintWriter 이용한 script 코드로 구현한 후 처리
+		//PrintWriter 이용한 script 코드로 구현한 후 페이지 전환 처리
 		int succ = 0;
 		succ = session.insert("boardInsert", dto);
 		session.commit();
@@ -53,5 +53,31 @@ public class BoardDAO {
 		dto = session.selectOne("boardDetail", b_num); //출력될 결과가 하나기 때문에 selectOne을 사용, 여러 개일 경우엔 selectList
 		session.close();
 		return dto;
-	}
+	} //boardDetail()
+	
+	//조회수 증가
+	public void boardCount(String b_num) {
+		SqlSession session = sqlMapper.openSession();
+		session.update("boardCount", b_num);
+		session.commit();
+		session.close();
+	} //boardCount()
+	
+	//글 삭제
+	public void boardDelete(String b_num) {
+		SqlSession session = sqlMapper.openSession();
+		//alert 창을 사용하지 않을 경우에는 succ가 필요없다.
+		//ActionForward를 이용한 페이지 전환
+		session.delete("boardDelete", b_num);
+		session.commit();
+		session.close();
+	} //boardDelte()
+	
+	//글 수정
+	public void boardUpdate(BoardDTO dto) {
+		SqlSession session = sqlMapper.openSession();
+		session.update("boardUpdate", dto);
+		session.commit();
+		session.close();
+	}//boardUpdate()
 } //class

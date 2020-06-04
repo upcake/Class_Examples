@@ -21,4 +21,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="boardDetail" parameterType="String" resultType="BoardDTO">
 		SELECT * FROM tblBoard WHERE b_num = #{b_num}
 	</select>
+	
+	<update id="boardCount" parameterType="String">
+		UPDATE tblBoard SET b_readcount = b_readcount + 1 WHERE b_num = #{b_num}
+	</update>
+
+	<delete id="boardDelete" parameterType="String">
+		DELETE FROM tblBoard WHERE b_num = #{b_num}
+	</delete>	
+		
+	<update id="boardUpdate" parameterType="BoardDTO">
+		UPDATE tblBoard 
+		SET b_writer = #{b_writer},
+			b_subject = #{b_subject},
+			b_content = #{b_content},
+			b_pwd = #{b_pwd}
+		WHERE b_num = #{b_num}
+	</update> 
 </mapper>

@@ -30,7 +30,7 @@ function fnLoad() {
 <div align="center">
 	<h3>[게시판 글쓰기]</h3>
 	<form action="boardInsert.do" method="post" name="regForm" onsubmit="return fnSubmit()" onreset="return fnReset()">
-		<table border="1">
+		<table border="1" style="width: 80%;">
 			<tr>
 				<th>작성자</th>
 				<td><input type="text" name="b_writer" maxlength="20" required="required" /></td>
