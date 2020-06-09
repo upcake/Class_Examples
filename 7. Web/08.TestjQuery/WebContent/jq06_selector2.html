@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 06</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//tag 선택자
+	console.log("table tag의 개수 : " + $("table").length); //1
+
+	//table tag의 자식 요소인 tr의 개수
+	console.log("table tr tag의 개수 : " + $("table tr").length); //3
+
+	//table tag의 자식 요소인 tr tag의 자식 요소인 td의 개수
+	console.log("table tr td tag의 개수 : " + $("table tr td").length); //3
+
+	//tag 선택자
+	console.log("td tag의 개수 : " + $("td").length); //3
+	console.log($("td").text()); //AAABBBCCC
+	
+	$("td").each(function() {
+		console.log($(this).text()); //AAA
+									 //BBB
+									 //CCC
+	});
+});
+</script>
+</head>
+<body>
+<table border="1">
+	<tr><td>AAA</td></tr>
+	<tr><td>BBB</td></tr>
+	<tr><td>CCC</td></tr>
+</table>
+</body>
+</html>

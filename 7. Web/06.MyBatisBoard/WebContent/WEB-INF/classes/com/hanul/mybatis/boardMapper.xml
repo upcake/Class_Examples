@@ -38,4 +38,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			b_pwd = #{b_pwd}
 		WHERE b_num = #{b_num}
 	</update> 
+	
+	<select id="boardSearch" parameterType="SearchDTO" resultType="BoardDTO">
+		SELECT * FROM tblBoard WHERE UPPER(${part}) LIKE UPPER(#{searchData})
+	</select>
 </mapper>

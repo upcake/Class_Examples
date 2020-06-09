@@ -1,6 +1,5 @@
 package com.hanul.dao;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
@@ -10,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.hanul.dto.BoardDTO;
+import com.hanul.dto.SearchDTO;
 
 public class BoardDAO {
 	//①SqlSessionFactory 설정
@@ -80,4 +80,14 @@ public class BoardDAO {
 		session.commit();
 		session.close();
 	}//boardUpdate()
+	
+	//조건 검색
+	public List<BoardDTO> boardSearch(SearchDTO dto) {
+		SqlSession session = sqlMapper.openSession();
+		//검색 결과가 아예 없을수도 있고 정확히 몇개인지 모르니 List로 받는다.
+		List<BoardDTO> list = null;
+		list = session.selectList("boardSearch", dto);
+		session.close();
+		return list;
+	} //boardSearch()
 } //class

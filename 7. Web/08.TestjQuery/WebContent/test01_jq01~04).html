@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test jQuery 01 (jq01 ~ 04)</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#btn').click(function(){
+		var num = $('#dan').val();
+		//alert(num);
+		
+		if(num < 2 || num > 9) {
+			alert("2 이상 9 이하의 수를 입력해주세요.");
+			$('#dan').val('');
+			$('#dan').focus();
+			return false;
+		}
+		
+		var html = "<table border='1'>";
+		for (var i = 1; i < 10; i++) {
+			html += "<tr>";
+				html += "<td>";
+					if(num * i < 10) {
+						html += num + " X " + i + " = 0" + num * i; 
+					} else {
+						html += num + " X " + i + " = " + num * i;  
+					}
+ 				html += "</td>";
+			html += "</tr>";			
+		}
+		html += "</table>";
+		
+		$("#display").empty();
+		$("#display").append(html);
+	});
+});
+</script>
+</head>
+<body>
+<input type="number" id="dan" min="2" max="9"/> <button id="btn">구구단 출력</button>
+
+<br/><br/>
+
+<div id="display">
+	여기에 구구단이 출력됩니다.
+</div>
+</body>
+</html>

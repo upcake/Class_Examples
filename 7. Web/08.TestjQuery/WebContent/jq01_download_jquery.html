@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- jQuery 준비 
+① src 속성으로 jquery 라이브러리 불러오기
+② $(document).ready(function(){});
+-->
+<!-- 다운로드 방식으로 jQuery 라이브러리 불러오기 -->
+<script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('tr:odd').css('background', '#ff0000');
+	$('tr:even').css('background', '#00ff00');
+	$('tr:first').css('background', '#0000ff').css('color', '#ffffff');
+});
+</script>
+<title>jQuery 01</title>
+</head>
+<body>
+<div align="center">
+	<table>
+		<tr><th>이름</th><th>혈액형</th><th>주소</th></tr>
+		<tr><td>홍길동</td><td>A형</td><td>서울특별시 강남구 삼성동</td></tr>
+		<tr><td>김길동</td><td>B형</td><td>서울특별시 강남구 역삼동</td></tr>
+		<tr><td>이길동</td><td>AB형</td><td>서울특별시 강남구 개포동</td></tr>
+		<tr><td>박길동</td><td>O형</td><td>서울특별시 강남구 청담동</td></tr>
+	</table>
+</div>
+</body>
+</html>

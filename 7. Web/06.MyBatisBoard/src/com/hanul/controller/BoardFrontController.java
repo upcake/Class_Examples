@@ -15,6 +15,7 @@ import com.hanul.action.BoardDeleteAction;
 import com.hanul.action.BoardDetailAction;
 import com.hanul.action.BoardInsertAction;
 import com.hanul.action.BoardListAction;
+import com.hanul.action.BoardSearchAction;
 import com.hanul.action.BoardUpdateAction;
 import com.hanul.action.BoardUpdateFormAction;
 
@@ -61,6 +62,9 @@ public class BoardFrontController extends HttpServlet {
 			forward = action.execute(request, response);
 		} else if(command.equals("/boardUpdate.do")) {
 			action = new BoardUpdateAction();
+			forward = action.execute(request, response);
+		} else if(command.equals("/boardSearch.do")) {
+			action = new BoardSearchAction();
 			forward = action.execute(request, response);
 		}
 		

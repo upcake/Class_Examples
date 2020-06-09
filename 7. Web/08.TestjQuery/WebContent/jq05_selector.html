@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 05</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//tag 선택자
+	console.log($("p").text());			//JAVAJSPAndroid
+	
+	//tag 선택자.each()
+	$("p").each(function(){
+		console.log($("p").text());		//JAVAJSPAndroid 3줄 반복
+		console.log($(this).text());	//JAVA
+										//JSP
+										//Android
+	});
+	
+	//tag 선택자
+	console.log($("div").text());		//AAABBBCCC
+	
+	//tag 선택자:필터 선택자
+	console.log($("div:eq(0)").text());	//AAA
+	console.log($("div:first").text());	//AAA
+	console.log($("div:last").text());	//CCC
+	
+	//id 선택자
+	console.log($("#a").text());		//AAA
+	
+	//tag 선택자#id선택자
+	console.log($("div#a").text());		//AAA
+	
+	//class 선택자 (※ 중복되는 속성을 부여할 때 class를 사용한다)
+	console.log($(".b").text());		//BBB
+	
+	//tag 선택자.class 선택자
+	console.log($("div.b").text());		//BBB
+});
+</script>
+</head>
+<body>
+<p>JAVA</p>
+<p>JSP</p>
+<p>Android</p>
+<div id="a">AAA</div>
+<div class="b">BBB</div>
+<div>CCC</div>
+</body>
+</html>

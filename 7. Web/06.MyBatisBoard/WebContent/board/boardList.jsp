@@ -79,7 +79,16 @@ List<BoardDTO> list = (List<BoardDTO>)request.getAttribute("list");
 		 
 		 <tr align="center">
 		 	<td colspan="5">
-		 		<input type="button" value="글쓰기" onclick="location.href='boardInsertForm.do'"/>
+		 		<form action="boardSearch.do" method="post">
+		 			<select name="part">
+		 				<option value="b_subject">제목</option>
+		 				<option value="b_content">내용</option>
+		 				<option value="b_writer">작성자</option>
+		 			</select>
+		 			<input type="text" name="searchData" required="required"/>
+		 			<input type="submit" value="검색" /> 
+		 			<input type="button" value="글쓰기" onclick="location.href='boardInsertForm.do'"/>
+		 		</form>
 		 		<!-- boardInsertForm.do를 작성하지 않고 버튼을 누르면 404, 500에러가 나지 않고 빈 화면이 나온다.
 		 		 BoardFrontController.java까지는 간 다음 서블렛에서 멈추기 때문 -->
 		 	</td>

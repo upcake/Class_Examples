@@ -78,11 +78,12 @@ function fnUpdate(b_pwd) {
 		<tr>
 			<th>비밀번호</th>
 			<td colspan="3">
-				<form name="detailForm" ><!-- script에서 user_pwd에 접근하기 위한 폼 -->
+				<!-- script에서 user_pwd에 접근하기 위한 폼, 폼에서 Enter키 입력으로 인한 화면 전환 방지 -->
+				<form name="detailForm" onsubmit="return false" >
 					<input type="password" name="user_pwd"/>
 					<input type="button" value="삭제" onclick="fnDelete('${dto.b_pwd}')"/>
 					<input type="button" value="수정" onclick="fnUpdate('${dto.b_pwd}')"/>
-					<input type="button" value="글 목록" onclick="location.href='boardList.do'"/>
+					<input type="button" value="글 목록" onclick="location.href='boardList.do'"/>				 
 				</form>
 			</td>
 		</tr>

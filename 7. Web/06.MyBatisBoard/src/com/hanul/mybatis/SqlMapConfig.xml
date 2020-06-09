@@ -6,6 +6,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<properties resource="com/hanul/mybatis/db.properties" />
 	<typeAliases>
 		<typeAlias type="com.hanul.dto.BoardDTO" alias="BoardDTO"/>
+		<typeAlias type="com.hanul.dto.SearchDTO" alias="SearchDTO"/>
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
