@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 07</title>
+<style type="text/css">
+.hidden {
+	display: none;
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#btn").click(function(){
+		//$("#display").addClass("hidden");
+		$("#display").toggleClass("hidden");
+	});
+});
+</script>
+</head>
+<body>
+<button id="btn">클릭하세요!</button>
+<br/><br/>
+<div id="display" style="background-color: yellow; width: 200px; height: 100px;">
+	안녕하세요
+</div>
+</body>
+</html>
