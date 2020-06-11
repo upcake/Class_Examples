@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 12</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#btn").click(function() {
+		$.ajax({
+			dataType : "xml",
+			url : "imageList.xml",
+			success : function(data){ resultHtml(data); },
+			error : function(){ alert("에러 발생"); }
+		}); //ajax()
+	}); //click()
+}); //ready()
+
+function resultHtml(data) {
+	var images = $(data).find("img"); //find() 메서드로 XML의 키 값을 찾는다.
+	//console.log(images.length);	//9
+	var html = "";
+	for(var i = 0; i < images.length; i++) {
+		var imgPath = images.eq(i);
+		//console.log(imgPath.text()); //images/apple1.jpg ~ images/pear3.jpg 까지 출력
+		html += "<img src = '" + imgPath.text() + "' width='150' height='150' /><br />";
+		//console.log(html);
+	}
+	$("#display").empty();
+	$("#display").append(html);
+	//$("#display").html(html);
+}
+</script>
+</head>
+<body>
+<button id="btn">이미지 보기</button>
+<br/><br/>
+<div id="display">
+	이미지가 출력되는 영역
+</div>
+</body>
+</html>

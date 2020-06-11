@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Test jQuery02</title>
+<title>Test jQuery03</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript">
@@ -10,7 +10,7 @@ $(document).ready(function(){
 	$("#btn").click(function(){
 		$.ajax({
 			dataType : "json",
-			url : "gjbus.jsp",
+			url : "http://api.gwangju.go.kr/json/lineInfo",
 			success : function(data){ resultHtml(data); },
 			error : function(){ alert("로딩실패!"); }
 		});
@@ -30,23 +30,27 @@ function resultHtml(data){
 	html += "</tr>";
 	
 	$.each(data, function(key, value){
-		html += "<tr align = 'center'>";
-		html += "<td>" + value.LINE_NAME + "</td>";
-		html += "<td>" + value.DIR_UP_NAME + "</td>";
-		html += "<td>" + value.DIR_DOWN_NAME + "</td>";
-		html += "<td>" + value.FIRST_RUN_TIME + "</td>";
-		html += "<td>" + value.LAST_RUN_TIME + "</td>";
-		html += "<td>" + value.RUN_INTERVAL + "</td>";
-		if(value.LINE_KIND == 1){
-			html += "<td>급행간선</td>";
-		}else if(value.LINE_KIND == 2){
-			html += "<td>간선</td>";
-		}else if(value.LINE_KIND == 3){
-			html += "<td>지선</td>";
-		}else if(value.LINE_KIND == 4){
-			html += "<td>마을버스</td>";
-		}		
-		html += "</tr>";
+		if(key == "LINE_LIST"){
+			$.each(value, function(key, value){
+				html += "<tr align = 'center'>";
+				html += "<td>" + value.LINE_NAME + "</td>";
+				html += "<td>" + value.DIR_UP_NAME + "</td>";
+				html += "<td>" + value.DIR_DOWN_NAME + "</td>";
+				html += "<td>" + value.FIRST_RUN_TIME + "</td>";
+				html += "<td>" + value.LAST_RUN_TIME + "</td>";
+				html += "<td>" + value.RUN_INTERVAL + "</td>";
+				if(value.LINE_KIND == 1){
+					html += "<td>급행간선</td>";
+				}else if(value.LINE_KIND == 2){
+					html += "<td>간선</td>";
+				}else if(value.LINE_KIND == 3){
+					html += "<td>지선</td>";
+				}else if(value.LINE_KIND == 4){
+					html += "<td>마을버스</td>";
+				}				
+				html += "</tr>";
+			});
+		}
 	});
 	
 	

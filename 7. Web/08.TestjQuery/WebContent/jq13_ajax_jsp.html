@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 13</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#btn").click(function(){
+		var num1 = $("#num1").val();
+		var num2 = $("#num2").val();
+		//console.log("num1 : " + num1 + "\nnum2 : " + num2);
+		
+		var param = "num1=" + num1 + "&num2=" + num2;
+		//console.log(param);
+		
+		$.ajax({
+			dataType : "text",
+			data : param,
+			url : "jq13.jsp",
+			type : "get",
+			success : function(data){ resultHtml(num1, num2, data); },
+			error : function(){ alert("에러 발생"); }
+		});	//ajax()
+	});	//click()
+});	//ready()
+
+function resultHtml(num1, num2, data){
+	console.log("num1 : " + num1 + "\nnum2 : " + num2 + "\nresult : " + data);
+	//리턴 받은 data에는 스트립틀릿 자리가 비어있어서 여백이 두 줄있고 세번째 줄에 data값이 나오게 된다.
+	var html = num1 + "부터 " + num2 + "까지의 누적합 : " + data;
+	$("#display").html(html);
+}
+</script>
+</head>
+<body>
+<input type="number" id="num1" required="required"/> ~ <input type="number" id="num2" required="required"/>
+<button id="btn">누적합 계산</button>
+<div id="display">
+	결괏값이 출력되는 영역
+</div>
+</body>
+</html>

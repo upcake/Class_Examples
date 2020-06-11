@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item>
+		<img>images/apple1.jpg</img>
+	</item>
+	<!-- 태그를 하나만 만들어두면 자동완성으로 지원이 된다 -->
+	
+	<item>
+		<img>images/apple2.jpg</img>
+	</item>
+	
+	<item>
+		<img>images/apple3.jpg</img>
+	</item>
+	
+	<item>
+		<img>images/banana1.jpg</img>
+	</item>
+	
+	<item>
+		<img>images/banana2.jpg</img>
+	</item>
+	
+	<item>
+		<img>images/banana3.jpg</img>
+	</item>
+	
+	<item>
+		<img>images/pear1.jpg</img>
+	</item>
+	
+	<item>
+		<img>images/pear2.jpg</img>
+	</item>
+	
+	<item>
+		<img>images/pear3.jpg</img>
+	</item>
+</items>
