@@ -1,0 +1,10 @@
+* 로그인
+	index.html → memberLogin.me → web.xml → MemberFrontController
+	 → loginForm.jsp → memberLoginAction.me → web.xml → MemberFrontController 
+		회원가입 X → 회원가입 페이지 전환(joinForm.jsp)
+		회원가입 O → isMember() → BoardList
+======================================================================================================================================
+* 회원가입
+	memberJoin.me → web.xml → MemberFrontController → joinForm.jsp 
+	 → memberJoinAction.me → web.xml → MemberFrontController → MemberJoinAction.java
+	 → MemberDAO.java → MemberJoinAction.java → MemberFrontController → memberLogin.me
