@@ -12,11 +12,11 @@ import com.commons.action.ActionForward;
 import com.member.study.MemberDAO;
 import com.member.study.MemberDTO;
 
-public class MemberJoinAction implements Action{
+public class MemberUpdateAction implements Action {
+
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		//String member_id = request.getParameter("member-id");
 		MemberDTO dto = new MemberDTO();
 		dto.setMember_id(request.getParameter("member_id"));
 		dto.setMember_pw(request.getParameter("member_pw"));
@@ -26,18 +26,17 @@ public class MemberJoinAction implements Action{
 		dto.setMember_email(request.getParameter("member_email"));
 		
 		MemberDAO dao = new MemberDAO();
-		boolean result = dao.joinMember(dto);
-		
+		int succ = dao.updateMember(dto);
+
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
-		if(result == false) {
-			out.println("<script>alert('회원가입 실패!');");
-			out.println("location.href='memberJoin.me';</script>");
-			return null;
+		if (succ > 0) {
+			out.println("<script>alert('수정 성공');");
+			out.println("location.href='boardList.bo'</script>");
 		} else {
-			out.println("<script>alert('회원가입 성공!');");
-			out.println("location.href='memberLogin.me';</script>");
-			return null;
+			out.println("<script>alert('수정 실패');");
+			out.println("location.href='boardList.bo'</script>");
 		}
+		return null;
 	}
 }

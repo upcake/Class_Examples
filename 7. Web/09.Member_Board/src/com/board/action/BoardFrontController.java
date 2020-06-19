@@ -25,6 +25,15 @@ public class BoardFrontController extends HttpServlet {
 		if(command.equals("/boardList.bo")) {
 			action = new BoardListAction();
 			forward = action.execute(request, response);
+		} else if(command.equals("/boardWrite.bo")) {
+			forward = new ActionForward();
+			forward.setPath("board/board_write.jsp");
+			forward.setRedirect(false);
+			//가져갈게 있으면 true(forward) 없으면 false(sendRedirect)
+			//URL 바뀌면 true(boardWrite.bo로 바뀌어서 안됨) 안바뀌면 false
+		} else if(command.equals("/boardAddAction.bo")) {
+			action = new BoardAddAction();
+			forward = action.execute(request, response);
 		}
 		
 		if(forward != null) {
