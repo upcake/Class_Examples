@@ -34,6 +34,18 @@ public class BoardFrontController extends HttpServlet {
 		} else if(command.equals("/boardAddAction.bo")) {
 			action = new BoardAddAction();
 			forward = action.execute(request, response);
+		} else if(command.equals("/boardDetailAction.bo")) {
+			action = new BoardDetailAction();
+			forward = action.execute(request, response);
+		} else if(command.equals("/boardDeleteAction.bo")) {
+			action = new BoardDeleteAction();
+			forward = action.execute(request, response);
+		} else if(command.equals("/boardModifyView.bo")) {
+			action = new BoardModifyView();
+			forward = action.execute(request, response);
+		} else if(command.equals("/boardModifyAction.bo")) {
+			action = new BoardModifyAction();
+			forward = action.execute(request, response);
 		}
 		
 		if(forward != null) {

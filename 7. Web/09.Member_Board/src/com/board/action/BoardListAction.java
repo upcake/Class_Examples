@@ -32,6 +32,7 @@ public class BoardListAction implements Action {
 		list = dao.getBoardList(page, limit);	//전체 글 목록
 		
 		int maxPage = (int) ((float)listCount / 10 + 0.95);	//최대 페이지수
+	
 		//현재 페이지에 보여줄 시작 페이지 수 (1, 11, 11, 21 ~~)
 		int startPage = (((int)((float) page / 10 + 0.9)) - 1) * 10 + 1;
 		

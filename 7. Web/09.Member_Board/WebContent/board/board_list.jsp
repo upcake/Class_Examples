@@ -52,7 +52,7 @@ function fnModify(id, member_pw) {
 			BoardDTO dto = list.get(i);%>
 			<tr align="center">
 				<td><%=dto.getBoard_num() %></td>
-				<td><a href="boardDeatilAction.bo?board_num=<%=dto.getBoard_num() %>"><%=dto.getBoard_subject() %></a></td>
+				<td><a href="boardDetailAction.bo?board_num=<%=dto.getBoard_num() %>"><%=dto.getBoard_subject() %></a></td>
 				<td><%=dto.getBoard_id() %></td>
 				<td><%=dto.getBoard_date().substring(0, 10) %></td>
 				<td><%=dto.getBoard_readcount() %></td>

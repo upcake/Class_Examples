@@ -114,7 +114,8 @@ public class BoardDAO {
 				dto.setBoard_content(rs.getString("board_content"));
 				dto.setBoard_file(rs.getString("board_file"));
 				dto.setBoard_re_ref(rs.getInt("board_re_ref"));
-				dto.setBoard_re_lev(rs.getInt("board_re_lev"));;
+				dto.setBoard_re_lev(rs.getInt("board_re_lev"));
+				dto.setBoard_re_seq(rs.getInt("board_re_seq"));
 				dto.setBoard_readcount(rs.getInt("board_readcount"));
 				dto.setBoard_date(rs.getString("board_date"));
 				list.add(dto);
@@ -130,6 +131,118 @@ public class BoardDAO {
 		
 	}
 
+	//글 내용 보기
+	public BoardDTO getDetail(int board_num) {
+		conn = getConn();
+		String sql = "SELECT * FROM memberBoard WHERE board_num = ?";
+		BoardDTO dto = null;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, board_num);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				dto = new BoardDTO();
+				dto.setBoard_num(rs.getInt("board_num"));
+				dto.setBoard_id(rs.getString("board_id"));
+				dto.setBoard_subject(rs.getString("board_subject"));
+				dto.setBoard_content(rs.getString("board_content"));
+				dto.setBoard_file(rs.getString("board_file"));
+				dto.setBoard_re_ref(rs.getInt("board_re_ref"));
+				dto.setBoard_re_lev(rs.getInt("board_re_lev"));
+				dto.setBoard_re_seq(rs.getInt("board_re_seq"));
+				dto.setBoard_readcount(rs.getInt("board_readcount"));
+				dto.setBoard_date(rs.getString("board_date"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("getDetail() Exception!!!");
+		} finally {
+			dbClose();
+		}
+		return dto;
+	} //getDetail()
+	
+	//조회수 증가
+	public void readCount(int board_num) {
+		conn =getConn();
+		String sql = "UPDATE memberBoard SET board_readcount = ";
+		sql += "board_readcount + 1 WHERE board_num = ?";
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, board_num);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("readCount() Excetption!!!");
+		} finally {
+			dbClose();
+		}
+	} //readCount()
+	
+	//작성자 확인
+	public boolean isBoardWriter(int board_num, String id) {
+		conn = getConn();
+		String sql = "SELECT * FROM memberBoard WHERE board_num = ?";
+		boolean result = false;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, board_num);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				if(id.equals(rs.getString("board_id"))) {
+					result = true;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("isBoardWriter() Exception!!!");
+		} finally {
+			dbClose();
+		}
+		return result;
+	} //isBoardWriter()
+
+	//글 삭제
+	public int boardDelete(int board_num) {
+		conn = getConn();
+		String sql = "DELETE FROM memberBoard WHERE board_num = ?";
+		int succ = 0;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, board_num);
+			succ = ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("boardDelete() Exception!!!");
+		} finally {
+			dbClose();
+		}
+		return succ;
+	} //boardDelete()
+	
+	//글 수정
+	public int boardUpdate(BoardDTO dto) {
+		conn = getConn();
+		String sql = "UPDATE memberBoard SET board_subject = ?, ";
+		sql += "board_content = ? WHERE board_num = ?";
+		int succ = 0;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, dto.getBoard_subject());
+			ps.setString(2, dto.getBoard_content());
+			ps.setInt(3, dto.getBoard_num());
+			succ = ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("boardUpdate() Exception!!!");
+		} finally {
+			dbClose();
+		}
+		return succ;
+	} //boardUpdate()
+
 	//DB 종료
 		public void dbClose() {
 			try {
@@ -141,5 +254,7 @@ public class BoardDAO {
 				System.out.println("dbClose() Exception!!!");
 			}
 		} //dbClose()
+
+
 
 } //class
