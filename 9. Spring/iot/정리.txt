@@ -1,0 +1,25 @@
+○ 고객 관리 DB 설정 : table.sql
+
+○ pom.xml에 JDBC 라이브러리 추가 설정
+	- mvnrepository.com
+		1. jdbc 검색
+		2. Spring JDBC 클릭
+		3. 5.2.2 RELEASE (20/06/30 기준 조회수가 가장 많음)
+		4. MAVEN 탭의 내용 복사
+		5. pom.xml의 <dependencies> 블록안에 붙여넣기
+		6. 다운로드를 기다린 뒤 컨텍스트가 다시 로드 됐을때에 에러가 없으면 성공
+		7. C:\Users\계정명\.m2\repository\org\springframework\spring-jdbc\5.2.2.RELEASE 에서 확인 가능
+
+○ DBCP(Database Connection Pool) 라이브러리 추가
+	- DB가 연결 객체를 미리 만들어 놓고 필요할 때에 꺼내서 쓰고 다시 반납
+	- 유효한 자원을 꺼내서 쓰기 때문에 매번 연결을 만들 필요가 없음
+	
+		1. dbcp 검색
+		2. 1.4 클릭
+		3. MAVAN 탭의 내용 복사
+		4. pom.xml의 <dependencies> 블록안에 붙여넣기
+		5. 다운로드를 기다린 뒤 컨텍스트가 다시 로드 됐을때에 에러가 없으면 성공
+
+○ OJDBC 라이브러리 추가 - maven 이용
+
+○ MyBatis, MyBatis 스프링 라이브러리 추가

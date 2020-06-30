@@ -1,0 +1,35 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: #000;
+}
+
+#content {
+	padding: 20px 0;
+	min-width: 1024px;	/* 창의 최소 크기 지정 */
+}
+
+img {
+	vertical-align: middle;	/* 세로축 가운데 정렬 */
+}
+
+table {
+	width: 80%;
+	margin: 0 auto;
+	border: 1px solid;
+	border-collapse: collapse;	/* 테두리 겹침 설정 collapse: 겹치지 않게 처리 */
+}
+
+table th, table td {
+	border: 1px solid;
+	padding: 5px 10px;
+}

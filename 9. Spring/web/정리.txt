@@ -1,0 +1,37 @@
+○ 컨트롤러 작성
+ 	1. @Controller 지정
+ 	2. @RequestMapping을 이용해 요청 경로 지정
+ 		 - 지정된 메서드에서 필요한 로직을 처리한 후
+ 			화면명 지정 : return "화면명";
+ 			화면에 전달할 데이터는 Model에 담는다.
+ 		
+○ 화면에 데이터를 전달하는 형태 : Model, ModelAndView
+ 	1. Model
+ 		 - 실행되어질 Method의 파라미터로 Model 타입의 변수를 선언한 후
+ 			선언한 변수에 attribute로 데이터를 담는다.
+ 				: Model타입변수.addAttribute("속성명", 저장할데이터);
+ 	2. ModelAndView
+ 		 - ModelAndView 객체를 생성한 후 addObject로 데이터를 담는다.
+ 				ModelAndView model = new ModelAndView();
+ 				model.addObject("속성명", 저장할데이터);
+ 		 - 선언한 ModelAndView 객체를 반환한다.
+ 				return model;
+ 			
+○ 화면을 통해 전달된 파라미터를 접근하는 방법
+	1. HttpServletRequest를 사용
+		 - getParameter()를 사용
+	2. @RequestParam을 사용
+		 - 매핑된 메서드의 파라미터로 @RequestParam 지정하여 선언
+	3. 데이터 객체(DTO/VO)를 사용 (스프링에선 주로 VO 용어를 사용, 데이터가 영속성을 가질때에 VO)
+		 - 매핑된 메서드의 파라미터로 데이터 객체 타입으로 지정하여 선언
+	4. @PathVariable 사용 
+		 - 요청 경로에 변수 형태로 데이터를 지정하여 선언
+		 
+○ 응답할 화면을 연결하는 형태 : forward, redirect
+	1. forward
+		- 요청하는 url과 응답하는 페이지가 서로 다르게 지정할 수 있는 형태
+		- 실제 응답하는 페이지의 url이 아닌, 요청하는 url이 유지되는 형태
+	
+	2. redirect
+		- 요청하는 url에 해당하는 페이지가 응답하는 형태
+
