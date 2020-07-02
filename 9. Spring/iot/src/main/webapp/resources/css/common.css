@@ -33,3 +33,61 @@ table th, table td {
 	border: 1px solid;
 	padding: 5px 10px;
 }
+
+table td a:hover { font-weight: bold; }
+
+.btnSet { margin-top: 20px;	}
+
+a.btn-fill, a.btn-empty {
+	text-align: center;
+	padding: 3px 10px;
+	border:1px solid #3367d6;
+	border-radius: 3px;
+	box-shadow: 2px 2px 3px #022d72;
+	/* 오른쪽, 아래쪽, 번진 정도 */
+}
+
+a.btn-fill { 
+	background-color: #3367d6;
+	color: #fff;
+}
+
+a.btn-empty { 
+	background-color: #fff;
+	color: #3367d6
+}
+
+.btnSet a:not(:first-child) {
+	margin-left: 3px;
+}
+
+a:hover { cursor:pointer; }
+
+input {
+	height: 22px;
+	padding: 3px 5px;
+	font-size: 15px;
+}
+
+input[type=radio] {
+	width: 18px;
+	margin: 0 5px 3px;
+	vertical-align: middle;
+}
+
+table tr td label:not(:last-child) {
+	margin-right: 20px;	
+}
+
+.w-pct60 { width: 60% }
+.w-pct70 { width: 70% }
+.w-pct80 { width: 80% }
+.w-px40 { width: 40px }
+.w-px60 { width: 60px }
+.w-px80 { width: 80px }
+.w-px100 { width: 100px }
+.w-px120 { width: 120px }
+.w-px140 { width: 140px }
+.w-px160 { width: 160px }
+.w-px180 { width: 180px }
+.w-px200 { width: 200px }

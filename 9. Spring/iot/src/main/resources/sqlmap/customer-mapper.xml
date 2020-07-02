@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="customer.mapper">
+	<!-- resultType : 반환될 데이터타입 -->
+	<select id="detail" resultType="customer.CustomerVO">
+		SELECT * FROM customer WHERE id=#{id }
+	</select>
+
+	<!-- 애스터리스크(*)를 쓰면 ROWNUM 등의 다른 필드를 쓸 수가 없다. -->
+	<select id="list" resultType="customer.CustomerVO">
+		SELECT ROWNUM no, c.* FROM (SELECT * FROM customer ORDER BY name) c
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO customer(name, gender, email, phone)
+		VALUES (#{name }, #{gender }, #{email }, #{phone }) 
+	</insert>
+	
+	<update id="update">
+		UPDATE customer SET gender=#{gender }, email=#{email }, phone=#{phone }
+		WHERE id=#{id }
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM customer WHERE id=#{id }
+	</delete>
+</mapper>

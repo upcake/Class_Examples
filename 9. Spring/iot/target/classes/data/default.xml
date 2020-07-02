@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+<!-- context : 외부 파일을 사용 할 수 있도록 경로를 설정 -->
+<context:property-placeholder location="classpath:data/db.properties" />
+
+<!-- 빈을 등록해놓을 설정 파일 -->
+<!-- id를 지정하면 다른 빈에서 참조할 수 있음 -->
+<bean id="dbcp" class="org.apache.commons.dbcp.BasicDataSource">
+	<!-- property : 데이터를 담을 필드를 의미 -->
+	<property name="driverClassName" value="${db.driver}" />
+	<property name="url" value="${db.url}" />
+	<property name="username" value="${db.username}" />
+	<property name="password" value="${db.password}" />
+</bean>
+
+<!-- myBatis 등록하는 빈 -->
+<!-- DB연결, 쿼리문 역할 -->
+<bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="dbcp"></property>
+	<property name="mapperLocations" value="classpath:sqlmap/*-mapper.xml"></property>
+</bean>
+
+<!-- Setter가 있다면 property로 필드에 데이터를 넣을 수 있지만 (자동 완성 기능으로 확인가능) -->
+<!-- Setter가 없다면 생성자를 만들어서 데이터를 넣는다. -->
+<bean class="org.mybatis.spring.SqlSessionTemplate">
+	<constructor-arg name="sqlSessionFactory"  ref="factory"/>
+</bean>
+
+</beans>
