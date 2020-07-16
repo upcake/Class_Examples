@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- tiles.apache.org > Apache Tiles > Tiles 3.0.x > Tutorial > 3 - 2 Creating Tiles Page > Create a definition > DOCTYPE 선언문 복사 -->
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="layout" template="/WEB-INF/views/tiles/layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/include/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/include/footer.jsp" />
+	</definition>
+	
+	<!-- 헤더 풋터를 계속 붙이기 때문에 바로 위의 layout을 상속 -->
+	<definition name="*/*" extends="layout">
+		<!-- views/{1}/{2} : 첫번째 애스터리스크(모든 폴더) / 두번째 애스터리스크(모든 jsp파일) 지정 -->
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+	
+	<definition name="*" extends="layout">
+		<put-attribute name="content" value="/WEB-INF/views/{1}.jsp"/>	
+	</definition>
+</tiles-definitions>

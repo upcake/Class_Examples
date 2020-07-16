@@ -57,6 +57,23 @@ a.btn-empty {
 	color: #3367d6
 }
 
+a.btn-fill-s, a.btn-empty-s {
+	text-align: center;
+	padding: 1px 10px;
+	border:1px solid #c4dafc
+	border-radius: 3px;
+	box-shadow: 2px 2px 3px #022d72;
+	font-size: 13px;
+}
+
+a.btn-fill-s { 
+	background-color: #bacdfa;
+}
+
+a.btn-empty-s { 
+	background-color: #fff;
+}
+
 .btnSet a:not(:first-child) {
 	margin-left: 3px;
 }
@@ -91,3 +108,22 @@ table tr td label:not(:last-child) {
 .w-px160 { width: 160px }
 .w-px180 { width: 180px }
 .w-px200 { width: 200px }
+
+.left { text-align: left }
+.right { text-align: right }
+
+.font-img { cursor: pointer; }
+
+ul { list-style: none; padding: 0; }
+#list-top{ width: 80%; padding: 20px 10%;}
+#list-top ul { margin:0; display:flex; }
+#list-top ul:last-child { float: right; }
+#list-top div { width: 100%;  }
+#list-top ul li * { vertical-align:middle; }
+
+input[name=title] { width:calc(100% - 14px) }
+textarea[name=content] { width:calc(100% - 6px); height: 150px; resize: none;}
+
+/* 파일 첨부 */
+.file-img { width: 18px; height:18px; cursor:poinrter; }
+#attach-file, #delete-file { display:none; }

@@ -8,8 +8,8 @@
 <title>list JSP</title>
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
-<div id="content">
+<%-- <jsp:include page="/WEB-INF/views/include/header.jsp" /> --%>
+<!-- <div id="content"> -->
 	<h3>고객 목록</h3>
 	<!-- CSS 파일을 변경 후에 바로 Refresh가 안된다면 common.css 파일로 들어가서 바로 Refresh 해주면 적용 된다. -->
 	<table class='w-pct60'>
@@ -33,7 +33,7 @@
 	<div class="btnSet">
 		<a class="btn-fill" href="new.cu">신규 고객</a>
 	</div>
-</div>
-<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
+<!-- </div> -->
+<%-- <jsp:include page="/WEB-INF/views/include/footer.jsp" /> --%>
 </body>
 </html>

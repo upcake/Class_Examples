@@ -7,8 +7,8 @@
 <title>detail JSP</title>
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/include/header.jsp" />
-<div id="content">
+<%-- <jsp:include page="/WEB-INF/views/include/header.jsp" /> --%>
+<!-- <div id="content"> -->
 	<h3>[ ${vo.name } ]고객 정보</h3>
 	<table class='w-pct60'>
 		<tr>
@@ -30,7 +30,7 @@
 		<a class='btn-fill' href="modify.cu?id=${vo.id }">수정</a>
 		<a class='btn-fill' onclick="if( confirm('정말 삭제하시겠습니까?') ){ href='delete.cu?id=${vo.id }' }" >삭제</a>
 	</div>
-</div>
-<jsp:include page="/WEB-INF/views/include/footer.jsp" />
+<!-- </div> -->
+<%-- <jsp:include page="/WEB-INF/views/include/footer.jsp" /> --%>
 </body>
 </html>

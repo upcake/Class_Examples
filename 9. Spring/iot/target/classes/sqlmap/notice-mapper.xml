@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice.mapper" >
+	<select id="list" resultType="notice.NoticeVO">
+		SELECT * 
+		FROM (SELECT ROWNUM no, n.* 
+				FROM (SELECT * FROM notice ORDER BY root, step DESC) n
+				ORDER BY no DESC) n 
+		WHERE no BETWEEN #{beginList} and #{endList}				
+		
+	</select>
+
+	<select id="totalList" resultType="integer">
+		SELECT COUNT(*) FROM notice
+	</select>
+	
+	<insert id="insert">	
+		INSERT INTO notice (id, root, title, content, writer, filename, filepath)
+		VALUES (seq_notice.nextval, seq_notice.currval, #{title }, #{content }, #{writer }, #{filename, jdbcType=VARCHAR }, #{filepath, jdbcType=VARCHAR }) 
+	</insert>
+	
+	<select id="detail" resultType="notice.NoticeVO">
+		SELECT n.*, (SELECT name FROM member m WHERE m.id = n.writer) name FROM notice n WHERE id=#{id }
+	</select>
+	<!-- jdbcType=VARCHAR 속성을 넣으면 null값이 허용된다. -->
+	
+	<update id="read">
+		UPDATE notice SET readcnt = readcnt + 1 WHERE id=#{id}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM notice WHERE id=#{id }
+	</delete>
+	
+	<update id="update">
+		UPDATE notice set title = #{title }, content = #{content }, filename = #{filename, jdbcType=VARCHAR }, filepath = #{filepath, jdbcType=VARCHAR }
+		WHERE id=#{id }
+	</update>
+	
+	<insert id="reply_insert">
+		<!-- 원글의 step보다 더 큰 step을 가진 글이 있다면 그 글들의 step을 먼저 +1 한다. -->
+		<![CDATA[
+			{CALL DECLARE BEGIN
+				UPDATE notice SET step = step + 1
+				WHERE root = #{root } AND step > #{step };
+				
+				INSERT INTO notice (id, root, title, content , writer, step, indent, filename, filepath)
+				VALUES (seq_notice.NEXTVAL, #{root }, #{title }, #{content }, #{writer }, #{step } + 1, #{indent } + 1, #{filename, jdbcType=VARCHAR }, #{filepath, jdbcType=VARCHAR });
+			END}
+		]]>
+	</insert>
+
+</mapper>

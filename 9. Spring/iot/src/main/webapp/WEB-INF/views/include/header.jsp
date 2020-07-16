@@ -32,7 +32,7 @@ header .category ul li a:hover, header .category ul li a.active {
 	color: #0000cd;
 }
 
-#userid, #userpw {
+header #userid, header #userpw {
 	width: 100px;
 	height: 18px;
 	font-size: 14px;
@@ -46,9 +46,9 @@ header ul li input { display:block; }
 		<ul>
 			<li><a href="<core:url value='/' />"><img src="img/logo.png" /></a></li>
 			<li><a href='list.cu' ${category eq 'cu' ? "class='active'" : '' } >고객 관리</a></li>
-			<li><a href='list.no'>공지사항</a></li>
-			<li><a href='list.bo'>방명록</a></li>
-			<li><a href='list.da'>공공 데이터</a></li>
+			<li><a href='list.no' ${category eq 'no' ? "class='active'" : '' } >공지사항</a></li>
+			<li><a href='list.bo' ${category eq 'bo' ? "class='active'" : '' } >방명록</a></li>
+			<li><a href='list.da' ${category eq 'da' ? "class='active'" : '' } >공공 데이터</a></li>
 		</ul>
 	</div>
 	
@@ -56,8 +56,8 @@ header ul li input { display:block; }
 		<!-- 로그인한 경우 -->
 		<core:if test="${!empty login_info }">
 			<ul>
-				<li>홍길동 [hong]</li>
-				<li><a class="btn-fill">로그아웃</a></li>
+				<li>${login_info.name } [ ${login_info.id } ]</li>
+				<li><a class="btn-fill" onclick="go_logout()">로그아웃</a></li>
 			</ul>
 		</core:if>
 
@@ -67,11 +67,11 @@ header ul li input { display:block; }
 			 	<li>
 			 		<span style="position: absolute; top: -14px; left: -120px">
 						<input type="text" id="userid" placeholder="아이디" />
-						<input type="password" id="userpw" placeholder="비밀번호" />
+						<input type="password" onkeypress="if(event.keyCode == 13) {go_login()}" id="userpw" placeholder="비밀번호" />
 			 		</span>
 			 	</li>
 			 	<li><a class="btn-fill" onclick="go_login()">로그인</a></li>
-			 	<li><a class="btn-fill">회원가입</a></li>
+			 	<li><a class="btn-fill" href="member">회원가입</a></li>
 			 </ul>
 		 </core:if>
 	</div>
@@ -93,8 +93,30 @@ function go_login() {
 		type: 'post',
 		url: 'login',
 		data: { id:$('#userid').val(), pw:$('#userpw').val() },
-		success: function() {},
-		error: function(req, text) { alert(text + ': ' + req.status} }
+		success: function(data) {
+			if(data == 'true') {
+				location.reload();
+			} else {
+				alert('아이디나 비밀번호가 일치하지 않습니다!');
+				$("#userid").focus();
+			}
+		},
+		error: function(req, text) {
+			 alert(text + ': ' + req.status);
+	 	}
+	});
+}
+
+function go_logout() {
+	$.ajax({
+		type: "post",
+		url: "logout",
+		success: function() {
+			location.reload();
+		},
+		error: function(req, text) {
+			 alert(text + ': ' + req.status);
+	 	}
 	});
 }
 </script>

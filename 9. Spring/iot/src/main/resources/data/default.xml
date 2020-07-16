@@ -31,4 +31,8 @@
 	<constructor-arg name="sqlSessionFactory"  ref="factory"/>
 </bean>
 
+<!-- 파일 업로드 객체 생성 -->
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<property name="defaultEncoding" value="utf-8" />
+</bean>
 </beans>

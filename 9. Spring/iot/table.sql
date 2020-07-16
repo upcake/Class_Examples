@@ -84,3 +84,71 @@ INSERT INTO member(name, id, pw, age, gender, email, admin)
 VALUES ('관리자', 'admin', '1234', 25, '남', 'admin@admin.com', 'Y');
 
 SELECT * FROM member;
+
+--20/07/10======================================================================
+CREATE TABLE notice(
+    id          NUMBER CONSTRAINT notice_id_pk PRIMARY KEY,
+    title       VARCHAR2(300) NOT NULL,
+    content     VARCHAR2(4000) NOT NULL,
+    writer      VARCHAR2(20) NOT NULL,
+    writedate   DATE DEFAULT SYSDATE,
+    readcnt     NUMBER DEFAULT 0,
+    filename    VARCHAR2(300),
+    filepath    VARCHAR2(300)
+);
+
+CREATE SEQUENCE seq_notice
+START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER trg_notice
+    BEFORE INSERT ON notice
+    FOR EACH ROW
+BEGIN
+    SELECT seq_notice.NEXTVAL INTO:NEW.id FROM dual;
+END;
+/
+
+SELECT * FROM notice;
+
+INSERT INTO notice(title, content, writer)
+VALUES ('공지 글 테스트', '테스트 공지 글 입니다.', 'admin');
+
+COMMIT;
+
+--20/07/15================================================
+--테이블에 공지글 항목 추가
+INSERT INTO notice(title, content ,writer, writedate, filepath, filename)
+SELECT title, content, writer, writedate, filepath, filename FROM notice;
+
+COMMIT;
+
+--20/07/16================================================
+--notice 테이블에 칼럼 추가
+CREATE TABLE notice(
+    id          NUMBER CONSTRAINT notice_id_pk PRIMARY KEY,
+    title       VARCHAR2(300) NOT NULL,
+    content     VARCHAR2(4000) NOT NULL,
+    writer      VARCHAR2(20) NOT NULL,
+    writedate   DATE DEFAULT SYSDATE,
+    readcnt     NUMBER DEFAULT 0,
+    filename    VARCHAR2(300),
+    filepath    VARCHAR2(300)
+    root        NUMBER,
+    step        NUMBER default 0,
+    indent      NUMBER default 0 
+);
+
+ALTER TABLE notice
+ADD(root NUMBER, step NUMBER DEFAULT 0, indent NUMBER DEFAULT 0);
+
+UPDATE notice SET root = id;
+
+--root : 원글의 root
+--step : 원글 step + 1 / 원글의 step보다 더 큰 step을 가진 글이 있다면 그 글들의 step을 먼저 +1 한다.
+--indent : 원글 indent + 1
+
+ALTER TRIGGER trg_notice DISABLE;
+
+SELECT * FROM notice;
+
+COMMIT;

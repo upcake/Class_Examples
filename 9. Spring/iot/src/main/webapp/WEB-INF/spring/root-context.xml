@@ -8,5 +8,8 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<import resource="classpath:data/*.xml" />
 		
-	<context:component-scan base-package="customer"/>
+	<!-- context에 member를 적음으로써 Autowired의 스캔 범위에 member가 추가된다. -->
+	<!-- 20/07/09 common 추가 -->
+	<!-- 20/07/10 notice 추가 -->
+	<context:component-scan base-package="notice, common, member, customer"/>
 </beans>
