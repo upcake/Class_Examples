@@ -30,7 +30,7 @@ public class NoticeController {
 	
 	//공지사항 목록화면 요청//////////////////////////////////////////////////////
 	@RequestMapping("/list.no")
-	public String list(Model model, HttpSession session, @RequestParam(defaultValue = "1") int curPage) {
+	public String list(Model model, HttpSession session, @RequestParam(defaultValue = "1") int curPage, String search, String keyword) {
 		//공지사항 클릭 하면 admin으로 자동 로그인
 		HashMap<String, String> map = new HashMap<String, String>();
 		//HashMap : 데이터를 담을 자료 구조
@@ -40,6 +40,8 @@ public class NoticeController {
 		session.setAttribute("category", "no");
 		//DB에서 공지 글 목록을 조회해와 목록 화면에 출력
 		page.setCurPage(curPage);
+		page.setSearch(search);
+		page.setKeyword(keyword);
 		model.addAttribute("page", service.notice_list(page));
 		
 		return "notice/list";
@@ -76,6 +78,7 @@ public class NoticeController {
 		//선택한 공지글 정보를 DB에서 조회해와 상세 화면에 출력
 		model.addAttribute("vo", service.notice_detail(id));
 		model.addAttribute("crlf", "\r\n");
+		model.addAttribute("page", page);
 		
 		return "notice/detail";
 	} //detail()

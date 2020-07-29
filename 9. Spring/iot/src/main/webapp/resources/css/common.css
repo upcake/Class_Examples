@@ -63,6 +63,7 @@ a.btn-fill-s, a.btn-empty-s {
 	border:1px solid #c4dafc
 	border-radius: 3px;
 	box-shadow: 2px 2px 3px #022d72;
+	color: #0000cd;
 	font-size: 13px;
 }
 
@@ -108,6 +109,7 @@ table tr td label:not(:last-child) {
 .w-px160 { width: 160px }
 .w-px180 { width: 180px }
 .w-px200 { width: 200px }
+.w-px300 { width: 300px }
 
 .left { text-align: left }
 .right { text-align: right }
@@ -115,10 +117,12 @@ table tr td label:not(:last-child) {
 .font-img { cursor: pointer; }
 
 ul { list-style: none; padding: 0; }
-#list-top{ width: 80%; padding: 20px 10%;}
+#list-top { width: 80%; padding: 20px 10%;}
 #list-top ul { margin:0; display:flex; }
 #list-top ul:last-child { float: right; }
-#list-top div { width: 100%;  }
+#list-top ul:first-child { float: left; }
+#list-top ul li:not(:first-child) { margin-left:2px }
+#list-top div { width: 100%; height: 32px;}
 #list-top ul li * { vertical-align:middle; }
 
 input[name=title] { width:calc(100% - 14px) }
@@ -127,3 +131,20 @@ textarea[name=content] { width:calc(100% - 6px); height: 150px; resize: none;}
 /* 파일 첨부 */
 .file-img { width: 18px; height:18px; cursor:poinrter; }
 #attach-file, #delete-file { display:none; }
+
+select { height: 32px }
+
+ul.grid { width: 80%; margin: 0 10%; }
+.grid li { float: left; width: 19%; height: 150px; border: 1px solid gray; box-sizing: border-box; }
+.grid li:not(:nth-child(5n)) { margin: 0 1.25% 20px 0  }
+.grid li div{ text-align: left; padding: 10px; }
+.grid li div:nth-child(1) { 
+	height:60px; 
+	line-height: 23px;
+	overflow:hidden; 
+	display:-webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical; /* 말 줄임 표시 */
+	word-Wrap: break-word; /* 영문 여러 줄 */
+}
+.grid li div:nth-child(2) { padding: 0 10px; }

@@ -11,5 +11,7 @@
 	<!-- context에 member를 적음으로써 Autowired의 스캔 범위에 member가 추가된다. -->
 	<!-- 20/07/09 common 추가 -->
 	<!-- 20/07/10 notice 추가 -->
-	<context:component-scan base-package="notice, common, member, customer"/>
+	<!-- 20/07/20 qna 추가 -->
+	<!-- 20/07/21 board 추가 -->
+	<context:component-scan base-package="board, qna ,notice, common, member, customer"/>
 </beans>

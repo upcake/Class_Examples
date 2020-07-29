@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>list JSP</title>
+<title>qna list JSP</title>
 </head>
 <body>
-<h3>공지사항</h3>
-<form method="post" action="list.no" id="list">
-	<input type="hidden" name="curPage" value="1"/>
+<h3>Q&A</h3>
+<form method="post" action="list.qna" id="list">
+	<input type="hidden" name="curPage" value="1" />
 	
 	<div id="list-top">
 		<div>
@@ -27,8 +27,8 @@
 			</ul>
 			<ul>
 				<core:if test="${login_info.admin eq 'Y' }">
-					<li><a class="btn-fill" href="new.no">글쓰기</a></li>
-				</core:if>
+					<li><a class="btn-fill" href="new.qna">글쓰기</a></li>
+				</core:if>			
 			</ul>
 		</div>
 	</div>
@@ -47,15 +47,15 @@
 			<td>${vo.no }</td>
 			<td class="left">
 				<core:forEach var="i" begin="1" end="${vo.indent }">
-					${i eq vo.indent ? "<img src = 'img/re.gif' />" : "&nbsp;&nbsp;" }	
+					${i eq vo.indent ? "<img src='img/re.gif' />" : "&nbsp;&nbsp;" }
 				</core:forEach>
-				<a href="detail.no?id=${vo.id }&curPage=${page.curPage }" >${vo.title }</a>
+				<a href="detail.qna?id=${vo.id }" >${vo.title }</a>
 			</td>
-			<td>${vo.name }</td>
+			<td>${vo.writer }</td>
 			<td>${vo.writedate }</td>
 			<td>
 				<core:if test="${!empty vo.filename }">
-					<a href="download.no?id=${vo.id }">
+					<a href="download.qna?id=${vo.id }">
 						<img title="${vo.filename }" class="file-img" src="img/attach.png" />
 					</a>
 				</core:if>

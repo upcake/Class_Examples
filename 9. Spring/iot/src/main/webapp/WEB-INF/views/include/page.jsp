@@ -58,6 +58,7 @@
 <script>
 function go_page(no) {
 	$('[name=curPage]').val(no);
+	$('[name=keyword]').val('${page.keyword}');
 	$('#list').submit();
 }
 </script>

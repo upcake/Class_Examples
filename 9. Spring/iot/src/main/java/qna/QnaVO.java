@@ -1,14 +1,36 @@
-package notice;
+package qna;
 
 import java.sql.Date;
 
-public class NoticeVO {
+public class QnaVO {
 	private int id, readcnt, no, root, step, indent;
-
 	private String title, content, writer, filename, filepath, name;
-	
 	private Date writedate;
 	
+	public int getId() {
+		return id;
+	}
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
+	public Date getWritedate() {
+		return writedate;
+	}
+	public void setWritedate(Date writedate) {
+		this.writedate = writedate;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getReadcnt() {
+		return readcnt;
+	}
+	public void setReadcnt(int readcnt) {
+		this.readcnt = readcnt;
+	}
 	public int getRoot() {
 		return root;
 	}
@@ -26,31 +48,6 @@ public class NoticeVO {
 	}
 	public void setIndent(int indent) {
 		this.indent = indent;
-	}
-	public int getNo() {
-		return no;
-	}
-	public void setNo(int no) {
-		this.no = no;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public int getReadcnt() {
-		return readcnt;
-	}
-	public void setReadcnt(int readcnt) {
-		this.readcnt = readcnt;
 	}
 	public String getTitle() {
 		return title;
@@ -82,12 +79,10 @@ public class NoticeVO {
 	public void setFilepath(String filepath) {
 		this.filepath = filepath;
 	}
-	public Date getWritedate() {
-		return writedate;
+	public String getName() {
+		return name;
 	}
-	public void setWritedate(Date writedate) {
-		this.writedate = writedate;
+	public void setName(String name) {
+		this.name = name;
 	}
-	
-	
 }

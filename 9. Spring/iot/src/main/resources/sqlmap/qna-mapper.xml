@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="qna.mapper" >
+	<insert id="insert">
+		INSERT INTO qna (id, root, title, content, writer, filename, filepath)
+		VALUES (seq_qna.NEXTVAL, seq_qna.CURRVAL, #{title }, #{content }, #{writer }, #{filename, jdbcType=VARCHAR }, #{filepath, jdbcType=VARCHAR })
+	</insert>
+	
+	<select id="detail" resultType="qna.QnaVO">
+		SELECT q.*, (SELECT name FROM member m WHERE m.id = q.writer) name
+		FROM qna q
+		WHERE id=#{id }
+	</select>
+	
+	<update id="read">
+		UPDATE qna SET readcnt = readcnt + 1 WHERE id=#{id }	
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM qna WHERE id=#{id }
+	</delete>
+	
+	<update id="update">
+		UPDATE qna SET title = #{title }, content = #{content }, filename = #{filename, jdbcType=VARCHAR }, filepath = #{filepath, jdbcType=VARCHAR }
+		WHERE id = #{id }
+	</update>
+	
+	<select id="list" resultType="qna.QnaVO">
+		SELECT *
+		FROM (SELECT ROWNUM no, q.*, (SELECT name FROM member m WHERE m.id = writer) name
+			FROM (SELECT * FROM qna <include refid="search_where" /> ORDER BY root, step DESC) q
+			ORDER BY no DESC) q
+		WHERE no BETWEEN #{beginList } and #{endList }
+	</select>
+	
+	<select id="totalList" resultType="integer">
+		SELECT COUNT(*) FROM qna <include refid="search_where"/>
+	</select>
+	
+	<insert id="reply_insert">
+		<!-- 원글의 step보다 더 큰 step을 가진 글이 있다면 그 글들의 step을 먼저 +1 한다. -->
+		<![CDATA[
+			{CALL DECLARE BEGIN
+				UPDATE qna SET step = step + 1
+				WHERE root = #{root } AND step > #{step };
+				
+				INSERT INTO qna (id, root, title, content, writer, step, indent, filename, filepath)
+				VALUES (seq_qna.NEXTVAL, #{root }, #{title }, #{content }, #{writer }, #{step } + 1, #{indent } + 1, #{filename, jdbcType=VARCHAR }, #{filepath, jdbcType=VARCHAR });
+			END}
+		]]>
+	</insert>
+	
+	<sql id="search_where">
+		<if test="search == 'title' or search == 'content'">
+			WHERE ${search } LIKE '%' || #{keyword } || '%'
+		</if>
+		<if test="search == 'writer'">
+			WHERE <include refid="search_writer" />
+		</if>
+		<if test="search == 'all'">
+			WHERE title LIKE '%' || #{keyword } || '%'
+			OR content LIKE '%' || #{keyword } || '%'
+			OR <include refid="search_writer" />
+		</if>
+	</sql>
+	
+	<sql id="search_writer">
+		writer IN (SELECT id FROM member WHERE name LIKE '%' || #{keyword } || '%')
+	</sql>
+</mapper>

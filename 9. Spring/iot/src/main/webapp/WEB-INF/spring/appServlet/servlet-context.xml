@@ -26,6 +26,8 @@
 	<!-- images 폴더 맵핑 -->
 	<resources location="/resources/images/" mapping="/img/**" />
 	
+	<resources location="/resources/upload/" mapping="/upload/**" />
+	
 	<!-- 화면을 어떻게 연결할 것인지 선언하는 부분 1순위 -->
 	<beans:bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
 		<beans:property name="order" value="0" />

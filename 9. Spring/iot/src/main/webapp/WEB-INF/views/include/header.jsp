@@ -49,6 +49,7 @@ header ul li input { display:block; }
 			<li><a href='list.no' ${category eq 'no' ? "class='active'" : '' } >공지사항</a></li>
 			<li><a href='list.bo' ${category eq 'bo' ? "class='active'" : '' } >방명록</a></li>
 			<li><a href='list.da' ${category eq 'da' ? "class='active'" : '' } >공공 데이터</a></li>
+			<li><a href='list.qna' ${category eq 'qna' ? "class='active'" : '' } >Q&A</a></li>
 		</ul>
 	</div>
 	

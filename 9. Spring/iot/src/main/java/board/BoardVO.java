@@ -1,45 +1,12 @@
-package notice;
+package board;
 
 import java.sql.Date;
 
-public class NoticeVO {
-	private int id, readcnt, no, root, step, indent;
-
-	private String title, content, writer, filename, filepath, name;
-	
+public class BoardVO {
+	private int id, readcnt, no;
+	private String title, content, writer, name, filename, filepath;
 	private Date writedate;
 	
-	public int getRoot() {
-		return root;
-	}
-	public void setRoot(int root) {
-		this.root = root;
-	}
-	public int getStep() {
-		return step;
-	}
-	public void setStep(int step) {
-		this.step = step;
-	}
-	public int getIndent() {
-		return indent;
-	}
-	public void setIndent(int indent) {
-		this.indent = indent;
-	}
-	public int getNo() {
-		return no;
-	}
-	public void setNo(int no) {
-		this.no = no;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public int getId() {
 		return id;
 	}
@@ -51,6 +18,12 @@ public class NoticeVO {
 	}
 	public void setReadcnt(int readcnt) {
 		this.readcnt = readcnt;
+	}
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
 	}
 	public String getTitle() {
 		return title;
@@ -70,6 +43,12 @@ public class NoticeVO {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getFilename() {
 		return filename;
 	}
@@ -88,6 +67,4 @@ public class NoticeVO {
 	public void setWritedate(Date writedate) {
 		this.writedate = writedate;
 	}
-	
-	
 }

@@ -1,7 +1,10 @@
 package common;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
@@ -16,6 +19,8 @@ import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.HtmlEmail;
 import org.apache.commons.mail.MultiPartEmail;
 import org.apache.commons.mail.SimpleEmail;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,6 +37,8 @@ public class CommonService {
 		
 		//3. HTML 태그 이메일 전송 처리
 		sendHtml(email, name, session);
+		
+		//4. 공공 데이터 REST API 요청 처리
 	};
 	
 	private void sendSimple(String email, String name) {
@@ -196,4 +203,55 @@ public class CommonService {
 		}
 		return file;
 	} //download()
+	
+	// 공공 데이터 REST API 요청 처리=========================================================================
+	public String xml_list(StringBuilder url) {
+		String result = url.toString();
+		
+		try {
+			HttpURLConnection conn
+			 = (HttpURLConnection)new URL( result ).openConnection();
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Content-type", "application/json");
+			BufferedReader rd;
+	        if(conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
+	            rd = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
+	        } else {
+	            rd = new BufferedReader(new InputStreamReader(conn.getErrorStream(), "utf-8"));
+	        }
+	        StringBuilder sb = new StringBuilder();
+	        String line;
+	        while ((line = rd.readLine()) != null) {
+	            sb.append(line);
+	        }
+	        rd.close();
+	        conn.disconnect();
+			result = sb.toString();
+			System.out.println(result);
+			
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return result;
+	}
+	
+	//JSON
+	public String json_list(StringBuilder url) {
+		JSONObject json = null; //JSONObject 클래스를 사용하기 위해 메이븐에서 JSON.simple 라이브러리 추가
+		
+		try {
+			json = (JSONObject) new JSONParser().parse( xml_list(url) );
+			json = (JSONObject) json.get("response");
+			json = (JSONObject) json.get("body");
+			int count = json.get("totalCount") == null ? 0 : Integer.parseInt(json.get("totalCount").toString());
+			
+			if (json.get("items") instanceof JSONObject) { //instanceof 타입 비교 키워드
+				json = (JSONObject) json.get("items");
+			}
+			json.put("count", count);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return json.toJSONString();
+	}
 }	
