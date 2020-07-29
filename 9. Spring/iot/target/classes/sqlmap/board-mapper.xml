@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board.mapper">
+	<select id="total" resultType="integer">
+		SELECT COUNT(*) FROM board <include refid="search"/>
+	</select>
+	
+	<select id="list" resultType="board.BoardVO">
+		SELECT n.*, (SELECT name FROM member WHERE member.id=writer) name
+		FROM (SELECT b.*, ROWNUM no
+	   	 	  FROM (SELECT * FROM board <include refid="search"/> ORDER by id) b
+			  ORDER BY no DESC) n
+		WHERE no BETWEEN #{beginList } AND #{endList }
+					
+	</select>
+	
+	<sql id="search">
+		<if test="search == 'title' or search == 'content'" >
+			WHERE ${search } LIKE '%' || #{keyword } || '%'
+		</if>
+		<if test="search == 'writer'" >
+			WHERE <include refid="writer" />
+		</if>
+		<if test="search == 'all'">
+			WHERE TITLE LIKE '%' || #{keyword } || '%'
+			OR content LIKE '%' || #{keyword } || '%'
+			OR <include refid="writer" />
+		</if>
+	</sql>
+	
+	<sql id="writer">
+		writer IN (SELECT id FROM member WHERE name LIKE '%' || #{keyword } || '%')
+	</sql>
+	
+	<insert id="insert">
+		INSERT INTO board(title, content, writer, filename, filepath)
+		VALUES (#{title }, #{content}, #{writer}, #{filename, jdbcType=VARCHAR}, #{filepath, jdbcType=VARCHAR} )
+	</insert>
+	
+	<update id="read">
+		UPDATE BOARD SET readcnt= readcnt + 1 WHERE id= #{id }
+	</update>
+	
+	<select id="detail" resultType="board.BoardVO">
+		SELECT b.*, (SELECT name FROM member m WHERE m.id= b.writer) name
+		FROM board b 
+		WHERE id=#{id }
+	</select>
+	
+	<update id="update">
+		UPDATE board SET title=#{title }, content=#{content }, filename=#{filename, jdbcType=VARCHAR}, filepath=#{filepath, jdbcType=VARCHAR}
+		WHERE id=#{id }
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM board WHERE id=#{id}
+	</delete>
+	
+	<insert id="comment_insert">
+		INSERT INTO board_comment(content, pid, writer)
+		VALUES (#{content}, #{pid}, #{writer})
+	</insert>
+	
+	<select id="comment_list" resultType="board.BoardCommentVO">
+		SELECT c.*, (SELECT name FROM member m WHERE m.id=writer) name,
+				TO_CHAR(writedate, 'yyyy-mm-dd hh24:mi:ss') writedate
+		FROM board_comment c
+		WHERE pid=#{pid}
+		ORDER BY id DESC
+	</select>
+	
+	<update id="comment_update">
+		UPDATE board_comment SET content=#{content} WHERE id=#{id}
+	</update>
+	
+	<delete id="comment_delete">
+		DELETE FROM board_comment WHERE id=#{id}
+	</delete>
+</mapper>
